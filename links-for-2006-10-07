@@ -1,0 +1,47 @@
+Title: links for 2006-10-07  
+Author: Chris Prather
+Date: 2006-10-07 11:22:13
+
+<ul class="delicious">
+	<li>
+		<div class="delicious-link"><a href="http://www.megabus.com/us/index.php">megabus.com - low cost, daily, express bus service in the US</a></div>
+		<div class="delicious-extended">Cheap bus travel around the upper midwest</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/travel">travel</a> <a href="http://del.icio.us/perigrin/midwest">midwest</a> <a href="http://del.icio.us/perigrin/bus">bus</a> <a href="http://del.icio.us/perigrin/transportation">transportation</a> <a href="http://del.icio.us/perigrin/budget">budget</a> <a href="http://del.icio.us/perigrin/minneapolis">minneapolis</a> <a href="http://del.icio.us/perigrin/minnesota">minnesota</a> <a href="http://del.icio.us/perigrin/chicago">chicago</a> <a href="http://del.icio.us/perigrin/detroit">detroit</a> <a href="http://del.icio.us/perigrin/cheap">cheap</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://forumserver.twoplustwo.com/showflat.php?Cat=0&Number=3740788&page=0&fpart=1&vc=1">The 2+2 Forums: Building a Bankroll For Newbies, Version 2.0 (rather long)</a></div>
+		<div class="delicious-extended">The purpose of this guide is to outline a successful strategy for building an initial poker bankroll from scratch, taking into account bonuses, initial investment, and the player's comfort level, as well as moving up to higher limits. This was written for</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/guide">guide</a> <a href="http://del.icio.us/perigrin/howto">howto</a> <a href="http://del.icio.us/perigrin/poker">poker</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://www.pokersource.org/poker-engine.php">PokerSource - poker-engine</a></div>
+		<div class="delicious-extended">poker-engine is a python library that implements poker rules according to variants and betting structures specified in configuration files. It designed to be used by a multiplayer poker server, a poker AI or a poker client.</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/python">python</a> <a href="http://del.icio.us/perigrin/poker">poker</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://search.cpan.org/~gene/Games-Battleship-0.05/lib/Games/Battleship.pm">Games::Battleship - "You sunk my battleship!" - search.cpan.org</a></div>
+		<div class="delicious-extended">A Games::Battleship object represents a battleship game between players. Each has a fleet of vessles and operates with a pair of playing grids One is for their own fleet and one for where the enemy has been seen.</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/games">games</a> <a href="http://del.icio.us/perigrin/battleship">battleship</a> <a href="http://del.icio.us/perigrin/perl">perl</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://search.cpan.org/~simon/Games-Poker-TexasHold-em-1.4/em.pm">Games::Poker::TexasHold'em - Abstract state in a Hold'em game - search.cpan.org</a></div>
+		<div class="delicious-extended">This represents a game of Texas Hold'em poker. It maintains the state of the pot, who's in to what amount, who's folded, what the bankrolls look like, and so on. It's meant to be used in conjunction with Games::Poker::OPP, but can be used stand-alone as w</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/games">games</a> <a href="http://del.icio.us/perigrin/perl">perl</a> <a href="http://del.icio.us/perigrin/poker">poker</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://search.cpan.org/~msergeant/POE-Component-Logger-1.00/lib/POE/Component/Logger.pm">POE::Component::Logger - A POE logging class - search.cpan.org</a></div>
+		<div class="delicious-extended">POE::Component::Logger provides a simple logging component that uses Log::Dispatch::Config to drive it, allowing you to log to multiple places at once (e.g. to STDERR and Syslog at the same time) and also to flexibly define your logger's output.</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/perl">perl</a> <a href="http://del.icio.us/perigrin/poe">poe</a> <a href="http://del.icio.us/perigrin/logging">logging</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://search.cpan.org/~rcaputo/Text-Conversation-0.03/lib/Text/Conversation.pm">Text::Conversation - Turn a conversation into threads, one line at a time. - search.cpan.org</a></div>
+		<div class="delicious-extended">Text::Conversation attempts to thread conversational text one line at a time. Given a speaker's ID (often a name, screen name, or other relatively unique identifier) and the text of their message, it attempts to find the most likely message they are refer</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/module">module</a> <a href="http://del.icio.us/perigrin/perl">perl</a> <a href="http://del.icio.us/perigrin/programming">programming</a> <a href="http://del.icio.us/perigrin/text">text</a> <a href="http://del.icio.us/perigrin/irc">irc</a> <a href="http://del.icio.us/perigrin/conversation">conversation</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://search.cpan.org/~book/Games-Mastermind-0.03/lib/Games/Mastermind.pm">Games::Mastermind - A simple framework for MasterMind games - search.cpan.org</a></div>
+		<div class="delicious-extended">Games::Mastermind is a very simple framework for running Mastermind games.</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/games">games</a> <a href="http://del.icio.us/perigrin/perl">perl</a> <a href="http://del.icio.us/perigrin/mastermind">mastermind</a>)</div>
+	</li>
+</ul>
+

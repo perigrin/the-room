@@ -1,0 +1,46 @@
+Title: links for 2006-05-22  
+Author: Chris Prather
+Date: 2006-05-22 11:20:00
+
+<ul class="delicious">
+	<li>
+		<div class="delicious-link"><a href="http://www.w3.org/2006/Talks/0518-SPASQL/">Adding SPARQL Support to MySQL</a></div>
+		<div class="delicious-extended">slides about adding SPARQL like queries to interrogate existing RDBMS databases.</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/sparql">sparql</a> <a href="http://del.icio.us/perigrin/w3c">w3c</a> <a href="http://del.icio.us/perigrin/mysql">mysql</a> <a href="http://del.icio.us/perigrin/xtech">xtech</a> <a href="http://del.icio.us/perigrin/rdf">rdf</a> <a href="http://del.icio.us/perigrin/development">development</a> <a href="http://del.icio.us/perigrin/semantic">semantic</a> <a href="http://del.icio.us/perigrin/web">web</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://www.megginson.com/blogs/quoderat/archives/2006/05/20/continuations-contd/">Quoderat » Continuations, cont’d</a></div>
+		<div class="delicious-extended">"I can see how continuations would work for that, just as I can see how a bulldozer could turn over the sod in my garden, but I’m far from convinced that either is the right tool for what is really a much simpler problem."</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/continuations">continuations</a> <a href="http://del.icio.us/perigrin/architecture">architecture</a> <a href="http://del.icio.us/perigrin/REST">REST</a> <a href="http://del.icio.us/perigrin/article">article</a> <a href="http://del.icio.us/perigrin/software">software</a> <a href="http://del.icio.us/perigrin/web">web</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://www.tbray.org/ongoing/When/200x/2006/05/19/Continuations-and-GUIs">ongoing · Continuations and GUIs</a></div>
+		<div class="delicious-extended">"Personally I have never found them idiomatic so I have no quarrel with Gilad’s reluctance, but I entirely disagree with the line of argument he uses to back it up."</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/continuations">continuations</a> <a href="http://del.icio.us/perigrin/web">web</a> <a href="http://del.icio.us/perigrin/software">software</a> <a href="http://del.icio.us/perigrin/usability">usability</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://smallthought.com/avi/?p=14">HREF Considered Harmful » Blog Archive » Ongoing Continuations</a></div>
+		<div class="delicious-extended">"Ultimately, I think all three models - state via REST, state via continuations or closures, state via Ajax - are important, and the job of a good web developer is to choose, for each user interaction, when to use which one."</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/continuations">continuations</a> <a href="http://del.icio.us/perigrin/ajax">ajax</a> <a href="http://del.icio.us/perigrin/rest">rest</a> <a href="http://del.icio.us/perigrin/webdev">webdev</a> <a href="http://del.icio.us/perigrin/programming">programming</a> <a href="http://del.icio.us/perigrin/web">web</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://www.psynixis.com/blog/?p=145">Simon Brocklehurst’s Weblog » Blog Archive » Tim Bray Says Web User Interfaces Are Great. I Beg To Differ.</a></div>
+		<div class="delicious-extended">"You see, it’s true that Web GUIs are easy to learn. No argument there. However, my argument is that “easy to learn” is only half of what you need to create a great user interface. The other half of the equation is what I call, “easy to use“; an</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/continuations">continuations</a> <a href="http://del.icio.us/perigrin/web">web</a> <a href="http://del.icio.us/perigrin/software">software</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://www.oreillynet.com/onlamp/blog/2006/05/of_oysters_and_perls_or_perl_i.html?CMP=OTC-3W3B95036222&ATT=Of+Oysters+and+Perls+or+Perl+in+the+Enterprise">Of Oysters and Perls, or Perl in the Enterprise - O'Reilly ONLamp Blog</a></div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/perl">perl</a> <a href="http://del.icio.us/perigrin/enterprise">enterprise</a> <a href="http://del.icio.us/perigrin/advocacy">advocacy</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://perlmonks.org/?node_id=550080">Perl in the Enterprise</a></div>
+		<div class="delicious-extended">Perlmonks reply to the previous Oysters and Perl article</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/perl">perl</a> <a href="http://del.icio.us/perigrin/enterprise">enterprise</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://use.perl.org/~chromatic/journal/29651?from=rss">Journal of chromatic (983) - The Mythical Monkey Month</a></div>
+		<div class="delicious-extended">It will argue against the apparently common illusion that, given a language with such enterprisey features as static type checking and compile-time provability, you can hire barely-trained monkeys and solve actual business problems well.</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/perl">perl</a> <a href="http://del.icio.us/perigrin/enterprise">enterprise</a>)</div>
+	</li>
+</ul>
+

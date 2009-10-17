@@ -1,0 +1,12 @@
+Title: links for 2006-06-20  
+Author: Chris Prather
+Date: 2006-06-20 11:23:18
+
+<ul class="delicious">
+	<li>
+		<div class="delicious-link"><a href="http://www.linux.com/article.pl?sid=06/05/19/145227">Linux.com | Accelerating OpenSSH connections with ControlMaster</a></div>
+		<div class="delicious-extended">OpenSSH 4.0 introduced an interesting new feature called ControlMaster that allows it to reuse an existing connection to a remote host when opening new connections to that host. This can significantly reduce the amount of time it takes to establish connec</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/ssh">ssh</a> <a href="http://del.icio.us/perigrin/openssh">openssh</a> <a href="http://del.icio.us/perigrin/linux">linux</a> <a href="http://del.icio.us/perigrin/tips">tips</a> <a href="http://del.icio.us/perigrin/controlmaster">controlmaster</a> <a href="http://del.icio.us/perigrin/howto">howto</a> <a href="http://del.icio.us/perigrin/networking">networking</a> <a href="http://del.icio.us/perigrin/sysadmin">sysadmin</a> <a href="http://del.icio.us/perigrin/shell">shell</a> <a href="http://del.icio.us/perigrin/security">security</a> <a href="http://del.icio.us/perigrin/hacks">hacks</a>)</div>
+	</li>
+</ul>
+

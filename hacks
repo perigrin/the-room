@@ -1,0 +1,31 @@
+Title: Hacks  
+Author: Chris Prather
+Date: 2006-02-03 14:12:48
+
+So I've been toying with the idea behind Audrey Tang's RDF::Yaml and the fact that JSON is YAML (http://redhanded.hobix.com/inspect/yamlIsJson.html) ... last night things finally coalesced in my head to produce the <a title="RDF to YAML or JSON Translator" href="http://chris.prather.org/cgi-bin/rdf_syck.pl">RDF to YAML or JSON Translator</a>
+
+You can plug in a URL to a RDF/XML document, optionally specifiy which URI in that document you want to serialize ... and poof you get back either JSON or YAML. 
+
+The whole thing, REST web service and all took 90 lines to write, and I'm confident it will work in both mod_perl's and CGI. Isn't that neat? I think it's neat.
+
+Edit: I went searching for some prior art and found the following
+
+<ul class="delicious">
+	<li>
+		<div class="delicious-link"><a href="http://danieldkim.blogspot.com/2005/07/javascript-and-rdf-almost-perfect.html">Dan's Blaggity Blog: JavaScript and RDF - (almost) perfect together</a></div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/javascript">javascript</a> <a href="http://del.icio.us/perigrin/rdf">rdf</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://www.mnot.net/blog/2005/01/24/json">mnot&#8217;s Web log: JSON and XML</a></div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/XML">XML</a> <a href="http://del.icio.us/perigrin/javascript">javascript</a> <a href="http://del.icio.us/perigrin/json">json</a> <a href="http://del.icio.us/perigrin/programming">programming</a> <a href="http://del.icio.us/perigrin/AJAX">AJAX</a> <a href="http://del.icio.us/perigrin/Web">Web</a> <a href="http://del.icio.us/perigrin/web2.0">web2.0</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://dannyayers.com/?p=2894">Raw » NextAction, last actions</a></div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/gtd">gtd</a> <a href="http://del.icio.us/perigrin/javascript">javascript</a> <a href="http://del.icio.us/perigrin/xml">xml</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://dannyayers.com/archives/2005/07/27/passing-it-around/">Raw » Passing it around</a></div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/javascript">javascript</a> <a href="http://del.icio.us/perigrin/tools">tools</a> <a href="http://del.icio.us/perigrin/xml">xml</a>)</div>
+	</li>
+</ul>
+Also this list should include the inspiration <a href="http://search.cpan.org/~autrijus/RDF-YAML-0.11/lib/RDF/YAML.pm">RDF::Yaml</a>.  

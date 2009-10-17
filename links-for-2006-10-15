@@ -1,0 +1,17 @@
+Title: links for 2006-10-15  
+Author: Chris Prather
+Date: 2006-10-15 11:22:29
+
+<ul class="delicious">
+	<li>
+		<div class="delicious-link"><a href="http://www.mcelhearn.com/article.php?story=20040924085258924">Kirkville - Image Manipulation from the Command Line</a></div>
+		<div class="delicious-extended">The sips (scriptable image processing system) command can do all this and more. Using Apple's Core Grahpics, sips manipulates images and displays information about them. It doesn't do much - you can't change an image from one format to another, but you ca</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/osx">osx</a> <a href="http://del.icio.us/perigrin/osxcli">osxcli</a> <a href="http://del.icio.us/perigrin/sips">sips</a> <a href="http://del.icio.us/perigrin/mac">mac</a> <a href="http://del.icio.us/perigrin/graphics">graphics</a> <a href="http://del.icio.us/perigrin/hack">hack</a> <a href="http://del.icio.us/perigrin/image">image</a> <a href="http://del.icio.us/perigrin/images">images</a> <a href="http://del.icio.us/perigrin/tips">tips</a>)</div>
+	</li>
+	<li>
+		<div class="delicious-link"><a href="http://www.w3.org/Style/Examples/007/center.html#vertical">CSS: centering things -- Centering Vertically</a></div>
+		<div class="delicious-extended">CSS level 2 doesn't have a property for centering things vertically. There will probably be one in CSS level 3. But even in CSS2 you can center blocks vertically, by combining a few properties. The trick is to specify that the outer block is to be formatt</div>
+		<div class="delicious-tags">(tags: <a href="http://del.icio.us/perigrin/code">code</a> <a href="http://del.icio.us/perigrin/css">css</a> <a href="http://del.icio.us/perigrin/hacks">hacks</a>)</div>
+	</li>
+</ul>
+
