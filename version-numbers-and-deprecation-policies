@@ -2,6 +2,7 @@ Title: Version Numbers and Deprecation Policies
 Author: Chris Prather
 Date: 2009-08-24 15:43:58
 
+# Version Numbers and Deprecation Policies
 A few days mst pointed out to me the Mojo release notes. I don't pay attention
 to the project since these days I have my plate full with [Moose][1],
 [Catalyst][2], and [KiokuDB][3] as well as starting a small business to be

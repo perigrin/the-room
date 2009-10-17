@@ -2,6 +2,7 @@ Title: State != Behavior
 Author: Chris Prather
 Date: 2009-06-03 15:37:39
 
+# State != Behavior
 Ovid has [discovered][1] another "bug" (and by "bug" I mean documented
 feature ;) ). He has code that effectively does:
 

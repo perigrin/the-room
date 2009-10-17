@@ -2,6 +2,7 @@ Title: Worry Bugs
 Author: Chris Prather
 Date: 2002-05-30 00:00:00
 
+# Worry Bugs
 I didn't post yesterday, I spent much of my time
 worrying about some bugs in Soq. I think I've got
 them reolved down to re-designing the object

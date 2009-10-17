@@ -2,6 +2,7 @@ Title: links for 2008-11-18
 Author: Chris Prather
 Date: 2008-11-18 17:07:18
 
+# links for 2008-11-18
 <ul class="delicious"><li>
                 <div class="delicious-link"><a href="http://blog.moertel.com/articles/2007/12/10/how-i-stopped-missing-darcs-and-started-loving-git">How I stopped missing Darcs and started loving Git</a></div>
                 <div class="delicious-extended">How to re-write history in git with git rebase --interactive</div>

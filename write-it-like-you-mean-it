@@ -2,6 +2,7 @@ Title: Write it Like You Mean It
 Author: Chris Prather
 Date: 2008-10-15 14:12:19
 
+# Write it Like You Mean It
 One of the things I've discovered recently, and wished I'd known *years* ago is you need to write all your Perl applications like you were gonna be posting them to CPAN, even if you have no intention of *ever* doing so.
 
 At work we are starting to migrate from a legacy system that was written in the grandest of late 90s CGI (the code is clear, easy to read and for this era of script well documented, but lacks any architectural cohesion and has been patched and re-patched over the years to handle new use cases). This system is absolutely core to our daily business, you might even argue that it *is* our daily business. 

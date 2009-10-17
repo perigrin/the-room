@@ -2,6 +2,7 @@ Title: The XML::Toolkit Story: Part 1 - The Early Years
 Author: Chris Prather
 Date: 2009-05-11 22:45:19
 
+# The XML::Toolkit Story: Part 1 - The Early Years
 So one of the talks I had accepted to [YAPC][1] is on [XML::Toolkit][2], and I
 thought I'd give a bit of a preview of what it is.
 

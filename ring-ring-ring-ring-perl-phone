@@ -2,6 +2,7 @@ Title: Ring Ring Ring Ring Perl Phone!
 Author: Chris Prather
 Date: 2009-09-05 15:42:11
 
+# Ring Ring Ring Ring Perl Phone!
 So I just got my first Perl script running on my Phone. I have a T-Mobile G1 and I installed the [Android Scripting Environment 0.11-Alpha][2] which allows you to install a copy of Perl5 (as of this writing 5.10.0) on your phone. It then sets up an RPC enviroment giving you access to the native Android APIs via a very naieve JSON-RPC system.
 
 There was a small bug in the JSON-RPC Code, but it was [easily fixed][1]. Now my [simple script][3] test script works as expected. DAHUT!

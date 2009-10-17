@@ -2,6 +2,7 @@ Title: Sketchy Code
 Author: Chris Prather
 Date: 2009-07-30 16:31:00
 
+# Sketchy Code
 Quite often when I'm developing with a new framework or toolset I find it easy
 to write a small test script to make sure I understand the feature I'm working
 with. They're sort of like sketches artists do while working on a piece or

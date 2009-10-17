@@ -2,6 +2,7 @@ Title: Sometimes Nothing is a Good Default
 Author: Chris Prather
 Date: 2009-07-09 12:34:20
 
+# Sometimes Nothing is a Good Default
 So I know this has come up before but I can't see where I've mentioned it and stevan just asked me to blog about it. One of the frequently requested features in Moose is for attributes to default to having some kind of accessor either `is => 'rw'` or `is => 'ro'` depending on the preference of whomever is making the request. This is because Moose defaults to *nothing* if you don't tell it what you want. I just ran into a situation where *either* default would lead to potential bugs in application.
 
 Our application has a queue that when it hits a high-water-mark will trigger processing on the queue and then reset the queue. This isn't exactly a *common* design pattern but it should be at least a familiar one. Here is the attribute definition for the queue:

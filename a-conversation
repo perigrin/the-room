@@ -2,6 +2,7 @@ Title: A Conversation
 Author: Chris Prather
 Date: 2003-02-01 00:00:00
 
+# A Conversation
 <span style="line-height: 110%; font-family: monospace;">
 [22:22:40] rto3rd: wow...I just disconnected by ethernet cable instead of the power cable...I was surprised it worked
 [22:23:07] MarceusX: You've got a few seconds of delay where you just drop packets.

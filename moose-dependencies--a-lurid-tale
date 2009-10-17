@@ -2,6 +2,7 @@ Title: Moose Dependencies: A Lurid Tale
 Author: Chris Prather
 Date: 2009-05-01 00:00:00
 
+# Moose Dependencies: A Lurid Tale
 Right so the rumor is that `Moose` has a lot of dependencies. I mean according
 to [cpantesters][1] `Moose` has 24 different dependencies! (Note: that same
 site says that almost all of those dependencies have a nearly 100% test

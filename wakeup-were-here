@@ -2,6 +2,7 @@ Title: Wakeup, we're here...
 Author: Chris Prather
 Date: 2005-10-15 17:55:36
 
+# Wakeup, we're here...
 I mentioned to Nacho that I would post this.
 
 I got Alice (my iBook running Tiger) updating it's Network Location based off the ssid of the network it joins to when it wakes up from suspend.

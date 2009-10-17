@@ -2,6 +2,7 @@ Title: What I've Learned about Perl Versions
 Author: Chris Prather
 Date: 2009-05-08 21:33:15
 
+# What I've Learned about Perl Versions
 So in a discussion about the version numbers in `MooseX::POE` the following wisdom was imparted upon me:
 <pre>
 14:35 <@lbr> DBIC had: $VERSION = '0.08010';

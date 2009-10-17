@@ -2,6 +2,7 @@ Title: Change Management is *Hard*
 Author: Chris Prather
 Date: 2009-07-02 17:26:06
 
+# Change Management is *Hard*
 So I've just release a new [JSON::Any][1]. Back in January when I made the last release, Marc Mims (the new maint for [Net::Twitter][2]) had a bug in JSON::Syck which Audrey decided not to fix since JSON::Syck is deprecated. This is fair, she's the maintainer and is allowed to deprecate things when there are better alternatives on CPAN (which honestly [JSON][3] / [JSON::XS][4] are).
 
 JSON::Any has a feature where you can explicitly load a list of modules by passing them in 

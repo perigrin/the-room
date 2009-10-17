@@ -2,6 +2,7 @@ Title: The Stability of Abstract Layers
 Author: Chris Prather
 Date: 2009-05-31 18:33:58
 
+# The Stability of Abstract Layers
 One of the reasons that [Moose][1] really works is that it's a layer of
 abstractions. At the bottom you have Perl's native OO layer which is ... let's
 be charitable and say "bare bones". On top of that Stevan wrote

@@ -2,6 +2,7 @@ Title: Take arms against a sea of troubles
 Author: Chris Prather
 Date: 2009-09-01 22:58:22
 
+# Take arms against a sea of troubles
 So [Dave Cross][1] has started injecting Moose Koolaid into his CPAN modules
 and got smacked by [Adam Kennedy][2] for injecting Moose into something with a
 ton of downstream dependencies. Or at least it *used* to have a ton of

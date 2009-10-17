@@ -2,6 +2,7 @@ Title: Mutant Weasels
 Author: Chris Prather
 Date: 2009-05-21 12:06:28
 
+# Mutant Weasels
 I was reading a [blog post][1] recently that mentioned the [Dawkins Weasel
 program][2]. I have always wanted to play around with [Genetic Algorithms][3]
 and this one seemed simple enough to hack at for a few hours. Four hours later

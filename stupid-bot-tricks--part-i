@@ -2,6 +2,7 @@ Title: Stupid Bot Tricks: Part I
 Author: Chris Prather
 Date: 2009-05-18 15:22:40
 
+# Stupid Bot Tricks: Part I
 I thought I'd take a stab at showing off a bot framework I'd written at the
 hackathon during the first [Frozen Perl][1].
 

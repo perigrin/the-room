@@ -2,6 +2,7 @@ Title: webkit-- # breaks REST apps
 Author: Chris Prather
 Date: 2009-02-21 18:40:28
 
+# webkit-- # breaks REST apps
 WebKit is has a broken Accept header, it puts text/xml and application/xml
 first which breaks Catalyst::Action::REST's default configuration and makes
 the idea of being able to dispatch html/xhtml different from XML difficult at

@@ -2,6 +2,7 @@ Title: This is interesting...
 Author: Chris Prather
 Date: 2003-04-23 21:30:44
 
+# This is interesting...
 A long thread on use.perl about <a title="Journal of ziggy (25)" href="http://use.perl.org/~ziggy/journal/11807">Standardizing on Microsoft</a>. I think Ziggy may have a point, though typically such rationalizations are not found in the Microsoft shop.
 
 I've worked for and technically work in a Microsoft Shop. I'm planning on moving my operating system to a Linux derivative (<a href="http://www.gentoo.org">gentoo</a>) in the  (mostly because Perl has such a legacy unix culture it tends to be painful to do things in Perl under Windows). Generally I've found that "We use windows because we've weight the costs and overall it lowers the bottom line" to be the last rationalization out of their mouths. Phrases like "enterprise system" and "robust development enviroment" come to into play long before that.

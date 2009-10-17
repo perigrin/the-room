@@ -2,6 +2,7 @@ Title: Family Ties
 Author: Chris Prather
 Date: 2006-03-12 23:27:44
 
+# Family Ties
 So tonight I got an e-mail from <a href="http://martin.prather.org">Martin Prather</a> asking what was up with Prather.org. I didn't have a good answer, which leads me to wanting to do something more open with it. So, I think I'm gonna create something there simple for now, and more complex later. 
 
 Simple is I think going to be a simple wiki. Probably something like CGI::Wiki::Kwiki or something similar. Hopefully I can get the tuits to upgrade it to SAWA::Wiki eventually but that will have to be a future task.

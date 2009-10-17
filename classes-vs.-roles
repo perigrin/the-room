@@ -2,6 +2,7 @@ Title: Classes Vs. Roles
 Author: Chris Prather
 Date: 2009-05-28 17:37:41
 
+# Classes Vs. Roles
 Ovid [recently asked][1] if there was ever a reason to use Inheritance over
 Composition. Stevan [answered][6] that question rather eloquently but the whole
 thing has me thinking about the relationship between Classes and Roles.

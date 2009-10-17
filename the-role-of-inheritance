@@ -2,6 +2,7 @@ Title: The Role of Inheritance
 Author: Chris Prather
 Date: 2009-07-19 23:55:45
 
+# The Role of Inheritance
 Ovid [linked][1] to [a blog post][2] about the evil's of inheritance. The post
 makes an excellent case for the dangers of inheritance for behavioral
 composition. However I knew he was running into a problem when his first

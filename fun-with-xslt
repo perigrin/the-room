@@ -2,6 +2,7 @@ Title: FUN with XSLT
 Author: Chris Prather
 Date: 2004-03-12 11:41:16
 
+# FUN with XSLT
 So I created yet another template engine today. But this time I created it in XSLT, and it takes xhtml as it's template format.
 
 You don't get anything fancy, it just parses the HTML and replaces elements with the right id attribute with content from the source XML file. So far it's tested with AxKit and SAWA (both using LibXSLT)  and seems to work perfectly for what it does.

@@ -2,6 +2,7 @@ Title: Hacks
 Author: Chris Prather
 Date: 2006-02-03 14:12:48
 
+# Hacks
 So I've been toying with the idea behind Audrey Tang's RDF::Yaml and the fact that JSON is YAML (http://redhanded.hobix.com/inspect/yamlIsJson.html) ... last night things finally coalesced in my head to produce the <a title="RDF to YAML or JSON Translator" href="http://chris.prather.org/cgi-bin/rdf_syck.pl">RDF to YAML or JSON Translator</a>
 
 You can plug in a URL to a RDF/XML document, optionally specifiy which URI in that document you want to serialize ... and poof you get back either JSON or YAML. 

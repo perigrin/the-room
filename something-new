@@ -2,6 +2,7 @@ Title: Something New
 Author: Chris Prather
 Date: 2006-05-09 01:07:04
 
+# Something New
 I wrote a little program tonight that takes input from STDIN and posts to this blog using [Net::Blogger][1] (obviously if you're reading this it worked). Because it reads from STDIN it works nicely with [TextMate][2]. W00t. Here's the text of the script (posted using: cat `which blog` | mate | blog --title "Something New")
 	#!/usr/bin/perl
 	use strict;

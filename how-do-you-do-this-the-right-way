@@ -2,6 +2,7 @@ Title: How do you do this the right way?
 Author: Chris Prather
 Date: 2004-08-06 22:11:47
 
+# How do you do this the right way?
 So I'm working with Java at work now. A little applet that has several tabbed panes of similar "View" objects. 
 
 The code I'm modeling it off of has several If/Then/Else blocks wrapping cut-n-pasted code which is slightly altered for each class. I want to replace this with something much more intelligent and generic. Something like this:

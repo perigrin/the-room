@@ -2,6 +2,7 @@ Title: links for 2009-02-12
 Author: Chris Prather
 Date: 2009-02-12 14:43:11
 
+# links for 2009-02-12
 <ul class="delicious"><li>
                 <div class="delicious-link"><a href="http://curl.haxx.se/libcurl/php/examples/callbacks.html">libcurl - PHP Binding examples</a></div>
                 <div class="delicious-extended">Took me forever to figure out why I was getting the headers in my output from curl. Setting up an empty call back fixed it.</div>

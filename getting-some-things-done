@@ -2,6 +2,7 @@ Title: Getting Some Things Done
 Author: Chris Prather
 Date: 2006-06-01 23:51:07
 
+# Getting Some Things Done
 I've been meaning to write a post about my organization system for work. I'm not sure why anybody would care, but I've mentioned it more than once to Mike and said that I'd write up something about it. It's based upon [Getting Things Done][GTD] which is apparently all the rage still, and [Time Management for System Administrators][TMSA]. 
 
 The basic part of GTD is context sensitive TODO lists. I cheat and use software to build my TODO lists, specifically I use [Llamagraphics' LifeBalance][LB]. LifeBalance comes in three flavors, Windows, Mac, and PalmOS. I only use the PalmOS version because it's all I need (currently*). It let's you input your tasks in a standard tree like fashion (similar to [ShadowPlan][SHADOW]), but it has a display screen that organizes your tasks by what you should do next (using some fuzzy logic processing to rank what you've done recently, how each task important it is.). In GTD your Task list should be filtered by context ... if you're at home you do "Home" tasks, if you're at a telephone you do "Telephone" tasks. LifeBalance let's you create "Places" which do exactly this. 
