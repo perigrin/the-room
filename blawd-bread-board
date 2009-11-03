@@ -2,6 +2,8 @@ Title: Bread::Board
 Author: Chris Prather
 Date: 2009-11-03 10:30
 
+# Bread::Board
+
 So I've been working on [Blawd][1] some more this week, trying to clean up the code so I can get some of the TODOs out of the way. One of the big TODOs is to implement a configuration system.
 
 I had built the application organically much the way I have built many different applications over time. I had a master `Blawd` class that wired everything Entries, Indexes, Storage and Rendering classes, together by passing around attributes to constructors. Pretty standard stuff really. The problem is that building a configuration out of this either you end up with a god object (one big object that gets passed around or is a Singleton), or lots of small attributes and methods for passing configuration around. None of these approaches appealed to me. Here's a pared down example from Blawd.
