@@ -24,8 +24,8 @@ Actually there are at least two clients for CPAN, `CPAN.pm` and `CPANPLUS.pm`. E
 
 They both however work rather identically from the client perspective. 
 
-    cpan Moose  # install Moose
-    cpanp Moose # install Moose
+    cpan -i Moose  # install Moose
+    cpanp -i Moose # install Moose
 
 ## There is a BuildBot on the Server
 
@@ -46,6 +46,12 @@ CPAN in fact can make matters worse because it assumes that the computationally 
 CPAN is a loosely organized large pile of semi-tested crap. It follows [Sturgeon's Law][4] that 90% of everything is crud pretty closely. But with the current size of CPAN that means that there are approximately 1,917 packages that aren't crud. Finding these packages is a continual conundrum. 
 
 The fact is however that if the problems are social (should testing be opt-in or opt-out? how do you find a good package? what do you do about versioning?) then the technical solution is doing it's job incredibly well. In a very significant way CPAN *is* the Perl language, without it you couldn't have a post-modern Object System, simple Tail Call Optimization, Parser Level syntax extensions, or any number of other low level adaptations to the language.
+
+## UPDATE
+
+So apparently people found this post interesting and I've had a few people metion problems with it. I've fixed the `cpan`/`cpanp` command line since they both will accept `-i` but only `cpan` will let me do `cpan ModuleName`.
+
+Also I've been told to link to [The Zen of Comprehensive Archive Networks][5] which explains in far more detail how CPAN works, and was written by the masterful Jarkko Hietaniemi.
 
 [1]: http://article.gmane.org/gmane.comp.python.distutils.devel/11359
 [2]: http://enterpriselamp.org/camp/
