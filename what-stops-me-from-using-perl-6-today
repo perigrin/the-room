@@ -4,9 +4,9 @@ Date: 2009-11-16 14:12
 
 # What Stops Me From Using Perl6 Today
 
-I have to confess `mst` asked me to step forward and make a comment about the [Perl5][mst] & [Perl6][maask]. I suspect because I'm a prime example of a person who's deeply involved in what `maask` calls the Perl5 story. This is because I've been bound up tightly with the Moose community for a while, and I've recently founded a [company][tamarou] that is doing Modern Enlightened Perl development. My bread is buttered by Perl5.
+I have to confess `mst` asked me to step forward and make a comment about the [Perl5][mst] & [Perl6][masak]. I suspect because I'm a prime example of a person who's deeply involved in what `masak` calls the Perl5 story. This is because I've been bound up tightly with the Moose community for a while, and I've recently founded a [company][tamarou] that is doing Modern Enlightened Perl development. My bread is buttered by Perl5.
 
-Recently because of `mst` and `maask` sparking a conversation I have started taking a really close look at Perl6. One of the things that struck me was how polished and complete the core Perl6 language was, and the Rakudo implementation.
+Recently because of `mst` and `masak` sparking a conversation I have started taking a really close look at Perl6. One of the things that struck me was how polished and complete the core Perl6 language was, and the Rakudo implementation.
 
 This post started out as a much more whiney response to `bakkushan`'s [post][bakkushan] of the same name. For that version of this post I set out to compare Perl6, specifically Rakudo, to my own cherished Moose. The Example object I came up with is a stripped down version of [`Blawd::Entry::MultiMarkdown`][bemm]. 
 
@@ -110,7 +110,7 @@ I've added `#perl6` to my IRC client. I'm keeping a closer eye on it, but for no
     Assignment type check failed; expected Time, but got Int
 
 [mst]: http://www.shadowcat.co.uk/blog/matt-s-trout/f_ck-perl-6/
-[maask]: http://use.perl.org/~masak/journal/39912
+[masak]: http://use.perl.org/~masak/journal/39912
 [tamarou]: http://tamarou.com
 [bakkushan]: http://howcaniexplainthis.blogspot.com/2009/11/what-stops-me-from-using-perl-6-today.html
 [bemm]: http://github.com/perigrin/blawd/blob/master/lib/Blawd/Entry/MultiMarkdown.pm
