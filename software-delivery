@@ -33,7 +33,7 @@ large corporations like Asay's article talks about (the Moose community
 for example has people from Walmart, the BBC, and Omni Hotels). Some of
 these developers work at smaller consultancies (again Moose has people
 from [Infinity Interactive][3], [Best Practical][4], and my own
-[Tamarou][5][^2]). Some of these people are even independent contractors.
+[Tamarou][5][^1]). Some of these people are even independent contractors.
 
 It seems like a very short step for these organizations do the heavy
 lifting for an enterprise level IT Project. The Corporate Sponsor could
@@ -45,7 +45,7 @@ In his book _The Four Hour Work Week_, Tim Ferris coined a term
 difference in prices between two or more markets. Geo-arbitrage is
 taking advantage of physically distinct markets (say India vs Europe).
 Geo and temporal arbitrage are what cause the radical lowering of cost
-for open source[^1]. Developers who are emotionally committed to a project somehow find non-monetary ways to value their time.
+for open source[^2]. Developers who are emotionally committed to a project somehow find non-monetary ways to value their time.
 
 Currently large corporations leverage geo arbitrage with a few very
 large strokes. They'll off-shore their internal developments staff
@@ -108,9 +108,9 @@ have to tell. I suspect that the truth in 20 years will be even stranger than we
 
 Update: Apparently the Perl Ironman blogging contest wants me to mention CPAN as well for it to show up. 
 
-[^1]: Temporal-arbitrage being the concept that even in the same place, all other things being equal, prices change depending on the time. 
+[^2]: Temporal-arbitrage being the concept that even in the same place, all other things being equal, prices change depending on the time. 
 
-[^2]: Actually there are far more consulting companies than these three active in teh community, and I've been told it was remiss to not point out [ShadowCat](http://shadowcat.co.uk) as well as [CloudTone](http;//cloudtone.ca)
+[^1]: Actually there are far more consulting companies than these three active in teh community, and I've been told it was remiss to not point out [ShadowCat](http://shadowcat.co.uk) as well as [CloudTone](http://cloudtone.ca)
 
 [1]: http://news.cnet.com/8301-13505_3-10404406-16.html
 [2]: http://tamarou.com
