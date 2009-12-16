@@ -4,6 +4,12 @@ Date: 2009-12-15 18:40
 
 # Lies, Damn Lies, and Statistics
 
+UPDATE: 
+
+Aldo Cortesi contacted me privately via email with a response to this post. With his permission I've updated this post with the substance of his response and my own rebuttal. The updated sections are marked with UPDATE/END blocks.
+
+END
+
 So after chromatic [linked][1] to Aldo Cortesi's post [The impact of
 language choice on github projects][2] I was curious. After reading the
 post, I was shocked and dismayed at some of the analysis Mr. Cortesi
@@ -57,6 +63,33 @@ existing projects to solve their problem. This explains why we have a
 higher median number of contributors to our projects as well as why our
 projects are on a whole *older*. 
 
+UPDATE: 
+
+Cortesi pointed out the following.
+
+> The first point where you strongly disagree with me is my conjecture
+> that the higher median commit count for Perl and C++ is due to a
+> decline in popluarity in the languages, which means that my sample is
+> skewed towards "older" projects. You counter that it might just be that
+> Perl and C++ are older, and that this is reflected in the project data.
+> This doesn't sound right to me - for one thing, Perl was first releaed
+> in 1987, and Python in 1990. I just don't think that a 3 year
+> difference over a 20+ year history can explain the size of the effect.
+> One way to approach this might be to look at the rate of project
+> creation over the last few years, which would be easy enough to do.
+
+He's right, I'm simply parroting the stereotype that Perl is
+older than Python (or even Ruby which came into existence in the mid
+90s) when I rightly know better. The stereotype however does have some
+merit. It's generally accepted that Perl had it's *second* wind during
+the dot-com era and that was when Python had it's first wind.
+
+I'm honestly not sure that the data can be conclusive argued one way
+or the other without perhaps correlating the age of the data (time
+since first commit) in there as well.
+
+END
+
 Next Cortesi measured number of files touched per commit (emphasis his).
 
 >   __Most commits touch about 4 files, with C++ touching somewhat more,
@@ -107,6 +140,20 @@ suspect that the significant discrepancy in data between these languages
 Ruby is four times again as much as Python) may come into play, but I've
 no evidence to back that up.
 
+UPDATE:
+
+Cortesi noted the following, which is a fair point I overlooked. 
+
+> Here, I'd like to point out that the graph shows the total commits vs
+> the total committers per project. As such, it doesn't tell us anything
+> about the _retention_ of committers - a committer who makes a single
+> commit and leaves the project is still counted. I've been thinking
+> about how to measure committer retention - perhaps looking at the
+> timespan bracketed by the first and last commits of a committer, as a
+> percentage of the lifespan of the project.
+
+END
+
 The next set of graphs shows the number of commits per day over the
 first 300 days of a project. Perl here shows a strong decline, the
 strongest actually. Coming in second is C, then Ruby being the last
@@ -155,6 +202,14 @@ I'm one of them, however if people find themselves feeling venomous,
 they should take it to their own blog. Better yet, take a deep breath
 and start that new project that is really cool and will change the
 world, and upload it to github so that the world beyond Perl can see it.
+
+UPDATE:
+
+This is pure conjecture on my part, any opinion expressed here is entirely my own and has not been approved or vetted by Mr. Cortesi. 
+
+Aldo seems genuinely surprised at the strength of reaction he had, and in speaking with him his comments weren't intended to be as inflammatory as they came off. I've expressed that the Perl of the past isn't the Modern Enlightened Perl we all know and love (YOU DO LOVE IT RIGHT?!?), and tried to show how things really are in the Perl universe I see rather than the one he's obviously experienced in the past.
+
+END
 
 [^1]: Today it is the second most popular language on github. The
 increase in "popularity" is entirely based upon the [`gitpan`][6]
