@@ -28,6 +28,7 @@ Instead of starting with "What different things are involved with Books, and how
 
 
 [^1]: The accepted answer for this question on Stack Overflow is excellent.
+
 [^2]: [Stevan][3] uses this quote all the time
 
 [1]: http://stackoverflow.com/questions/1078838/oop-choosing-objects
