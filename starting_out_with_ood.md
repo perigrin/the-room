@@ -1,8 +1,8 @@
-Title: Starting out with Object Oriented Design
+Title: Starting out with OOD
 Author: Chris Prather
 Date: 2009-12-31 19:21
 
-# Starting out with Object Oriented Design
+# Starting Out with  OOD
 
 The [basic question][1][^1] for Object Oriented Design is 
 
