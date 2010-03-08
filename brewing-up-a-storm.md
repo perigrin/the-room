@@ -33,7 +33,7 @@ Then I decided it and `local::lib` both sharing $HOME/perl5 wasn't going to be p
 
 Then I got annoyed with the pages of verbose output, so I stole a page from `cpanminus` and implemented a `quiet` switch that is enabled by default. Output now goes to `$PERLBREW_ROOT/build.log`.
 
-Today I integrated it with `local::lib` so that if you have `local::lib` installed it will drop the proper configuration in the `perlbrew` configuration scripts so that when you install new modules they get installed into your `perlbrew` managed directories.
+Today I integrated it with `local::lib` so that if you have `local::lib` installed it will drop the proper configuration in the `perlbrew` configuration scripts so that when you install new modules they get installed into your `perlbrew` managed directories[^3].
 
 Finally just now I finished getting `--as=` working. This means that if you build a custom perl you can have it installed under a special name and then easily switch to and from it. I'm planning on using this to build a `--as-workperl` that contains all the modules I need for work. 
 
