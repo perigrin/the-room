@@ -1,4 +1,4 @@
-Article: Been There, Done That
+Title: Been There, Done That
 Author: Chris Prather
 Date: 2010-03-14
 
