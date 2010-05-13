@@ -63,8 +63,10 @@ the Perl space, I welcome people adding to [the list][5].
 [^1]: You can tell it's the same evening because apparently I'm
 recycling Beatles songs for post titles. I swear I'm not even listening
 to the Beatles right now.
+
 [^2]: Which is convient as my wife has had her own 
 [small business](http://superawesomecool.org) explode with activity in the last month.
+
 [^3]: I'm planning on looking, reading, and doing stuff like this for at
 least the next ten years. That's how long it took me to be confident
 enough at Perl to consider myself good with Perl.
