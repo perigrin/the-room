@@ -15,7 +15,7 @@ before `xenoterracide`'s blog post I came to the same realization he
 had. 
 
 `Dist::Zilla` is designed to help the author develop faster, but it
-(<strikeout>inadvertently I'm sure</strikeout>[^2]) disenfranchises people who might contribute a
+(<strikeout>inadvertently I'm sure</strikeout>) disenfranchises people who might contribute a
 patch by raising the bar for contribution. There are extra hoops you
 have to jump through to contribute. More modules from CPAN you need
 before you can work on the modules from CPAN you need.
@@ -38,12 +38,9 @@ straight from the repository. To paraphrase [Homer Simpson][3].
 I'd like to thank `doy` for vetting the modules I included and making
 sure `Class::MOP` was covered.
 
-[^1]: I honestly think in this case "clever" is not the right approach.
-One of the problems I have seen contributing to
-[cpanminus](http://cpanmin.us) is that there is generated code in the
-repository, making it unclear which files I should patch.
+## Update 2010-05-14
 
-[^2]: Talking with RJBS on IRC today, it was a carefully considered decision.
+Talking with RJBS on IRC today, it was a carefully considered decision.
 
 >  [A]ll of my dists can be tested with "prove -lr t" and I accept patches
 >  against the cpan tarball. [B]ut in the end, I decided that 99.9% of my
@@ -55,6 +52,12 @@ In no way did I wish to express that RJBS was being sloppy. He is an
 excellent developer, and I use more than a few of his modules every day.
 `Dist::Zilla` is part of `Task::Kensho` because I think it makes
 creating a distribution simpler; something we want more people to do.
+
+[^1]: I honestly think in this case "clever" is not the right approach.
+One of the problems I have seen contributing to
+[cpanminus](http://cpanmin.us) is that there is generated code in the
+repository, making it unclear which files I should patch.
+
 
 [1]: http://xenoterracide.blogspot.com/2010/04/my-new-lovehate-relationship-with.html
 [2]: http://xenoterracide.blogspot.com/2010/04/distzilla-vs-xenoterracide.html
