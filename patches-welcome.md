@@ -84,12 +84,12 @@ Lee if you're reading this I'll happily bust my ass on a board at your
 direction as well. I would love to learn to kick-flip before I die, but
 I suspect being able to ollie is a required skill I lack.
 
-[^5]: You can replace skate boarding any profession here too, I'm pretty
-sure if Christian Jacobs were to ask me to sit in with the Aquabats
-because I said that he'd gotten sloppy on _Charge!_ with his horn
-section, even though I'm not a professional musician, you'd bet your ass
-I'd be sitting in with the band. Same thing for Mr. Gaiman and his loose
-plotting (although I adore his prose style).
+[^5]: You can replace skateboarding with any profession here too, I'm
+pretty sure if Christian Jacobs were to ask me to sit in with the
+Aquabats because I said that he'd gotten sloppy on _Charge!_ with his
+horn section, even though I'm not a professional musician, you'd bet
+your ass I'd be sitting in with the band. Same thing for Mr. Gaiman and
+his loose plotting (although I adore his prose style).
 
 [^6]I'm not expecting to even be contacted by a professional
 skateboarder. I'm pretty sure ours is the only industry where not
