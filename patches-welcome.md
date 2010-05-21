@@ -35,25 +35,23 @@ would have serious qualms about moving into that community).
 
 Anything I've uploaded to CPAN that I wasn't directly paid to do was
 done because I love doing it, recreationally. It's a hobby. RelaxNG
-support for XML::Toolkit won't happen until I am in the mood. If have a
-problem with that, and would like it to not be a hobby for me, I have an
-hourly rate that is I'm told very reasonable[^2]. I hate saying that,
-but it's true[^3].
+support for XML::Toolkit won't happen until I am in the mood. If you
+would like it to not be a hobby for me, I have an hourly rate that is
+I'm told very reasonable[^2]. I hate saying that, but it's true.
 
 As a hobby FOSS programming is a team sport. "Patches Welcome" is an
 invitation to play.
 
-If you ran into Tony Hawk skating at the Brooklyn Banks, would you tell
+If you ran into Tony Hawk[^3] skating at the Brooklyn Banks, would you tell
 him his flip kick was a little off or ask him to help you with your pop
 shove-it? Yeah, me neither. But if we were to do so, and he replied "hey
-I'm busy right now, why don't you show me what you mean"? What if he
-phrased it like "show it, hot shot"? That shouldn't automatically translate
-to "screw you, I'm TONY HAWK!", it's challenge to participate.
+I'm busy right now, why don't you show me what you mean"? Even if he
+phrased it like "show it, hot shot" that shouldn't automatically translate
+to "screw you, I'm TONY HAWK!"; it's challenge to participate.
 
-I've never skated in my life, but if a professional skate
-boarder[^4][^5] offered to work with me if I were to show up and try. I
-would[^6]. If I can't or don't try to participate, does that reflect on
-them?
+I've never skated in my life, but if a professional skateboarder[^4]
+offered to work with me if I were to show up and try. I would[^5]. If I
+can't or don't try to participate, does that reflect on them?
 
 "Patches Welcome" is an invitation to play. It may be said during a
 period of frustration or exhaustion. It may be said to people who don't
@@ -62,41 +60,42 @@ mean to say "screw you, I'm STEVAN LITTLE!". That doesn't
 make it any less of an invitation.
 
 I have already [started discussing][help] what we as a community can do
-about increasing the number of Professional opportunities available[^7].
+about increasing the number of professional opportunities available[^6].
 If you want to discuss how people should be more Professional about
 their recreation, you really need to look at the definitions of
 [those][professional] [terms][recreation].
+
+The thing of it is, discussing this is unprofessional. Claiming you know
+best what something someone else means is unprofessional. Claiming that
+your time (recreational or not) is somehow holy or too valuable to share is
+unprofessional. So let's move on and do something else with our time.
 
 [^1]: At least nobody is asking CPAN contributors to move to Mongolia
 for two years. Though it is wonderful if you want to
 [volunteer](http://www.peacecorps.gov) to do so. They have more
 requirements than CPAN for contribution though.
 
-[^2]: I estimate the cost of RNG support in XML::Toolkit to be about a
-minimum of $6000 USD at Tamarou's current rates. If you would like to
-Volunteer as a FOSS programmer, please contact me I can definitely use
-unpaid professional labour right now.
+[^2]: If you would like to Volunteer as a FOSS programmer, please
+contact me I can definitely use unpaid professional labour right now.
 
-[^3]: Think of it like a dual-license.
-
-[^4]: Doesn't have to be Tony Hawk. Elissa Steamer, Bucky Lasek, Jason
+[^3]: Doesn't have to be Tony Hawk. Elissa Steamer, Bucky Lasek, Jason
 Lee if you're reading this I'll happily bust my ass on a board at your
 direction as well. I would love to learn to kick-flip before I die, but
 I suspect being able to ollie is a required skill I lack.
 
-[^5]: You can replace skateboarding with any profession here too, I'm
+[^4]: You can replace skateboarding with any profession here too, I'm
 pretty sure if Christian Jacobs were to ask me to sit in with the
 Aquabats because I said that he'd gotten sloppy on _Charge!_ with his
 horn section, even though I'm not a professional musician, you'd bet
 your ass I'd be sitting in with the band. Same thing for Mr. Gaiman and
 his loose plotting (although I adore his prose style).
 
-[^6]I'm not expecting to even be contacted by a professional
+[^5]I'm not expecting to even be contacted by a professional
 skateboarder. I'm pretty sure ours is the only industry where not
 responding to complaints in a blog some where somehow makes us less
 professional too.
 
-[^7]: One of Tamarou's explicit goals is to grow the number of Perl
+[^6]: One of Tamarou's explicit goals is to grow the number of Perl
 related business opportunities in the world.
 
 
