@@ -102,7 +102,7 @@ related business opportunities in the world.
 
 [axkit]: http://axkit.org/
 [moose]: http://moose.perl.org
-[retuers]: http://reuters.com
+[reuters]: http://reuters.com
 [ii]: http://iinteractive.com
 [tamarou]: http://tamarou.com
 [help]: http://chris.prather.org/with-a-little-help-from-my-friends.md.html
