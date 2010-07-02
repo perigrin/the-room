@@ -1,0 +1,115 @@
+Title: The Perl Foundation
+Date: 2010-06-27T15:08:03 EDT
+Author: Chris Prather
+
+# The Perl Foundation
+
+Gabor Szabo recently [asked on his blog][1] what we want to see out of
+[The Perl Foundation][tpf]. This was in response to the issues raised in
+comments on his [grant request][2]. I'd made a comment in there that I
+figured I should pull some of ideas from my comments there out into a
+blog post in response Gabor's question.
+
+Obviously much of the comments are specifically a response to the
+particular grant proposal. However there are important pieces in there
+about what I think the future of the TPF could be.
+
+## Workshops ##
+
+The TPF current helps with much of the infrastructure and financial
+support for running the Three Perl Workshops in North America as well as
+YAPC::NA. I know this because I've been involved with organizing a
+workshop for the last 3 years (Frozen Perl initially and then Perl
+Oasis), as well as writing the winning bid for YAPC::NA 2011 from
+[Dahut.pm][dahut] and leading the organization efforts there[^1].
+
+The conferences committee has put together excellent documentation for
+helping plan a workshop or YAPC. Depending on the level of commitment
+you want from them, they help process payments and write checks for the
+venues etc.
+
+I would love to see them continue and expand on this process. This is an
+"easy win" for them because many workshops are self-funding. I would
+love to see those of us like Pittsburgh, Minneapolis and Orlando be
+called on to help give advice to new groups looking to host their own
+workshop or write a YAPC bid. I know I was actually moved by the amount
+of support I got at YAPC after the bid was announced from former
+organizers Dan Wright, Casey West, Heath Bair, and Rob Kinyon to name a
+few[^2]. These conferences are a *steal* compared to the equivalent in
+other communities, anything we can do to make them bigger and better
+should be a priority.
+
+One of the pain points of being a conference organizer is fund raising.
+Each set of organizers must individually contact all the different
+companies who may or may not sponsor and give them a pitch. This is not
+only highly inefficient, it annoys the companies that sponsor. I think
+that one possible thing that the Perl Foundation could take on here
+would be to take on some of this work. If we had someone at the TPF
+level who could contact a list of donors and help work out some basic
+sponsorship each year for the different workshops it would smooth the
+process unmeasurably. These donors would be sponsoring the workshops
+directly, that wouldn't change, but they would be coordinated across
+*all* of the events the TPF is responsible for so we can help balance
+funds and grow the number and quality of events.
+
+## Grants ##
+
+The Perl Foundation currently issues grants quarterly. In fact the 2010
+Q3 Call for Proposals was just [announced][3]. Grants are for $500 to
+$3000 in funding and help targeted projects get done. This is how the
+[`Moose` documentation][4] was written.
+
+The TPF traditionally has had a poor record when it comes to grants.
+Looking at the [grant history][5] an embarassing number are failed.
+However they are increasing their success rate. Dave Rolsky has an
+excellent [post][6] discussing the nature of grants and motivation.
+Let's just say that for some people they can provide the proper
+incentive to perform good tasks for the community. Having them is in my
+mind a net benefit.
+
+## Events ##
+
+Much more recently, and closer to the nature of Gabor's grant proposal
+are the TPF involvement in non-TPF events. These events aren't
+specifically non-Perl but are simply not one of the official events that
+the TPF helps sponsor. These would include OSCON as well as many of the
+events listed [on the wiki][7]. Gabor has been doing an amazingly good
+job of organizing people to attend these and help spread the Modern Perl
+movement beyond the echo chamber.
+
+I personally think that the TPF should elevate this process to equal to
+the Conferences and Grants. Those two efforts have official committees
+and budgets to allocate to proposed efforts, and so should the Events
+group. The budget would go toward whatever is necessary to attend an
+event (SWAG, travel expenses, booth/space rental), and be allocated at
+the discretion of the committee.
+
+## Conclusion ##
+
+As you can see the ideas here are a consolidation of the things the TPF
+are already doing. I think that right now the TPF needs to organize
+itself and find it's own identity and purpose. This is an introspective
+process fundamentally but can be done in consultation with the
+community[^3]. Only once they are successful at the things they are
+*currently* doing will they be able to properly focus on a new endeavor.
+
+[^1]: I am *deeply* indebted to the many many people who have
+volunteered to help with YAPC::NA, and who have contributed to Perl
+Oasis. For the help the TPF gives, nothing would happen if I didn't have
+wonderful people getting things done.
+
+[^2]: These aren't the only people to volunteer their support and
+wisdom, they're just the ones I know are former organizers.
+
+[^3]: The Perl Community is the main customer of the Perl Foundation. We
+are the people who benefit most from their activities. 
+
+[tpf]: http://news.perlfoundation.org/
+[dahut]: http://dahut.pm.org
+[1]: http://blogs.perl.org/users/gabor_szabo/2010/07/what-would-you-like-tpf-to-do.html
+[2]: http://news.perlfoundation.org/2010/06/hague-grant-application-perl-e.html
+[3]: http://news.perlfoundation.org/2010/07/2010q3-call-for-grant-proposal.html
+[4]: http://search.cpan.org/dist/Moose
+[5]: http://github.com/rjbs/tpf-grant-history
+[6]: http://blog.urth.org/2010/07/do-tpf-grants-de-motivate.html
+[7]: http://www.socialtext.net/perl5/index.cgi?events
