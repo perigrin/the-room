@@ -1,8 +1,8 @@
-Title: The Why of Traits vs Roles
+Title: Traits vs Roles
 Author: Chris Prather
 Date: 2010-08-11
 
-# The Why of Traits vs Roles
+# Traits vs Roles
 
 In natural languages lot of objects have multiple names. For example I
 am known on CPAN and IRC as `perigrin`, I am know to my friends and
@@ -24,8 +24,8 @@ differentiation isn't very concrete. For example Chris vs `perigrin` is
 history will help explain the reason that these two names exist and are
 adopted by the Moose community.
 
-First the concept of Roles is generally based upon a paper [__Traits —
-Composable Units of Behavior__][scg]. For this paper they created an
+First the concept of Roles is generally based upon a paper 
+[__Traits —Composable Units of Behavior__][scg]. For this paper they created an
 implementation of what we call Roles for Smalltalk 80, and named them
 Traits. So outside of the Perl world, Roles are Traits. This is the
 first point of confusion.
@@ -94,7 +94,7 @@ confusing, as is using the wrong name in the wrong context. Try being
 woken up at 3am with a loud obnoxious brit referring to you by your IRC
 name! One of the more confusing moments in my life.
 
-[^2] I know that if someone on the phone is calling me `perigrin` they
+[^2]: I know that if someone on the phone is calling me `perigrin` they
 are talking about Perl, or if they're calling me `David` they've never
 actually spoken to me before and got my name from some official document
 somewhere.
