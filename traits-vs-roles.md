@@ -39,11 +39,11 @@ According to [Synopsis 06][syn06]:
 >    syntax defines traits on containers and subroutines, as part of
 >    their declaration:
 
-     constant $pi is Approximated = 3;   # variable $pi has Approximated trait
-     
-     my $key is Persistent(:file<.key>);
-     
-     sub fib is cached {...}
+>     constant $pi is Approximated = 3;   # variable $pi has Approximated trait
+>     
+>     my $key is Persistent(:file<.key>);
+>     
+>     sub fib is cached {...}
      
 If you follow the idea that in Perl6 everything is an object, these
 traits at compile time modify a given instance. In the examples above
