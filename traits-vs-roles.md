@@ -100,5 +100,5 @@ actually spoken to me before and got my name from some official document
 somewhere.
 
 [so-traits]: http://stackoverflow.com/questions/1093506/how-do-roles-and-traits-differ-in-moose/
-[sgc]: http://scg.unibe.ch/research/traits
+[scg]: http://scg.unibe.ch/research/traits
 [syn06]: http://perlcabal.org/syn/S06.html#Properties_and_traits
