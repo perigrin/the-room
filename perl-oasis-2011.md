@@ -5,9 +5,10 @@ Date: 2010-12-05
 # Perl Oasis 2011
 
 With London Perl Workshop closing up this weekend, I realized So [Perl Oasis
-2011] is rapidly approaching. It will in fact be happening January 15th, 2011,
-and the deadline for Talk Submissions is December 17th. Worse yet the deadline
-for booking the hotel rooms with our discount rate is December 16th!
+2011](http://www.perloasis.info/opw2011/) is rapidly approaching. It will in
+fact be happening January 15th, 2011, and the deadline for Talk Submissions is
+December 17th. Worse yet the deadline for booking the hotel rooms with our
+discount rate is December 16th!
 
 The call for speakers is open and we have had some speakers submit talks
 already on Catalyst, Moose, Javascript, Template::Zoom, MozRepl. However we
