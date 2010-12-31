@@ -27,8 +27,7 @@ it shouldn't be *that* hard to write. Two days later...
 
 Well here is a Screen Shot:
 
-<a href="https://skitch.com/perigrin/r8ft8/173x36"><img src="https://img.skitch.com/20101230-q9qftqfyy9hnegdp6g59tse9cr.jpg" alt="Screen Shot" /></a>
-
+<a href="https://skitch.com/perigrin/r8ft8/173x36"><img src="https://img.skitch.com/20101230-q9qftqfyy9hnegdp6g59tse9cr.medium.jpg" alt="Screen Shot" /></a>
 ## Games::Lacuna::MUD
 
 The code is still in developer release mode. It may never get beyond that
