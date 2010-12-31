@@ -9,7 +9,7 @@ than I probably should be. It's an interesting game with a lot of other Perl
 programmers involved, so the community feeling is very familiar. 
 
 One of the things that Lacuna Expanse does that I haven't seen in other games,
-not that I game a [lot][^1], is they expose their server API fully. This means
+not that I game a lot[^1], is they expose their server API fully. This means
 not only can you use the official JS/HTML Client, or the iPhone client, or the
 Adobe AIR client, but you can write your own scripts to target the API.
 Shortly after the game was formed, `tsee` created
@@ -35,7 +35,7 @@ The code is still in developer release mode. It may never get beyond that
 point. If you'd like to get started with Games::Lacuna::MUD simply do the
 following.
 
-On a box with [Perl 5.12.2][^2] installed download a copy of this Games::Lacuna::MUD
+On a box with Perl 5.12.2[^2] installed download a copy of this Games::Lacuna::MUD
 either by cloning it or downloading a
 [tarball](https://github.com/Tamarou/games-lacuna-mud/tarball/master).
 
