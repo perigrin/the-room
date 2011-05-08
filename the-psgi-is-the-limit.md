@@ -5,7 +5,7 @@ Date: 2011-05-08T03:34:45
 
 Miyagawa has recently linked to a [bunch](http://bit.ly/j4q5oJ) [of](http://perlmonks.org/index.pl?node_id=903569) [forums](http://bit.ly/lk9ZnO) where he has encountered a lot of push back against PSGI. The argument basically goes "We're using CGI/mod_perl/FastCGI just fine and it works for us, why should we change?" Let me tell you a couple of stories.
 
-For the last year and a half I consulted on a large web application. It was a closed application but based on Catalyst and used mod_perl as a deployment. The site hand a decent amount of traffic but with a combination of nginx as a front-end proxy, proper caching, and a CDN the systems we had were handling things just fine. 
+For the last year and a half I consulted on a large web application. It was a closed application but based on Catalyst and used mod_perl as a deployment. The site had a decent amount of traffic but with a combination of nginx as a front-end proxy, proper caching, and a CDN the systems we had were handling things just fine. 
 
 The lead systems guy was often in the mood to experiment with alternatives to see if we could get better performance out of the cluster of machines that ran the site. Because we happened to be using Catalyst, and thus Catalyst::Engine, we suggested that he try moving to FastCGI and dropping Apache out of the mix. So he took a box out of commission, re-jiggered it and tried it. There was a 30% reduction in the system load. 
 
