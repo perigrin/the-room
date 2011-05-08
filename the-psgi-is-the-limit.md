@@ -1,3 +1,6 @@
+Author: Chris Prather
+Date: 2011-05-08T03:34:45
+
 # The PSGI is the Limit
 
 Miyagawa has recently linked to a [bunch](http://bit.ly/j4q5oJ) [of](http://perlmonks.org/index.pl?node_id=903569) [forums](http://bit.ly/lk9ZnO) where he has encountered a lot of push back against PSGI. The argument basically goes "We're using CGI/mod_perl/FastCGI just fine and it works for us, why should we change?" Let me tell you a couple of stories.
