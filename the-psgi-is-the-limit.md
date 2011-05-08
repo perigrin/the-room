@@ -23,4 +23,4 @@ Now I hear you crying out that CGI is just that easy, but really it's not. CGI i
 
 So while CGI may be "good enough" for you (hopa!) there are cases where it's not "good enough" for the people implementing the tools. While you may never ever ever move off of CGI, FastCGI or mod_perl, that doesn't mean that something better won't ever be invented. It also doesn't mean that what you're using is the best possible solution for your application, but you'll never know that because you didn't see a reason to abstract your deployment in such a way that you can try out alternatives quickly and easily.
 
-[^1]: Think that's not sufficiently bad? Look at the hoops people suggest you jump through for CGI support under nginx http://wiki.nginx.org/SimpleCGI
+[^1]: Think that's not sufficiently bad? Look at the hoops people suggest you jump through for CGI support under nginx [http://wiki.nginx.org/SimpleCGI](http://wiki.nginx.org/SimpleCGI)
