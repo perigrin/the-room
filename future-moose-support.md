@@ -25,5 +25,5 @@ This is as Jesse has [said][2], how Open Source works.
 
 [^1]: Now I own a [consulting company](http://tamarou.com), and I would *love* to have a vested interest in fixing core Moose bugs. I'm pretty sure that Jesse and Dave would be open to having the same happen as well. If this is something that there is interest in, please let me know we can work out some kind of Moose Extended Support License.
 
-[1]: http://chris.prather.org/tyranny-of-distributions.md.html
+[1]: http://chris.prather.org/tyranny-of-distributions.md.html
 [2]: http://twitter.com/#!/doyster/statuses/71255246382440448
