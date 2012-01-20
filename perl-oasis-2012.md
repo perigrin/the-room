@@ -1,0 +1,107 @@
+Title: Perl Oasis 2012
+Author: Chris Prather
+Date: 2012-01-20 12:00:00
+
+# Perl Oasis 2012
+## How to organize a conference in your home town, and then not attend!
+
+So last weekend (January 14th specifically) was the 4th Orlando Perl Workshop
+aka "Perl Oasis". From [the feedback][xdg] I've seen people generally had an
+excellent time. Which is good because I missed most of it.
+
+## Friday Night Lights
+
+Friday I taught the Moose course to four excellent students, afterwards we had
+a wonderful welcome party that started in the foyer of the conference area and
+eventually moved up to the Hospitality Suite that we'd booked for the weekend.
+People contributed money towards ordering Pizza and Drinks, and everyone hung
+out until around 2am. Or at least thats when *I* went to bed. Unfortunately
+the sleep wasn't to last long.
+
+![http://instagr.am/p/hBnZk/](http://distilleryimage8.s3.amazonaws.com/72d52eb23eab11e1a87612313804ec91_7.jpg "Friday Night")
+
+## Take My Breath Away
+
+About 4am my phone rang. I hung up. It rang again and woke me up enough to
+notice it was my mother-in-law calling. She was the grandparent we had left my
+son with[^1], and if she was calling it probably was important. During the
+night our son Eoin had started having breathing issues and had woken them up
+coughing and wheezing. He'd reached the point in the night where needed to go
+to the ER.
+
+![http://instagr.am/p/hBm8q/](http://distilleryimage6.s3.amazonaws.com/57fc7df23eab11e1a87612313804ec91_7.jpg "The Boy").
+
+Since my wife, Jamie, had partaken a bit more heavily of some of the adult beverages
+than she'd intended[^2], I was the one sober enough at 4am to drive across
+town to the hospital. 
+
+My son has had breathing issues since he was born premature. It has been in
+fact the only lasting effect of the time he spent in the hospital after he was
+born. So the time I spent on saturday sitting in an ER waiting for his O2
+levels to rise to acceptable levels was not unfamiliar. My wife on the other
+hand woke up to being the lead organizer for a Perl Conference.
+
+## Herding Cats
+
+When my wife showed up at the conference venue (happily downstairs from the
+hotel rooms!) she'd discovered there had been a mis-communication between the
+staff and the kitchen and the buffet we thought was to be served in the
+conference foyer was instead being served in the restaurant ... and involved
+coupons we never received and couldn't give to attendees. Recovering from this
+only pushed the conference start times back 30 minutes.
+
+The amazing [Mark Keating](http://mdk.per.ly/) stepped in and helped organize
+things. This was familiar to him as he'd only just finished being lead
+organizer for the London Perl Workshop. Between him and Jamie they managed to
+get talks going and run things until 3pm when my son had been formally
+admitted to a hospital for observation and I could return to the hotel and
+switch off with Jamie.
+
+## It's Almost the End of the Show
+
+I arrived in time to hang out a little bit before the lightning talks started.
+Mark again stepped up and provided introductions to the Lighting Talks, and I
+got to watch several excellent and enthralling talks. This was only a slight
+problem as I was supposed to be timing the talks and giving notice when they
+were getting short on time. I got so wrapped up in a few talks I was late
+giving the notice and a few of them almost ran over.
+
+After the lightning talks came [Cory Watson's](http://www.onemogin.com/)
+Keynote. I'd asked Cory to give it last year knowing I wouldn't have to worry
+about it again. I was proven exactly right, Cory knocked it out of the park.
+I'd been approached afterwards by people who were absolutely not technical
+people who told me that the talk was excellent. Hopefully he has a chance to
+give it again this year at other events! (If you're an organizer this is a
+blatant hint.)
+
+## Thank You and Good Night
+
+So Perl Oasis 2012 turned out to be a success, despite the organizers hectic
+lives. We had 30 attendees from at least three continents again[^3], we had
+18 talks over two and a half tracks, and we had 3 excellent sponsors:
+
+![http://shadow.cat](http://conferences.yapceurope.org/ye2010/images/logos/small/shadowcat.png "ShadowCat")
+![http://dyn.com](http://www.perloasis.info/opw2012/img/dyn.png "Dyn")
+![http://tamarou.com](http://www.perloasis.info/opw2012/img/tamarou.png "Tamarou")
+
+My wife and I were so busy this fall that we came into this event thinking
+that perhaps it would be our last. We both had so much fun at the event,
+despite everything else going on in our lives, that we're ready to go again
+next year. Mark Keating has even started recruiting volunteers to help us
+organize it again.
+
+
+[^1]: We operate under a divide and conquer policy with the kids. The girl went
+with one grandmother, the son with the other. That way they can't team up on
+either of them.
+
+[^2]: I honestly blame Ella for the Absinthe. That stuff is evil. And, despite
+Casey West's efforts to regulate her intake, Jamie (who rarely drinks) over
+did it. "I kept trying to give her less and she kept noticing." -- cwest.
+
+[^3]: This year [Breno de Oliveira](http://onionstand.blogspot.com/) represented
+South America, while unfortunately [Karen Pauley](http://martian.org/karen/)
+couldn't make it from Tokyo.
+
+[xdg]: http://www.dagolden.com/index.php/1565/perl-oasis-2012-wrapup/
+
