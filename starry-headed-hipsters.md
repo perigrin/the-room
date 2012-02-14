@@ -19,7 +19,7 @@ I'd rather however we stop for a minute and remember that there is another devel
 
 So here's the deal, the next time you feel you need to complain that someone is using Moose, or not using Moose, or using Dist::Zilla, or using Module::Install ... rather than explaining to them how their decision has personally caused you anguish and has been shown in peer reviewed studies to cause cancer in Kittens, stop. Email them, or message them, or whatever and ask them why they chose that path. They may tell you that they didn't know a better way, that they were just trying something new, or that they need more research candidates for their research studies on curing cancer. 
 
-If you can't accept their opinion at that point, ask yourself what you can do to help people become better informed on what the appropriate opinions are in the future. If you can't come up with something simple you can do, ask yourself why you you can't contribute to making the Perl community better. 
+If you can't accept their opinion at that point, ask yourself what you can do to help people become better informed on what the appropriate opinions are in the future. If you can't come up with something simple you can do, ask yourself why you can't contribute to making the Perl community better. 
 
 Then submit a talk to the next Perl workshop[^3] about why you hate kittens.
 
