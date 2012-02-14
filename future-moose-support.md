@@ -1,3 +1,6 @@
+Author: Chris Prather
+Title: Future Moose Support
+Date: 2012-5-20T12:50:49
 # Future Moose Support
 
 There has been a little bit of noise on twitter about the recent policy decision by the Moose core team. Most of it seems to focus on this line:
