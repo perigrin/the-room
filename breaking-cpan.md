@@ -6,7 +6,7 @@ Date: Tue Apr  3 13:22:22 EDT 2012
 
 # How to Automate breaking half of CPAN with Dist::Zilla!
 
-So last night I dropped a [new module][crixa] on to the CPAN. Normally this would be a cause for celelbration, except it turns out I broke Moose.
+So last night I dropped a [new module][crixa] on to the CPAN. Normally this would be a cause for celebration, except it turns out I broke Moose.
 
 ## A Date with Destiny
 
