@@ -30,7 +30,7 @@ Crap.
 
 The main fix (and the one I didn't do in a timely enough manner) was to run crying to my local PAUSE admin and tell them what I'd done. 
 
-What I had done was immediately when I noticed issue a delete request for the bad dist, and create a new good dist and upload that. What needed to happen was for a PAUSE admin to force a reindex (and even then `doy` had to create a new release of Moose) of the affected modules. 
+What I had done was, immediately when I noticed, issue a delete request for the bad dist, and create a new good dist and upload that. What needed to happen was for a PAUSE admin to force a reindex (and even then `doy` had to create a new release of Moose) of the affected modules. 
 
 Finally, I just needed to teach dzil to prune the perl5 directory so that it never happened again. Adding the following to my `dist.ini` fixed it.
 
