@@ -38,7 +38,9 @@ First, obviously, you can [contribute money][4]. (Seriously: we can really use t
 
 
 [^1]: The summer of 2012, in which YAPC::NA was brilliantly hosted in Madison, WI.
+
 [^2]: My favorite comment/review of the talk was "Dude needs a nap." At this point, I'm not sure who made the comment, but it was awesome.
+
 [^3]: One of the best things, for me, to come out of the Moving to Moose hackathon was how it reminded me of all the things I love most about the Perl community.
 
 [1]: https://www.youtube.com/watch?v=Uy_ZrN25orY
