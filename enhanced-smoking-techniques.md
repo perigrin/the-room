@@ -14,15 +14,15 @@ I don't want to go into the details on what went wrong with the project, because
 
 ## The Plan
 
-Back in March, there was a discussion about testing intrfastructure on p5p, with contributions from many Perl community members, including myself. The overall consenus reached by this discussion was that despite the amazing efforts by people such as Steffen Müller, Abe Timmerman, George Greer, Andreas Koenig, and others I'm unfortunately forgetting, there is a significant unmet need for additional, improved smoking infrastructure for the Perl core. Nicholas Clark even went so far as to sketch out some notes on what he would like to see added in this area. (Shortly after this email thread concluded, I started my ill-fated summer project.)
+Back in March, there was a discussion about testing intrfastructure on p5p, with contributions from many Perl community members, including myself. One consenus reached by this discussion was that despite the amazing efforts by people such as Steffen Müller, Abe Timmerman, George Greer, Andreas Koenig, and others I'm unfortunately forgetting, there is a significant room for additional, improved smoking infrastructure for the Perl core. Nicholas Clark even went so far as to sketch out some notes on what he would like to see added in this area. (Shortly after this email thread concluded, I started my ill-fated summer project.)
 
-Now, several months later, Tamarou is in the position of desperately needing to trade some time for money. Consequently, we've started [a new project][2] on the new and improved [Tamarou website][3]. The project has the general outline of what I think needs to be done to accomplish the tasks that Nicholas defined. It has a timeline for how long I expect to take to accomplish these tasks. It also has a place where you can donate some money to making this project happen, if you think this is a good idea. Overall, we need about US$5000 to make this project feasible. 
+Now, several months later, Tamarou is in the position of desperately needing to trade some time for money. Consequently, we've started [a new project][2] on the recently updated [Tamarou website][3]. The project has the general outline of what I think needs to be done to accomplish the tasks that Nicholas defined. It has a timeline for how long I expect to take to accomplish these tasks. It also has a place where you can donate some money to making this project happen, if you think this is a good idea. Overall, we need about $5000 USD to make this project feasible. 
 
 ## Frequently Anticipated Questions
 
 1) Why not get a grant from The Perl Foundation?
 
-I love The Perl Foundation. I will try to do anything that TPF President Karen Pauly asks, because I think she works far too hard as it is. That said, I think that the TPF has had a rocky history when it comes to development grants. While I think that the Perl5 Core Maintenance fund is doing an awesome job in moving past that history, I wanted to try something different. And while I remain open to future TPF involvement, I hope that Tamarou can show a third way to succeed with crowd-sourced funding for development to support Perl5 core.
+I love The Perl Foundation. I will try to do anything that TPF President Karen Pauly asks, because I think she works far too hard as it is. That said, I think that the TPF has had a rocky history when it comes to development grants. While stewardship by the current Grants Committe, and projects like the Perl5 Core Maintenance fund are doing an awesome job in moving past that history, I wanted to try something different. I remain open to future TPF involvement, but I hope that Tamarou can show a third way to succeed with crowd-sourced funding for development to support Perl5 core.
 
 2) What happens if you fail?
 
@@ -30,11 +30,11 @@ Then we fail. Publically and with full transparency. I think the project scope i
 
 3) Is this really something we, the Perl5 community, need?
 
-I don't know. In March, posters on p5p were excited about seeing it done. I've had in-person conversations with some of the people it would directly benefit and they didn't seem to think the project was insane. I had to pick *something* to try, and this is what I picked. If you have a better idea, and this experiment doesn't totally blow up in our face ... we can try your idea next time!
+I don't know. In March, posters on p5p were excited about seeing it done. I've had private conversations with some of the people it would directly benefit and they didn't seem to think the project was insane. I had to pick *something* to try, and this is what I picked. If you have a better idea, and this experiment doesn't totally blow up in our face ... we can try your idea next time!
 
 4) How can I help?
 
-First, obviously, you can [contribute money][4]. (Seriously: we can really use the cash.) Secondly, there are many tasks I left out of the initial scope of this project to make something I thought could be reasonably accomplished on a reasonable schedule and budget. ___FIXME: really need another sentence here about the "many tasks" and what people can do with them ___
+First, obviously, you can [contribute money][4]. (Seriously: we can really use the cash.) Secondly, there are many tasks I left out of the initial scope of this project to make something I thought could be reasonably accomplished on a reasonable schedule and budget. I have [already committed][5] to start documenting these tasks, and as I move through this project I will work on making everything accessible for contributions from the community at large.
 
 
 [^1]: The summer of 2012, in which YAPC::NA was brilliantly hosted in Madison, WI.
@@ -44,4 +44,5 @@ First, obviously, you can [contribute money][4]. (Seriously: we can really use t
 [1]: https://www.youtube.com/watch?v=Uy_ZrN25orY
 [2]: https://tamarou.com/projects/p5-smoker
 [3]: https://tamarou.com
-[4]: link to where that can happen
+[4]: https://tamarou.com/projects/p5-smoker#contribute
+[5]: https://twitter.com/perigrin/status/250733047329198080
