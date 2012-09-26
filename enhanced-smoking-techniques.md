@@ -4,47 +4,44 @@ Date: 2012-09-25 23:45:00
 
 # Enhanced Smoking Techniques for Saving My Ass
 
-*In which we learn how a cockup can re-inforce lessons about money, and help provide some new infrastructure for Perl5 Core*
+*In which we learn how a series of cockups can reinforce lessons about money, and potentially provide some new infrastructure for Perl5 Core*
 
 ## The Background
 
-If you were at YAPC::NA this past summer[^1] you might have attended [my talk][1] about my company Tamarou. One of the points I tried making in the talk was to understand the importance of money. I tried to get across is that Money is not a finite substance (like we treat metaphorical house hold budgets), but a fluid (like people who properly operate with money treat it). Anyone who has seen the talk may also have noticed that I was a little tired[^2]. This is mainly because I had forgotten this point *myself* and was trying to pull some heroics to unstick a project that had gotten firmly stuck.
+If you were at YAPC::NA this past summer[^1], you may have attended [my talk][1] about the lessons I've learned from starting and running my company Tamarou. One of the points I emphasized in the talk was the importance of understanding the nature of money. What I wanted to convey is that "money" is not a finite substance (like we treat it when thinking about the stereotypical household budget), but rather a fluid (which is how people who work with money professionally -- accountants, financial advisors, stock brokers and other gamblers -- regard it). Anyone who has seen the talk may also have noticed that I was a _little_ tired while delivering it[^2]. That exhaustion was largely because I had forgotten this important point about the fluid nature of money *myself*, and was attempting to heroically unjam a project that had gotten firmly -- and in the end, fatally -- stuck.
 
-I really don't want to go into the details on what went wrong. There is plenty of blame to go around, but the situation is that it screwed up our cashflows horribly. It also wrecked me for a couple months[^3]. Which lead us to the situation we're in now. Tamarou needs some help with our cashflow. We have contracts coming in that will help us in the coming months, but we have more serious short term needs and rather than just begging for money we decided we'd rather give something to the Perl community. 
+I don't want to go into the details on what went wrong with the project, because at this point, they're inconsequential. The critical point is that our cashflows have been seriously impacted by the implosion of this project. In addition to the financial impact, it also wrecked me on an personal level for a couple months, until the recent Moving To Moose hackathon gave me an opportunity to get some distance and clarity on the situation[^3], and to appreciate and understand where we are now: Tamarou needs some short-term help with our cashflow. Longer term, we have contracts coming in, but we also have serious unmet short term needs. Rather than just begging for money, we decided we'd rather give something to the Perl community. 
 
 ## The Plan
 
-Back in March there was a discussion, which I participated in, on the Perl5 Porters mailing list. The outcome of this discussion was that despite the amazing efforts by people like Steffen Müller, Abe Timmerman, George Greer, Andreas Koenig, and others I'm totally forgetting I'm sure; there is room for more, better smoking infrastructure for the Perl core. Nicholas Clark even went so far as to sketch out some notes on what he would like to see. Shortly after this email thread happened, I started my ill fated summer project.
+Back in March, there was a discussion about testing intrfastructure on p5p, with contributions from many Perl community members, including myself. The overall consenus reached by this discussion was that despite the amazing efforts by people such as Steffen Müller, Abe Timmerman, George Greer, Andreas Koenig, and others I'm unfortunately forgetting, there is a significant unmet need for additional, improved smoking infrastructure for the Perl core. Nicholas Clark even went so far as to sketch out some notes on what he would like to see added in this area. (Shortly after this email thread concluded, I started my ill-fated summer project.)
 
-However times have changed, and as we said Tamarou desperately needs to trade some time for money. So we've started [a project][2] on the new and improved [tamarou website][3]. The project has the general outline of what I think needs to be done to accomplish the tasks that Nicholas defined. It has a timeline for how long I expect to do it. It also has a place where if you want you can donate some money to making this project happen. We need about $5000 to make this work.
+Now, several months later, Tamarou is in the position of desperately needing to trade some time for money. Consequently, we've started [a new project][2] on the new and improved [Tamarou website][3]. The project has the general outline of what I think needs to be done to accomplish the tasks that Nicholas defined. It has a timeline for how long I expect to take to accomplish these tasks. It also has a place where you can donate some money to making this project happen, if you think this is a good idea. Overall, we need about US$5000 to make this project feasible. 
 
-## Questions
+## Frequently Anticipated Questions
 
 1) Why not get a grant from The Perl Foundation?
 
-I love The Perl Foundation. I will try to do anything that Karen Pauly, the TPF president asks, because I think she works far too hard as it is. That said I think that the TPF has had a rocky history when it comes to development grants. I think that the Perl5 Core Maintenance fund is doing an awesome job in moving past that history, but I wanted to try something different. I'm still open to TPF involvement, I just think that Tamarou can show a third way to do crowd sourced funding for Perl development.
+I love The Perl Foundation. I will try to do anything that TPF President Karen Pauly asks, because I think she works far too hard as it is. That said, I think that the TPF has had a rocky history when it comes to development grants. While I think that the Perl5 Core Maintenance fund is doing an awesome job in moving past that history, I wanted to try something different. And while I remain open to future TPF involvement, I hope that Tamarou can show a third way to succeed with crowd-sourced funding for development to support Perl5 core.
 
 2) What happens if you fail?
 
-Then we fail. Publically. I think that the scope is well understood enough that it can be reasonably accomplished on the timemline I've given it. If I go over then I go over. If it cannot be accomplisehd then however far I get will be committed to a public repository and provided for the world to use. 
+Then we fail. Publically and with full transparency. I think the project scope is well understood, and it can be reasonably accomplished on the timemline I've laid out -- I've learned my "heroics" lesson -- but if I go over time, then I go over time. If in the end, even after extraordinary effort, the project cannot be accomplised, all my work products will be committed to a public repository and provided for the world to use.
 
-3) Is this really something we need?
+3) Is this really something we, the Perl5 community, need?
 
-I don't know. In March people were happy to see it done. I've talked with some of the people it would directly benefit and they didn't seem to think the project was insane. I had to pick *something* to try, this is what I picked. If you have a better idea, and this experiment doesn't totally blow up in our face ... we can try your idea next time!
+I don't know. In March, posters on p5p were excited about seeing it done. I've had in-person conversations with some of the people it would directly benefit and they didn't seem to think the project was insane. I had to pick *something* to try, and this is what I picked. If you have a better idea, and this experiment doesn't totally blow up in our face ... we can try your idea next time!
 
-3) How can I help?
+4) How can I help?
 
-Well one you can donate money. We can really use the cash. Two, there are many many tasks I left out of the initial scope of this project to make something I thought could be reasonably accomplished on a reasonable schedule and budget.
-
-5) Did people really ask you these questions?
-
-No. I just made them up. But they were real questions I had when I thought about this project and why the hell someone would want to fund it.
+First, obviously, you can [contribute money][4]. (Seriously: we can really use the cash.) Secondly, there are many tasks I left out of the initial scope of this project to make something I thought could be reasonably accomplished on a reasonable schedule and budget. ___FIXME: really need another sentence here about the "many tasks" and what people can do with them ___
 
 
 [^1]: The summer of 2012, in which YAPC::NA was brilliantly hosted in Madison, WI.
-[^2]: My favorite comment/review of the talk was "Dude needs a nap." I forget who made the comment at this point but it was awesome.
-[^3]: One of the best things, for me, to come out of the Moving to Moose hackathon was it reminded me of all the things I love about the Perl community.
+[^2]: My favorite comment/review of the talk was "Dude needs a nap." At this point, I'm not sure who made the comment, but it was awesome.
+[^3]: One of the best things, for me, to come out of the Moving to Moose hackathon was how it reminded me of all the things I love most about the Perl community.
 
 [1]: https://www.youtube.com/watch?v=Uy_ZrN25orY
 [2]: https://tamarou.com/projects/p5-smoker
 [3]: https://tamarou.com
+[4]: link to where that can happen
