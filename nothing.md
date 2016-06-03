@@ -1,6 +1,0 @@
-Title: Nothing  
-Author: Chris Prather
-Date: 2003-02-03 15:16:53
-
-# Nothing
-So now I've got it all setup to make it easier to post, and I'm not sure what to say. 

@@ -1,8 +1,0 @@
-Title: Read...  
-Author: Chris Prather
-Date: 2003-04-12 01:30:19
-
-# Read...
-<a title="AlterNet: Metaphor and War, Again" href="http://www.alternet.org/story.html?StoryID=15414">AlterNet: Metaphor and War, Again</a>
-
-Though I still disagree with the commonly held idea that this war is "really about oil". I think it's really about replaying a political strategy that worked to subvert the american population in the past, namely fear of a forign element (Cold War, War on Terror).

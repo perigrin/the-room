@@ -1,7 +1,0 @@
-Title: All Wet  
-Author: Chris Prather
-Date: 2003-03-20 16:40:01
-
-# All Wet
-This is I think the best picture of the bunch, simply because of it's caption... "Mom They threw me in the water!" ... very Mark.
-<a href="http://www.prather.org/images/mark_wet.html" onclick="window.open('http://www.prather.org/images/mark_wet.html','popup','width=480,height=321,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">View image</a>

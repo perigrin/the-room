@@ -1,8 +1,0 @@
-Title: Evil  
-Author: Chris Prather
-Date: 2005-03-21 22:30:23
-
-# Evil
-Rhonda is evil. She's addicted me to <a title="not pr0n" href="http://deathball.net/notpron/notpron.htm">this</a>.
-
-

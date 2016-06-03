@@ -1,9 +1,0 @@
-Title: New to Me...  
-Author: Chris Prather
-Date: 2003-05-07 15:30:45
-
-# New to Me...
-<blockquote>
-Stable ownership is the gift of social law, and is given late in the progress of society. It would be curious then, if an idea, the fugitive fermentation of an individual brain, could, of natural right, be claimed in exclusive and stable property. If nature has made any one thing less susceptible than all others of exclusive property, it is the action of the thinking power called an idea, which an individual may exclusively possess as long as he keeps it to himself; but the moment it is divulged, it forces itself into the possession of every one, and the receiver cannot dispossess himself of it. Its peculiar character, too, is that no one possesses the less, because every other possesses the whole of it.</blockquote>
-
-From: <a title="Letter concerning patents from Thomas Jefferson to Isaac McPherson" href="http://www.red-bean.com/~kfogel/jefferson-macpherson-letter.html">Letter concerning patents from Thomas Jefferson to Isaac McPherson</a>

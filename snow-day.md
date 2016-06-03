@@ -1,6 +1,0 @@
-Title: SNOW DAY  
-Author: Chris Prather
-Date: 2007-03-02 11:36:13
-
-# SNOW DAY
-![The round table is two snow falls, teh table beside it is just last night](http://chris.prather.org/photos/IMG_0912.JPG?size=320;format=raw)

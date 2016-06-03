@@ -1,8 +1,0 @@
-Title:   
-Author: Chris Prather
-Date: 2005-03-08 17:58:03
-
-# 
-<a title="English Cut" href="http://www.englishcut.com/">English Cut</a>
-
-<blockquote>I really hope that the spot where the rug was rolled up on the parquet floor, so Mr. Astaire could dance to check the fit of his coat never came away from his collar, won't be the permanent resting place for a new Xerox machine. God forbid.</blockquote>

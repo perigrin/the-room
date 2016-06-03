@@ -1,6 +1,0 @@
-Title: Spam FREE!  
-Author: Chris Prather
-Date: 2006-01-19 18:31:40
-
-# Spam FREE!
-We are now spam free. I have cleaned out the 2K or so in old spam that built up under the previous blogging system. W00t I say, W00t.

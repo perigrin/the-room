@@ -1,8 +1,0 @@
-Title: We're Back!  
-Author: Chris Prather
-Date: 2003-08-23 10:45:22
-
-# We're Back!
-So ... I'd gotten a message from one of the residents on prather.org that she'd broken her blog. I have no clue how she managed to not only take down >her< blog but mine as well (I think it might have something to do with the disk quota filling up which really isn't her fault but I'll still point fingers at her ::point point::).
-
-It was easy to fix though. I simply opened a template, saved it, rebuilt the templates, and rebuilt the website. Thus I get back all my webby goodness. And you get to enjoy more from me... and my erratic blog.

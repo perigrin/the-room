@@ -1,6 +1,0 @@
-Title: ...  
-Author: Chris Prather
-Date: 2002-07-07 00:00:00
-
-# ...
-Work busy ... blog more later.

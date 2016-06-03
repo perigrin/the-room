@@ -1,8 +1,0 @@
-Title: punc rawk!  
-Author: Chris Prather
-Date: 2003-06-25 10:34:55
-
-# punc rawk!
-<a title="SoCal P.I.S.S." href="http://www.socalpiss.com/">SoCal P.I.S.S.</a>
-
-Because it makes working with ASP berable.

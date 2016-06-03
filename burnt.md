@@ -1,8 +1,0 @@
-Title: Burnt  
-Author: Chris Prather
-Date: 2005-03-02 21:27:19
-
-# Burnt
-Well I've burnt nearly all my comments. I didn't intend to burn them quite this badly, but then they weren't really adding content anymore through the spam that had clogged them up.
-
-If I deleted something you said, I apologize. If you care, e-mail me.
