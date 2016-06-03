@@ -1,11 +1,9 @@
 ---
 layout: post
-Title: Enhanced Smoking Techniques for Saving My Ass
-Author: Chris Prather
-Date: 2012-09-25 23:45:00
+title: Enhanced Smoking Techniques for Saving My Ass
+author: Chris Prather
+date: 2012-09-25 23:45:00
 ---
-
-# Enhanced Smoking Techniques for Saving My Ass
 
 *In which we learn how a series of cockups can reinforce lessons about money, and potentially provide some new infrastructure for Perl5 Core*
 
@@ -13,13 +11,13 @@ Date: 2012-09-25 23:45:00
 
 If you were at YAPC::NA this past summer[^1], you may have attended [my talk][1] about the lessons I've learned from starting and running my company Tamarou. One of the points I emphasized in the talk was the importance of understanding the nature of money. What I wanted to convey is that "money" is not a finite substance (like we treat it when thinking about the stereotypical household budget), but rather a fluid (which is how people who work with money professionally -- accountants, financial advisors, stock brokers and other gamblers -- regard it). Anyone who has seen the talk may also have noticed that I was a _little_ tired while delivering it[^2]. That exhaustion was largely because I had forgotten this important point about the fluid nature of money *myself*, and was attempting to heroically unjam a project that had gotten firmly -- and in the end, fatally -- stuck.
 
-I don't want to go into the details on what went wrong with the project, because at this point, they're inconsequential. The critical point is that our cashflows have been seriously impacted by the implosion of this project. In addition to the financial impact, it also wrecked me on an personal level for a couple months, until the recent Moving To Moose hackathon gave me an opportunity to get some distance and clarity on the situation[^3], and to appreciate and understand where we are now: Tamarou needs some short-term help with our cashflow. Longer term, we have contracts coming in, but we also have serious unmet short term needs. Rather than just begging for money, we decided we'd rather give something to the Perl community. 
+I don't want to go into the details on what went wrong with the project, because at this point, they're inconsequential. The critical point is that our cashflows have been seriously impacted by the implosion of this project. In addition to the financial impact, it also wrecked me on an personal level for a couple months, until the recent Moving To Moose hackathon gave me an opportunity to get some distance and clarity on the situation[^3], and to appreciate and understand where we are now: Tamarou needs some short-term help with our cashflow. Longer term, we have contracts coming in, but we also have serious unmet short term needs. Rather than just begging for money, we decided we'd rather give something to the Perl community.
 
 ## The Plan
 
 Back in March, there was a discussion about testing intrfastructure on p5p, with contributions from many Perl community members, including myself. One consenus reached by this discussion was that despite the amazing efforts by people such as Steffen Müller, Abe Timmerman, George Greer, Andreas Koenig, and others I'm unfortunately forgetting, there is significant room for additional, improved smoking infrastructure for the Perl core. Nicholas Clark even went so far as to sketch out some notes on what he would like to see added in this area. (Shortly after this email thread concluded, I started my ill-fated summer project.)
 
-Now, several months later, Tamarou is in the position of desperately needing to trade some time for money. Consequently, we've started [a new project][2] on the recently updated [Tamarou website][3]. The project has the general outline of what I think needs to be done to accomplish the tasks that Nicholas defined. It has a timeline for how long I expect to take to accomplish these tasks. It also has a place where you can donate some money to making this project happen, if you think this is a good idea. Overall, we need about $5000 USD to make this project feasible. 
+Now, several months later, Tamarou is in the position of desperately needing to trade some time for money. Consequently, we've started [a new project][2] on the recently updated [Tamarou website][3]. The project has the general outline of what I think needs to be done to accomplish the tasks that Nicholas defined. It has a timeline for how long I expect to take to accomplish these tasks. It also has a place where you can donate some money to making this project happen, if you think this is a good idea. Overall, we need about $5000 USD to make this project feasible.
 
 ## Frequently Anticipated Questions
 

@@ -17,3 +17,10 @@ github_username:  perigrin
 
 # Build settings
 markdown: kramdown
+gems:
+    - jekyll-paginate
+    - jekyll-seo-tag
+    - jemoji
+
+paginate: 5
+paginate_path: "/:num/"
