@@ -1,11 +1,9 @@
 ---
 layout: post
-Title: How to Break CPAN with Dist::Zilla!
-Author: Chris Prather
-Date: 2012-04-03 13:22:22 -0500
+title: How to Automate breaking half of CPAN with Dist::Zilla!
+author: Chris Prather
+date: 2012-04-03 13:22:22 -0500
 ---
-
-# How to Automate breaking half of CPAN with Dist::Zilla!
 
 So last night I dropped a [new module][crixa] on to the CPAN. Normally this would be a cause for celebration, except it turns out I broke Moose.
 

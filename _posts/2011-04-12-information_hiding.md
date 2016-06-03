@@ -1,11 +1,9 @@
 ---
 layout: post
-layout: post
 author: Chris Prather
 date: 2011-04-12 14:08:02 -0400
-----
-
-# Information Hiding or how I learned to hate state and love behavior...
+title: Information Hiding or how I learned to hate state and love behavior...
+---
 
 The conversations about documentation of Object Oriented Perl brought up a classic disagreement about the nature of encapsulation. It doesn't help that the term 'encapsulation' is overloaded.
 
