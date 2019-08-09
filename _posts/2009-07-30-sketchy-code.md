@@ -1,6 +1,6 @@
 ---
 layout: post
-Title: Sketchy Code  
+Title: Sketchy Code
 Author: Chris Prather
 Date: 2009-07-30 16:31:00
 ---
@@ -14,29 +14,29 @@ character.
 
 Some code I posted earlier today to the [POE Cookbook][1] started out as a
 sketch.
-
+```perl
     #!/usr/bin/env perl
     use 5.10.0;
-    
+
     {
-        
+
         package Counter;
         use MooseX::POE;
-        
+
         has count => (
             isa     => 'Int',
             is      => 'rw',
             default => 1,
         );
-        
+
         has id => ( is => 'ro' );
-        
+
         sub START {
             my ( $self, $kernel, $session ) = @_[ OBJECT, KERNEL, SESSION ];
             say 'Starting '.$self->id;
             $self->yield('dec');
         }
-        
+
         event inc => sub {
             my ($self) = $_[OBJECT];
             say 'Count '.$self->id . ':' . $self->count;
@@ -44,24 +44,24 @@ sketch.
             return if 3 < $self->count;
             $self->yield('inc');
         };
-        
+
         sub on_dec {
             my ($self) = $_[OBJECT];
             say 'Count '.$self->id . ':' . $self->count;
             $self->count( $self->count - 1 );
             $self->yield('inc');
         }
-        
+
         sub STOP {
             say 'Stopping '.$_[0]->id;
         }
-        
+
         no MooseX::POE;
     }
-    
+
     my @objs = map { Counter->new( id => $_ ) } ( 1 .. 10 );
     POE::Kernel->run();
-
+```
 I wrote this code initially to sketch out how [`MooseX::POE`][2] would work.
 When I was writing it I had never used `MooseX::POE`, in fact nobody had since
 I was still writing it. This code was a sketch to make sure that I understood
@@ -78,7 +78,7 @@ The final benefit I want to mention about code sketches is that they become
 tests. The code above is part of the `MooseX::POE` [test suite][3] now, and
 even if code doesn't become an official part of the test suite of whatever I'm
 working on ... I can use it as a simple example of what I'm trying to achieve
-so that I can ask others for help. 
+so that I can ask others for help.
 
 [1]: http://poe.perl.org/?POE_Cookbook/MooseX::POE
 [2]: http://search.cpan.org/dist/MooseX-POE
