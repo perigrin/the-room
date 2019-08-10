@@ -15,6 +15,9 @@ Technical Leadership, CSS, HTML, CGI, Web Design
 
 ## Experience
 
+### Cloud Deployment Engineer
+_June 2018 - Present Remote_
+
 ### Managing Partner — Tamarou
 _September 2008 - Present - Orlando FL_
 

@@ -7,7 +7,7 @@ disqus:
 google-ID: ''
 
 menu:
-- {name: 'Resume', path: 'menu', url: 'cv.html'}
+- {name: 'CV', path: 'menu', url: 'cv.html'}
 - {name: 'Colophon', path: 'menu', url: 'colophon.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
