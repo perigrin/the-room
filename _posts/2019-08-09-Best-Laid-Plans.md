@@ -5,6 +5,7 @@ author: "Chris Prather"
 categories:
 tags: [meta]
 date: 2019-08-09T20:48:05 -0500
+image: https://live.staticflickr.com/4913/45472627774_41666f6131_z.jpg
 ---
 
 > But Mousie, thou are no thy-lane, <br/>
