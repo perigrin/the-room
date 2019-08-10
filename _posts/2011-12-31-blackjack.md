@@ -1,11 +1,9 @@
 ---
 layout: post
-Title: Blackjack in 10 Lines of Modern Perl
-Author: Chris Prather
-Date: 2011-12-31 18:00:00
+title: "Blackjack in 10 Lines of Modern Perl"
+author: "Chris Prather"
+date: 2011-12-31 18:00:00
 ---
-
-# Blackjack in 10 Lines of Modern Perl.
 
 There is this [thread][1] on Reddit (and [StackOverflow][3]) about what's the
 coolest thing you can pull off in 10 lines of code. Obviously the first
@@ -24,8 +22,8 @@ pull off. For example, here's a game of Blackjack in 10 lines of code:
     while ( prompt( "@$player\nHit? ", '-tyn1' ) ) { if ( value( deal( $player, 1 ) ) > 21 ) { show( "Busted!", $player ); exit; } }
     while ( say("Dealer @$dealer") && value($dealer) < 17 ) { show( "Dealer busted!", $dealer ) && exit if value( deal( $dealer, 1 ) ) > 21; }
     value($player) >= value($dealer) ? show( "Player wins", $player ) : show( "Dealer wins", $dealer );
-    
-Simple no? 
+
+Simple no?
 
 Okay so this wasn't the most legible code I've ever written, let's run
 Perl::Tidy on it and step through what's going. The first thing you'll notice
@@ -43,7 +41,7 @@ advantage of the other modern features this will import (like `say` and
 
     sub deal {
         state $shoe = [
-            shuffle map { 
+            shuffle map {
                 my $v = $_;
                 map {"$v$_"} qw(&#x2764; &#x25C6; &clubs; &spades;)
                 } ( 2 .. 10, qw( J Q K A ) ) x 6
@@ -81,7 +79,7 @@ hand.
         }
         $v;
     }
-    
+
 so the hand is passed in via `$_[0]`, since we're going to munge the value we
 need to take a local copy of the hand. The idiom `local @_ = @_;` is what gave
 me the basic idea.
@@ -100,7 +98,7 @@ make that work here, and couldn't come up with anything simple. Patches
 welcome.
 
 Finally we return the running tally.
-    
+
     sub show { say sprintf "%s (%i)", "$_[0] @{$_[1]}", value( $_[1] ) }
 
 We had a common idiom for displaying a hand with some extra information so we
@@ -125,24 +123,24 @@ so let's dig into it.
             exit;
         }
     }
-    
+
 First we prompt the user what if they want to Hit. If they choose to take
 another card check if the value of that new hand is greater than 21. If it is
 we tell the player they've busted and quit. Eventually the player will either
 bust or quit taking cards, and it'll become the dealer's turn.
-    
+
     while ( say("Dealer @$dealer") && value($dealer) < 17 ) {
         if ( value( deal( $dealer, 1 ) ) > 21 ) {
             show( "Dealer busted!", $dealer );
             exit;
         }
     }
-    
+
 According to [Wikipedia][2] Dealer's in Blackjack are constrained to always draw if the value of their
-hand is less than 17. So we draw for the dealer and perform the same check to see if they bust. 
+hand is less than 17. So we draw for the dealer and perform the same check to see if they bust.
 
 Finally if nobody has busted.
-    
+
     value($player) >= value($dealer)
         ? show( "Player wins", $player )
         : show( "Dealer wins", $dealer );
