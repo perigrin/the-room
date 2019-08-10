@@ -5,13 +5,16 @@
 
 <body>
 
-<div class="container">
-  {% include header.html %}
-  <div class="posts-wrapper">
-    {{ content }}
+  <div class="container">
+    {% include header.html %}
+
+    <div class="post-container">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
   </div>
-  {% include footer.html %}
-</div>
 
 </body>
 </html>
