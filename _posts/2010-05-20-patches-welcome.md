@@ -1,10 +1,8 @@
 ---
-Title: "Patches Welcome" or Volunteers vs Hobbists
-Author: Chris Prather
-Date: 2010-05-20T19:08:24 EDT
+title: "Patches Welcome" or Volunteers vs Hobbists
+author: Chris Prather
+date: 2010-05-20T19:08:24 EDT
 ---
-
-# "Patches Welcome" or Volunteers vs Hobbyists #
 
 There has been a strong meme going around that I've not been paying
 attention to until today. I'm not sure my opinion really matters here
@@ -16,9 +14,9 @@ been involved in various degrees in the Perl Community for a little less
 than a decade. I have been what I consider actively involved in the Perl
 community for only about 3-4 years. In that time I've watched [some
 projects][axkit] I've been involved with flounder and effectively die,
-and [other projects][moose] not. I've worked for 
-[very large companies][reuters] with a DarkPAN problem, and for 
-[very small companies][ii] that contribute heavily to CPAN. I am currently 
+and [other projects][moose] not. I've worked for
+[very large companies][reuters] with a DarkPAN problem, and for
+[very small companies][ii] that contribute heavily to CPAN. I am currently
 running [another][tamarou].
 
 All of this is background to say "I've been around the block a few times".

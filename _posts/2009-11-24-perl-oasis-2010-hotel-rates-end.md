@@ -1,10 +1,8 @@
 ---
-Title: Perl Oasis 2010: Discount Hotel Rates End
+Title: Perl Oasis 2010 - Discount Hotel Rates End
 Author: Chris Prather
 Date: 2009-11-24 20:45
 ---
-
-# Perl Oasis 2010: Discount Hotel Rates End
 
 November 25th is the last day for the Perl Oasis special Group Rate. The
 rate is $75 USD / night for what according to other sources is a

@@ -1,10 +1,9 @@
 ---
-Title: Stupid Bot Tricks: Part I  
+Title: Stupid Bot Tricks - Part I
 Author: Chris Prather
 Date: 2009-05-18 15:22:40
 ---
 
-# Stupid Bot Tricks: Part I
 I thought I'd take a stab at showing off a bot framework I'd written at the
 hackathon during the first [Frozen Perl][1].
 
@@ -97,7 +96,7 @@ dispatcher.
     };
 
 Finally we set up a little call to the `run` method defined in `Adam` that
-will start up our bot and connect it to IRC. 
+will start up our bot and connect it to IRC.
 
     __PACKAGE__->run;
     1;
@@ -111,7 +110,7 @@ for user details. An example of it's output:
     19:32 <@perigrin> UniBlab: show user bingos
     19:32 < UniBlab> perigrin: bingos is Chris Williams ()  http://use.perl.org/~bingos/journal/
     19:32 <@perigrin> UniBlab: show user nothingmuch
-    19:32 < UniBlab> perigrin: nothingmuch is Yuval Kogman (The Intertubes) nothingmuch@woobling.org 
+    19:32 < UniBlab> perigrin: nothingmuch is Yuval Kogman (The Intertubes) nothingmuch@woobling.org
                      http://nothingmuch.woobling.org
 
 I'll leave it as an exercise for the reader to expand this example to lookup
