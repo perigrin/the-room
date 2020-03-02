@@ -1,13 +1,12 @@
 ---
-Title: Thumb-Rate.com: A Modern Perl iPhone Application  
+Title: Thumb-Rate.com - A Modern Perl iPhone Application
 Author: Chris Prather
 Date: 2009-05-01 23:08:59
 ---
 
-# Thumb-Rate.com: A Modern Perl iPhone Application
 Yuval has been [posting][1] [several][2] [entries][3] about [KiokuDB][4] and I
 thought I'd give a chance to talk about how we had used for an application
-currently on sale in the [iPhone store][5]. 
+currently on sale in the [iPhone store][5].
 
 [Thumb-Rate][6] is a social app that allows you to simply vote up or down on
 things in real life. It's not a complicated, and the source code clocks in at

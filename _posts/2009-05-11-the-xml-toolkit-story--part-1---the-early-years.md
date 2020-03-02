@@ -1,10 +1,9 @@
 ---
-Title: The XML::Toolkit Story: Part 1 - The Early Years  
-Author: Chris Prather
-Date: 2009-05-11 22:45:19
+title: The XML::Toolkit Story Part 1 - The Early Years
+author: Chris Prather
+date: 2009-05-11 22:45:19
 ---
 
-# The XML::Toolkit Story: Part 1 - The Early Years
 So one of the talks I had accepted to [YAPC][1] is on [XML::Toolkit][2], and I
 thought I'd give a bit of a preview of what it is.
 
@@ -18,14 +17,14 @@ but some work with the client sorted that.
 
 So hard requirements:
 
-1) Round-Trip XML 
+1) Round-Trip XML
 2) Guess the Schema
 
 Add to this some soft requirements:
 
 1. Use Moose (we were a nearly 100% Moose company)
 2. Be fast
-3. Do XML properly (ie Not XML::Simple / XML::Smart which IMHO "fake it"**)
+3. Do XML properly (ie Not XML::Simple / XML::Smart which IMHO "fake it"[^1])
 
 So I dipped into some latent XML knowledge. I've been hanging out with the
 AxKit people since I started with Perl, and while I haven't done a ton of XML
@@ -33,7 +32,7 @@ work in the last 8 years, I have soaked up a few things. Particularly the
 knowledge of Kip Hampton's [Perl/XML][3] column from 2002. I knew that I
 wanted something that would perform adequately and that I wanted something
 flexible, so I reached for the SAX tools on CPAN. I knew that you could write
-[drivers for non-sax data][4], and I assumed I could do the inverse. 
+[drivers for non-sax data][4], and I assumed I could do the inverse.
 
 After some hacking I came up with a sax parser that would build [Moose Meta
 Classes from SAX streams][5]. A little extra tweaking and I had something
@@ -41,7 +40,7 @@ useable for the work project. I will try to get a second post up that details
 the second major project I had for XML::Toolkit which caused me to clean it up
 and release it.
 
-**&nbsp;Sometimes faking it is good enough.
+[^1]: Sometimes faking it is good enough.
 
 [1]: http://yapc10.org
 [2]: http://search.cpan.org/dist/XML-Toolkit/
