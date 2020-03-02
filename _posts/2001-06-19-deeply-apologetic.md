@@ -1,7 +1,7 @@
 ---
 author: "Chris Prather"
 title: "I'm deeply apologetic to those…"
-date: 2019-06-19
+date: 2001-06-19
 ---
 
 I'm deeply apologetic to those who've found this place less than maintained, I've been terribly busy trying to not starve. Aparently the world doesn't want or need yet another web designer. I'm trying to convince it otherwise. On to why I'm posting.
