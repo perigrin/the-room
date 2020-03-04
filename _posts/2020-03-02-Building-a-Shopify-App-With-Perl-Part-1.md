@@ -155,12 +155,12 @@ a fit. That may be different by the time you're reading this.
 Next we build a simple app, create an `app.pl` and add the following:
 
 ```perl
-	use 5.30.1;
-	use Mojolicious::Lite -signatures;
+    use 5.30.1;
+    use Mojolicious::Lite -signatures;
 
     get "/" => sub ($c) {
-		$c->render(text => "Hello, World");
-	};
+        $c->render(text => "Hello, World");
+    };
 
     app->run;
 ```
@@ -170,11 +170,14 @@ really do much with this. So now we start laying in the shopify specific routes
 (Part 4 in the the Shopify tutorial).
 
 We should export the API key and API secret you got from Shopify into the
-environment:
+environment. In a bash shell I do the following:
 ```perl
 export SHOPIFY_API_KEY="NOT A REAL KEY"
 export SHOPIFY_API_SECRET="NOT A REAL SECRET EITHER"
 ```
+These will get picked up by docker (sepcifically see the `environment` key in
+the `docker-config.yml`) and passed through to the application.
+
 And update our `app.pl` with a shopify route.
 ```perl
 use 5.30.1;
@@ -194,7 +197,7 @@ get "/shopify" => sub ($c) {
     my $shop = $c->param('shop') =~ s/\.myshopify\.com//r;
 
     my $scopes       = "write_orders,read_customers"; # TODO Replace with your own scopes
-    my $redirect_uri = $c->url_for("/connect")->userinfo(undef)->to_abs;
+    my $redirect_uri = $c->url_for("/shopify/connect")->userinfo(undef)->to_abs;
     my $state = $c->random_string();
 
     my $url = "https://$shop.myshopify.com/admin/oauth/authorize"
@@ -215,10 +218,10 @@ Generate those) and redirects to the [app authorization prompt][9]. The user
 then verifies the permissions and can click an "Install" button which will send
 them back to the callback route you whitelisted when you set up the app.
 
-Next we'll need to handle that callback:
+Next we'll need to handle that connect callback:
 
 ```perl
-get "/shopify/callback" => sub ($c) {
+get "/shopify/connect" => sub ($c) {
 
     my $code = $c->param('code');
     my $shop = $c->param('shop');
@@ -347,6 +350,9 @@ application, with `docker-compose up` and hit it with the install link.`
 The banner image is [The shop](https://flic.kr/p/dLf7z) by
 [OiMax](https://www.flickr.com/photos/oimax), on Flickr.
 
+This post has been edited based on feedback from people. If you want to see the
+changes to this or any post on this site, it's all hosted [on github][12].
+
 [1]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express
 [2]: https://metacpan.org/pod/Carton
 [3]: https://metacpan.org/pod/Code::TidyAll
@@ -357,4 +363,4 @@ The banner image is [The shop](https://flic.kr/p/dLf7z) by
 [8]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express#step-1-expose-your-local-development-environment-to-the-internet
 [9]: https://shopify.dev/tutorials/authenticate-with-oauth#step-2-ask-for-permission
 [10]: https://shopify.dev/tutorials/authenticate-with-oauth#verification
-[11]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express#step-6-run-your-app
+[11]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express#step-6-run-your-app[12]: https://github.com/perigrin/the-room/
