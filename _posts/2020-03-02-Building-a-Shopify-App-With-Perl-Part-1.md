@@ -144,7 +144,7 @@ others to participate in development we're going to be starting with
 
 ```perl
 requires 'IO::Socket::SSL' => 2.009;
-requires 'Mojoliicous';
+requires 'Mojolicious';
 requires 'Mojolicious::Plugin::Util::RandomString';
 ```
 The extra requirement on `IO::Socket::SSL` is becasue without it the docker
@@ -345,13 +345,18 @@ get "/connect" => sub ($c) {
 };
 ```
 As the Shopify tutorial says in [Step 6][11] you should now be able to run your
-application, with `docker-compose up` and hit it with the install link.`
+application, with `docker-compose up` and hit it with the install link.
+
 ---
+
 The banner image is [The shop](https://flic.kr/p/dLf7z) by
 [OiMax](https://www.flickr.com/photos/oimax), on Flickr.
 
 This post has been edited based on feedback from people. If you want to see the
 changes to this or any post on this site, it's all hosted [on github][12].
+
+Apparently this made it to the front page of [r/programming][13]. I was
+notified at the same time I was told about a typo.
 
 [1]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express
 [2]: https://metacpan.org/pod/Carton
@@ -363,4 +368,6 @@ changes to this or any post on this site, it's all hosted [on github][12].
 [8]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express#step-1-expose-your-local-development-environment-to-the-internet
 [9]: https://shopify.dev/tutorials/authenticate-with-oauth#step-2-ask-for-permission
 [10]: https://shopify.dev/tutorials/authenticate-with-oauth#verification
-[11]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express#step-6-run-your-app[12]: https://github.com/perigrin/the-room/
+[11]: https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-express#step-6-run-your-app
+[12]: https://github.com/perigrin/the-room/
+[13]: https://www.reddit.com/r/programming/comments/fi4r9l/building_a_shopify_app_with_perl_part_1/
