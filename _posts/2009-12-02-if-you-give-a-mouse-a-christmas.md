@@ -5,8 +5,6 @@ Author: Chris Prather
 Date: 2009-12-02 18:14
 ---
 
-# If You Give a Mouse A Christmas
-
 Jerrad Pierce wrote a [Perl Advent Calendar entry][1] that has sparked
 some discussion in the Moose community. He has revised it two or three
 times, and the final version is disappointing but not blatantly wrong.
@@ -74,9 +72,18 @@ designed their application with possible Mouse usage in mind, it simply
 cannot be a safe guaranteed drop in replacement for Moose. This is why
 the Mouse documentation say to use Moose instead.
 
-This leads to my last, and sadly personal, issue with this calendar post. I'm an active member in the Moose community. I have been for about three years now. I am one of the people who will have to support the kinds of failure that this well intentioned but reckless advice will cause.
+This leads to my last, and sadly personal, issue with this calendar post. I'm
+an active member in the Moose community. I have been for about three years now.
+I am one of the people who will have to support the kinds of failure that this
+well intentioned but reckless advice will cause.
 
-If Jerrad had simply talked to us when writing this calendar post, we wouldn't have reacted so strongly. We could have pointed out the issues in the advice he was giving, and helped him to write a better article that focused on the important part of advocating Mouse as a reasonable replacement for Moose in some circumstances, and the interesting hack he performed with Package::Alias, or Alias.pm, or even the `import` hack someone in the Moose community suggested.
+If Jerrad had simply talked to us when writing this calendar post, we wouldn't
+have reacted so strongly. We could have pointed out the issues in the advice he
+was giving, and helped him to write a better article that focused on the
+important part of advocating Mouse as a reasonable replacement for Moose in
+some circumstances, and the interesting hack he performed with Package::Alias,
+or Alias.pm, or even the `import` hack someone in the Moose community
+suggested.
 
 [1]: http://www.perladvent.org/2009/1/
 [2]: http://chris.prather.org/moose-dependencies--a-lurid-tale.html
