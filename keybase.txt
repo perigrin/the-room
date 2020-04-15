@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/perigrin
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://chris.prather.org
+  * I am perigrin (https://keybase.io/perigrin) on keybase.
+  * I have a public key ASAELCkXSZoBJschYKHZGPNL50dOxcDQx5FdPk2bvorNxAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010119439923e05892b1433c35d09f78abe646b6cffdc7a6e147be02f113508966890a",
+      "host": "keybase.io",
+      "kid": "0120042c2917499a0126c72160a1d918f34be7474ec5c0d0c7915d3e4d9bbe8acdc40a",
+      "uid": "39b5c2425661e4469dfd64afacd01100",
+      "username": "perigrin"
+    },
+    "merkle_root": {
+      "ctime": 1586993765,
+      "hash": "c370b84eba09da538bcbe870f2c25aadbec23410e7f36867d622e95407d9ded881b83207c0508d657c2e2a5d6542c07dedd5a7e04d91e0173c6758ff33afd5eb",
+      "hash_meta": "92fa88d19a97414fec60a3930f7a38ad7c3a20083bbca67c328fd6e6c763e24d",
+      "seqno": 15935979
+    },
+    "service": {
+      "entropy": "18WepkL/XbxtitDEErnZonKo",
+      "hostname": "chris.prather.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.0"
+  },
+  "ctime": 1586993792,
+  "expire_in": 504576000,
+  "prev": "bf1d956145b3554e69cd1aab59af8e0e556b83db9678a1ca52389510083da532",
+  "seqno": 107,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgBCwpF0maASbHIWCh2RjzS+dHTsXA0MeRXT5Nm76KzcQKp3BheWxvYWTESpcCa8Qgvx2VYUWzVU5pzRqrWa+ODlVrg9uWeKHKUjiVEAg9pTLEIEioN00EPLzm3lWgiPKAbuXnfAoL+3k+JKZq4gEtKSXUAgHCo3NpZ8RAJx6ZalepoRNdgWGcXerZ/TnPPHeijqzGIWWPu72dv8Wo/uZJzkKTfHzwjIs8lGwkW/l8h2MNqg/cNXrXMbEHAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEII+NBSaKjFZ3dJ0jxURc2xj0XjPfnU/L4wJ1QjSyrH3xo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/perigrin
+
+==================================================================
