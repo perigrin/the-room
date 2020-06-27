@@ -8,12 +8,7 @@ title: Chris Prather
 * Email: chris.prather@tamarou.com
 * Github: http://github.com/perigrin
 
-## Top Skills
-Perl, REST, Web Development, Git, Linux, SQL, Software Development, XML, Open
-Source, Moose, OOP, Bash, OS X, JavaScript, NodeJS, Apache, Databases, SOAP,
-Technical Leadership, CSS, HTML, CGI, Web Design
-
-## Experience
+## Work Experience
 
 ### Joyent - San Francisco CA (Remote) (100 Employees)
 
@@ -25,23 +20,47 @@ The cloud deployment team is responsible for the preflight configuration and
 validation of machines before they were released for production use in our
 cloud services environment.
 
-* Maintained [conch-ui][conch-ui] application written in mithril.js until a new
-  version in Vue.js could be developed and released.
-* Identified, interviewed, and reccomended for hire a new front end developer
-  for [conch-ui and maintain][conch-ui].
-* Wrote proof of concept Bill of Material/Datacenter Inventory Manamgnet application
-  [Conch-Locker][conch-locker] using Perl's Mojoliicous::Lite and Postgres.
-* Learned Go to take over maintenance and development of [conch-shell][conch-shell] and
-  [kosh][kosh] the command line (CLI) clients for the Conch API.
+##### Duties and Responsbilities
+
+Initially maintained the UI/UX our build validation system Conch. Worked with
+the team lead to identify, interview  and hire a new developer to take over the
+maintenance of the UI/UX component. Worked on several projects related to build
+automation, including proof of concept for a Data Center Inventory Management
+system. Took over the build operations platform and duties.
+
+##### Attention to Detail
+
+* Assisted in or Performed build operations tasks for several expansions,
+  requiring monitoring dozens of machines at various stages of the build process.
+* Rebuilt preflight operations infrastructure migrating migrating it to
+  Ansible, a configuration management tool, for consistent and maintainble
+  deployment.
+* Began documentation of preflight operations workflows, preflight
+  infrastructure, and software components.
+
+##### Customer Service
+
 * Took over hands-on build preflight operations for preparing new machines for the
   production environment. This required working with the expansion Project
   Manager to maintain the schedule of releases. And working with the Datacenter
   and Network Operations staff to diagnose and resolve hardware and software
   configuration failures on machines during validation.
-* Rebuilt preflight operations infrastructure migrating migrating it to Ansible
-  for consistent and maintainble deployment.
-* Began documentation of preflight operations workflows, preflight
-  infrastructure, and software components. Including presentations for
+
+##### Oral Communication
+
+* Identified, interviewed, and reccomended for hire a new front end developer
+  for [conch-ui and maintain][conch-ui].
+* Gave presentations on the current state and future direction for build
+  operations infrastructure.
+
+##### Problem Solving
+
+* Maintained [conch-ui][conch-ui] application written in mithril.js until a new
+  version in Vue.js could be developed and released.
+* Wrote proof of concept Bill of Material/Datacenter Inventory Manamgnet application
+  [Conch-Locker][conch-locker] using Perl's Mojoliicous::Lite and Postgres.
+* Learned Go to take over maintenance and development of [conch-shell][conch-shell] and
+  [kosh][kosh] the command line (CLI) clients for the Conch API.
   stakeholders and co-workers on the infrastructure and architecture.
 * Rewote preflight [Firmware Agent][firmware-agent] from legacy Shell (bash)
   scripts to modern Go architecture.
@@ -62,11 +81,30 @@ things that are pleasing to their customers.
 
 #### Managing Partner - 10/2008 to 06/2018  - 40 hours / week
 
-* Handled the administrative, business, and legal aspects for the company,
-  including finding new contracts, tracking invoices, and assigning work.
+##### Duties and Responsibilities
+
+Managed administrative, business, and legal aspects of this consulting company
+including finding new contracts, tracking invioces, and work assignments.
+
+##### Attention to Detail
+
+* Worked on testable infrastructure deployment using Ansible.
 * Worked on implementing a combat system for a turn based online MMORPG written
   in Perl.
-* Worked on testable infrastructure deployment using Ansible.
+
+##### Customer Service
+
+* Handled the administrative, business, and legal aspects for the company,
+  including finding new contracts, tracking invoices, and assigning work.
+
+##### Oral Communication
+
+* Presented the talk "The Secret Diary of a Small Perl Shop" at the Yet Another
+  Perl Conference 2010 in Madison WI. About the experiences of running Tamarou.
+  Available online at https://youtu.be/23sFIOpeqR8
+
+##### Problem Solving
+
 * Worked on architecture and design of REST APIs using JSON, Perl, Postgres,
   and MySQL.
 * Worked on porting a realtime sales portal to Rabbit MQ based message quees
@@ -77,15 +115,13 @@ things that are pleasing to their customers.
 
 ### Callsheet LLC - Los Angeles, CA (Remote) (3 employees)
 
-Callsheet was a startup to produce next generation filmmaking pre-production
-software.
+Callsheet produces next generation filmmaking pre-production software.
 
 ####  Founder - 08/2011 to 06/2018 - 10 hours / week
 
-* Handled the administrative, business, and legal aspects of this early stage
-  startup.
-* Assisted with architecture and design for both the REST API, and EmberJS
-  based UI.
+Handled the administrative, business, and legal aspects of this early stage
+startup. Assisted with architecture and design for both the REST API, and
+EmberJS based UI.
 
 ### HD Publishing Group, Development Team - Lake Mary FL (50 employees)
 
@@ -94,19 +130,18 @@ provide the public with access to information in a consumer-friendly manner.
 
 #### Programmer - 10/2008 to 08/2009 - 40 hours / week
 
-* Made significant changes to the order processing system, reducing code
-  duplication and adding more verification of user entered data
-* Added a system to track updates to customer billing accounts and update
-  internal records so that automatic re-billing would work seamlessly
-* Helped implement integration with a third party credit card verification system
-* Built an on-deman reporting system to perform business intelligence queries
-  for Marketting and Upper Managment
-* Researched developing a graph oriented data-store linking potentially
-  hundreds of millions of records based on latent semantic criteria.
-* Introduced modern Perl frameworks such as Moose, and DBIx::Class into the
-  development process, and migrated the code source control system from
-  Subversion to Git.
-* I assisted developers on getting up to speed with the new systems and technology.
+Made significant changes to the order processing system, reducing code
+duplication and adding more verification of user entered data. Added a system
+to track updates to customer billing accounts and update internal records so
+that automatic re-billing would work seamlessly. Helped implement integration
+with a third party credit card verification system. Built an on-deman reporting
+system to perform business intelligence queries for Marketting and Upper
+Managment. Researched developing a graph oriented data-store linking
+potentially hundreds of millions of records based on latent semantic criteria.
+Introduced modern Perl frameworks such as Moose, and DBIx::Class into the
+development process, and migrated the code source control system from
+Subversion to Git. I assisted developers on getting up to speed with the new
+systems and technology.
 
 ### Infinity Interactive - Manhasset, NY (Remote) (8 Employees)
 
@@ -117,8 +152,8 @@ because we don’t have an office.
 
 #### Software Developer - 03/2007 to 10/2008 - 40 hours / week
 
-* Worked on large Catalyst and DBIx::Class based websites, and developed
-  backend applications for offline processing using Moose and POE.
+Worked on large Catalyst and DBIx::Class based websites, and developed backend
+applications for offline processing using Moose and POE.
 
 ### Reuters, Fixed Income Pricing - St. Paul MN (5000 Employees)
 
@@ -128,14 +163,13 @@ professionally.
 
 #### Software Engineer — 04/2004 to 03/2007 - 40 hours / week
 
-* Designed and built a web application to allow the Pricing Desk analysts
-  control over Money Market instrument pricing, and web application to allow data
-  analysts access to quality assurance tools for Real Time Composite Pricing.
-* Helped architect and implement the Real Time Composite Pricing cycle
-  infrastructure.
-* Built an application for real time TBA mortgage pricing, and designed several
-  other web based utilities for the Pricing Desk analysts to control the daily
-  pricing cycles.
+Designed and built a web application to allow the Pricing Desk analysts control
+over Money Market instrument pricing, and web application to allow data
+analysts access to quality assurance tools for Real Time Composite Pricing.
+Helped architect and implement the Real Time Composite Pricing cycle
+infrastructure. Built an application for real time TBA mortgage pricing, and
+designed several other web based utilities for the Pricing Desk analysts to
+control the daily pricing cycles.
 
 ### NKD Webmedia - Edinburgh, Scotland (7 employees)
 
@@ -143,13 +177,12 @@ Bespoke software consultancy specializing in web delivered applications.
 
 #### Software Developer - 12/2001 to 08/2003 - 40 hours / week
 
-* Designed and implemented a multi-tiered Apache/mod_perl + SOAP application,
-  and implemented SoqL OO Relational Database language (atop MySQL 3.23). I
-  presented a talk about SoqL at YAPC::EU 2003.
-* Administered several Linux (Gentoo, RH 7.x) boxes running Apache/mod_perl &
-  MySQL platforms
-* Designed and Implemented a large scale SQL Server 2000 Database for a
-  Continuing Professional Development Management system
+Designed and implemented a multi-tiered Apache/mod_perl + SOAP application, and
+implemented SoqL OO Relational Database language (atop MySQL 3.23). I presented
+a talk about SoqL at YAPC::EU 2003. Administered several Linux (Gentoo, RH 7.x)
+boxes running Apache/mod_perl & MySQL platforms. Designed and Implemented a
+large scale SQL Server 2000 Database for a Continuing Professional Development
+Management system.
 
 ## Volunteer Experience & Causes
 
