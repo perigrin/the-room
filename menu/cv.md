@@ -5,7 +5,7 @@ title: Chris Prather
 
 * Street: 4109 Woodlynne Lane, Orlando FL 32812
 * Phone: 407.414.4784
-* Email: chris.prather@tamarou.com
+* Email: chris@prather.org
 * Github: http://github.com/perigrin
 
 ## Work Experience
