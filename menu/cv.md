@@ -99,9 +99,12 @@ including finding new contracts, tracking invioces, and work assignments.
 
 ##### Oral Communication
 
-* Presented the talk "The Secret Diary of a Small Perl Shop" at the Yet Another
-  Perl Conference 2010 in Madison WI. About the experiences of running Tamarou.
-  Available online at https://youtu.be/23sFIOpeqR8
+* Happy Campers: Lessons Learned From Scouting's Premiere Leadership Course
+  (scheduled) 06/2019 The Perl Conference - Pittsburgh, PA
+* I Never Metaphor I Didn't Like: How Congitive Linguistics Makes You a More
+  Badass Programmer (scheduled) 08/2016 South East Linux Fest - Charolette, NC
+* The Secret Diary of a Small Perl Shop (scheduled) 06/2012 Yet Another Perl
+  Conference North America - Madison, WI
 
 ##### Problem Solving
 
