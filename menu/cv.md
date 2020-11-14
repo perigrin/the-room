@@ -30,12 +30,14 @@ system. Took over the build operations platform and duties.
 
 ##### Attention to Detail
 
+* Started transitioning preflight workflow tools to Go from Perl + Shell to improve 
+  maintainability by the larger team.
 * Assisted in or Performed build operations tasks for several expansions,
   requiring monitoring dozens of machines at various stages of the build process.
 * Rebuilt preflight operations infrastructure migrating migrating it to
   Ansible, a configuration management tool, for consistent and maintainble
   deployment.
-* Began documentation of preflight operations workflows, preflight
+* Documented of preflight operations workflows, preflight
   infrastructure, and software components.
 
 ##### Customer Service
@@ -88,15 +90,18 @@ including finding new contracts, tracking invioces, and work assignments.
 
 ##### Attention to Detail
 
-* Worked on testable infrastructure deployment using Ansible.
-* Worked on implementing a combat system for a turn based online MMORPG written
+* Handled the administrative, business, and legal aspects for the company for 10 years.
+* Build a testable infrastructure deployment using Ansible.
+* Implemented a combat system for a turn based online MMORPG written
   in Perl.
 
 ##### Customer Service
 
-* Handled the administrative, business, and legal aspects for the company,
-  including finding new contracts, tracking invoices, and assigning work.
-
+* Identified recruited, and mainted new customers and employees.
+* Managed the team re-developing the content managent application for an 
+  Alexa Top 100 video on demand website using Perl's Catalyst (comparable 
+  to Ruby on Rails) and MySQL.
+   
 ##### Oral Communication
 
 * Happy Campers: Lessons Learned From Scouting's Premiere Leadership Course
@@ -108,13 +113,11 @@ including finding new contracts, tracking invioces, and work assignments.
 
 ##### Problem Solving
 
-* Worked on architecture and design of REST APIs using JSON, Perl, Postgres,
-  and MySQL.
-* Worked on porting a realtime sales portal to Rabbit MQ based message quees
-  system.
-* Worked on the content managent application for a Alexa Top 100 video
-  on demand website using Perl's Catalyst (comparable to Ruby on Rails) and
-  MySQL.
+* Designed several REST APIs using JSON, Perl, Postgres and MySQL.
+* Designed a realtime sales fufillment engine, identified that the current system's 
+  failure to scale was it's syncrhonous nature. Researched message passing systems 
+  (0mq, Kafka, NSQ etc.) ended up using Rabbit MQ. Wrote the initial version of the 
+  Crixa Perl module to better fit with the RabbitMQ development style. 
 
 ### Callsheet LLC - Los Angeles, CA (Remote) (3 employees)
 
