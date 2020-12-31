@@ -401,7 +401,7 @@ module.exports = {
 }
 ```
 
-First We establish that we're in development mode. Remember that we're in the
+First we establish that we're in development mode. Remember that we're in the
 `assets/` directory, all the paths here will be relative to that.  Our entry
 point, that is the main file for our application is located in `src/index.js`,
 so I coped the Mitrhil code from my template above into that file. The output
