@@ -52,7 +52,7 @@ experience. Like this decision should be for any company.
 
 [2]: https://www.reddit.com/r/programming/comments/fi4r9l/building_a_shopify_app_with_perl_part_1/
 
-## Hold you ears folks, It's showtime
+## Hold your ears folks, It's showtime
 
 After getting the basics of the backend application up and running. My thoughts
 turned to the next most complicated piece: the frontend. It's been about two
@@ -201,7 +201,7 @@ passed directly to `m()` and rendered. So we can do something like this:
 This works, click on the links and you can navigate between the components
 rendered as different pages. It is however deeply ugly, so we bring in some
 CSS. CSS has come a long way since I first learned it in the late 90s.
-Specifically [Zed Shaw][4] has been talking about Flexbox and Grid layouts on
+[Zed Shaw][4] has been talking about Flexbox and Grid layouts on
 his twitter recently. So I took a stab at writing some.
 
 ```css
@@ -466,7 +466,7 @@ The title image is "rustic yet modern" by [Christian Collins](https://www.flickr
 
 [^1]: I'm as flummoxed as anybody.
 
-[^2]: I have now, I've even ported most of stevan's [Web::Machine](TK) over to my own [webframework](TK).
+[^2]: I have now, I've even ported most of stevan's [Web::Machine](https://metacpan.org/pod/Web::Machine) over to my own [webframework](https://github.com/tamarou/blackarachnia).
 
 [^3]: I know that Leila at All Around the World and Mark at Shadowcat will return my calls in an emergency and give me a fair rate. I know that they'll recommend individual freelancers for me if I can't afford their costs.
 
