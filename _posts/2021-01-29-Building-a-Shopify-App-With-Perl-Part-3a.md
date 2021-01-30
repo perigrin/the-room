@@ -5,7 +5,7 @@ author: "Chris Prather"
 categories:
 tags: shopify, docker, k8s, k3s, lxc
 date:  Fri 29 Jan 2021 10:00:00 PM EST
-image: https://live.staticflickr.com/3263/2383423665_c1a6b71cba_z.jpg
+image: https://live.staticflickr.com/3263/2383423665_c1a6b71cba_b.jpg
 ---
 
 ## The Preface
