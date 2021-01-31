@@ -5,7 +5,7 @@ author: "Chris Prather"
 categories:
 tags: shopify, docker, k8s, k3s, lxc
 date:  Fri 29 Jan 2021 10:00:00 PM EST
-image: https://live.staticflickr.com/3263/2383423665_c1a6b71cba_b.jpg
+image: https://live.staticflickr.com/3263/2383423665_c1a6b71cba_z.jpg
 ---
 
 ## The Preface
@@ -126,9 +126,9 @@ we need to fake in the container.
 Now we can create a new container. To save myself some trouble I
 went with ubuntu for now, I'll bite off getting alpine to work at a later date.
 
-`lxc launch -p k3x ubuntu: k3s-master`
+`lxc launch -p k3s ubuntu: k3s-master`
 
-Next I created a little install script (based on the one from [k3s-on-lxd][k3x-lxd]
+Next I created a little install script (based on the one from [k3s-on-lxd][k3s-lxd]
 
 ```bash
 apt update && apt install openssl curl -y
