@@ -10,7 +10,7 @@ image: https://live.staticflickr.com/8375/8376960724_e908c79b5c_z.jpg
 
 ## The Preface
 
-My wife runs an afterschool pottery program in various elementary schools
+My wife runs an after-school pottery program in various elementary schools
 around town. Parents sign their kids up for the classes, and then my wife's
 staff go out to the various schools and teach basic ceramics to the kids. All
 the existing student registration systems for this are both wildly expensive,
@@ -37,7 +37,7 @@ Window][5]
 I know of at least one other person interested in this project for a
 non-profit. I also know I work a full time job *other* than this project and
 will eventually need help. So I want to ensure that the application is dead
-simple for someone else to get up and get running at least in a dev enviornment
+simple for someone else to get up and get running at least in a dev environment
 quickly so they can contribute as quickly as possible to the code.
 
 This also means that there should be a robust test suite for everything.
@@ -45,17 +45,17 @@ This also means that there should be a robust test suite for everything.
 3) Designed to minimize the differences between dev, staging, and production
 
 I've been doing a lot of junior DevOps for the last couple years. I hate
-differences beween my development environment and production and having to
+differences between my development environment and production and having to
 account for those. So I want production and dev to be as close as possible.
 
-## Part 0.5: A Modern Dev + Test Environment for People Who Overengineer DevOps
+## Part 0.5: A Modern Dev + Test Environment for People Who Over-engineer DevOps
 
-First thing we do is we go go github and create a new repository. I pick the
+First thing we do is we go to GitHub and create a new repository. I pick the
 Perl 5 `.gitignore` file and since at the moment this isn't an open project no
 license.
 
 Then clone the new repository and start setting up the scaffolding. Because I
-use [Carton][2], I start by dropping a cpan file of just the following:
+use [Carton][2], I start by dropping a CPAN file of just the following:
 
 ```perl
 on 'develop' => sub {
@@ -64,7 +64,7 @@ on 'develop' => sub {
 ```
 
 This allows us to set a house style for the code layout. We may eventually
-upgrade to soemthing like [Code::TidyAll][3] but right now we don't even really
+upgrade to something like [Code::TidyAll][3] but right now we don't even really
 have Perl yet.
 
 Second thing we do is make sure that our dev, testing, and staging environments
@@ -138,7 +138,7 @@ like Perl. The [steps for creating a Partner account][7] and an app are the
 same. So just go follow them, I'll wait. You can go ahead and use [their setup
 with ngrok][8] too, it'll play nice with our set up.
 
-Now that you've done that let's replace their Step 3 with Perl. Becasue we want
+Now that you've done that let's replace their Step 3 with Perl. Because we want
 others to participate in development we're going to be starting with
 [Mojolicious::Lite][6]. Add the following to the `cpanfile`:
 
@@ -147,8 +147,8 @@ requires 'IO::Socket::SSL' => 2.009;
 requires 'Mojolicious';
 requires 'Mojolicious::Plugin::Util::RandomString';
 ```
-The extra requirement on `IO::Socket::SSL` is becasue without it the docker
-image I'm using was defaulting to something lower and mojolicious was throwing
+The extra requirement on `IO::Socket::SSL` is because without it the docker
+image I'm using was defaulting to something lower and Mojolicious was throwing
 a fit. That may be different by the time you're reading this.
 
 
@@ -165,9 +165,9 @@ Next we build a simple app, create an `app.pl` and add the following:
     app->run;
 ```
 Then we can run `docker build -t myapp:latest .` to rebuild the app and
-`docker-compse up` and it'll start up the app. This is great but we can't
+`docker-compose up` and it'll start up the app. This is great but we can't
 really do much with this. So now we start laying in the shopify specific routes
-(Part 4 in the the Shopify tutorial).
+(Part 4 in the Shopify tutorial).
 
 We should export the API key and API secret you got from Shopify into the
 environment. In a bash shell I do the following:
@@ -175,7 +175,7 @@ environment. In a bash shell I do the following:
 export SHOPIFY_API_KEY="NOT A REAL KEY"
 export SHOPIFY_API_SECRET="NOT A REAL SECRET EITHER"
 ```
-These will get picked up by docker (sepcifically see the `environment` key in
+These will get picked up by docker (specifically see the `environment` key in
 the `docker-config.yml`) and passed through to the application.
 
 And update our `app.pl` with a shopify route.
@@ -216,7 +216,7 @@ app->run;
 This will take an Invite link from Shopify (the tutorial explains how to
 Generate those) and redirects to the [app authorization prompt][9]. The user
 then verifies the permissions and can click an "Install" button which will send
-them back to the callback route you whitelisted when you set up the app.
+them back to the callback route you white-listed when you set up the app.
 
 Next we'll need to handle that connect callback:
 
@@ -337,7 +337,7 @@ get "/connect" => sub ($c) {
                     }
                 )->catch( sub { die "Request failed: @_" } );
             }
-        )->catch( sub { die "Coudn't fetch access token: @_" } );
+        )->catch( sub { die "Couldn't fetch access token: @_" } );
     }
     else {
         die 'Bad Shop in Args';

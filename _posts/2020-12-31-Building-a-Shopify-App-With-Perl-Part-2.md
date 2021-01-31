@@ -62,7 +62,7 @@ tool-set. This project doesn't have that luxury.
 
 So we need to remember how to piece together a modern(ish?) frontend dev
 tool-set. Shopify highly recommends that we use React, sadly I don't know React.
-I did pick up Mithril though. While I don't know enough [Mirthil][3] to fix a
+I did pick up Mithril though. While I don't know enough [Mithril][3] to fix a
 fundamentally flawed architecture. I'm confident enough I know enough to build
 from scratch (and make my own mistakes).
 
@@ -102,7 +102,7 @@ try {
 	$access_token = $tx->result->json->{access_token};
 }
 catch {
-	die "Coud not fetch access token: $@";
+	die "Could not fetch access token: $@";
 }
 
 try {

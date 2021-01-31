@@ -42,6 +42,7 @@ aws
 axkit
 AxKit
 BabaSurLaLune
+backend
 backends
 bakingsheet
 Barak
@@ -76,12 +77,14 @@ Carbonara
 CatEntries
 cba
 ccg
+cdb
 CDN
 centos
 Centos
 CentOS
 Centrefication
 cgroup
+charset
 chatterbot
 cheatsheet
 checkboxes
@@ -147,6 +150,8 @@ DevCon
 Devel
 developerworks
 Devops
+DevOps
+devs
 dgillett
 DHCP
 DHMO
@@ -188,6 +193,7 @@ ENV
 Eoin
 Eoin's
 EOS
+ep
 EPO
 eq
 erlang
@@ -238,6 +244,7 @@ freerunning
 friendfeed
 frontend
 FRONTEND
+fs
 Fserv
 gangbuster
 Geekdad
@@ -249,6 +256,7 @@ gigaspaces
 GigaSpaces
 github
 Github's
+gitignore
 GlobalDestruction
 glutt
 gmail
@@ -312,6 +320,7 @@ iphone
 irc
 IRC
 isa
+ish
 iSSH
 itunes
 Ivanka's
@@ -327,7 +336,7 @@ jpg
 jrockway
 js
 json
-Jurveston
+Jurvetson
 Kaitlynn's
 Keating
 Kenshin
@@ -344,11 +353,13 @@ kubernetes
 Kubernetes
 kutiman
 Lackner
+lang
 Lasket
 Lessig
 L'Etoile
 lexically
 libpg
+libpq
 libssl
 libxml
 LibXML
@@ -398,12 +409,15 @@ Minnedemo
 minnesota
 Mirrlees
 Mither
+mithril
+Mithril
 Miyagawa
 mkdir
 mkopt
 mochikit
 MochiKit
 ModWiki
+Mojo
 mojolicious
 Mojolicious
 montylingua
@@ -432,6 +446,7 @@ NATed
 NCSA
 ne
 Neilsen
+netfilter
 netlink
 netplan
 nf
@@ -440,10 +455,13 @@ Nginx
 NginxFcgiExample
 ngrok
 ngvgg
+nic
 NIC
 nicholls
+nictype
 nictype nic
 nom
+noninteractive
 Nord
 nortel
 nosql
@@ -588,6 +606,7 @@ scriptable
 sd
 searchengine
 Seebis
+segfaulting
 semanticweb
 SemanticWeb
 semweb
@@ -626,6 +645,7 @@ sql
 SQL
 Squidoo
 Squigby
+src
 SSHKeychain
 SSL
 stackless
@@ -693,6 +713,7 @@ unix
 Unix
 UNIX
 unpaying
+unpkg
 upto
 uri
 URI
@@ -704,6 +725,7 @@ USD
 useable
 userinfo
 usr
+utf
 UTF
 Util
 vcs
@@ -713,6 +735,8 @@ VersionTracker
 virtualdesktops
 visualhub
 VLC
+vnode
+vnodes
 vpn
 vxlan
 Wab
@@ -766,6 +790,7 @@ YORKSHIREMAN
 Yorkshiremen
 youtube
 za
+zA
 Zelany's
 Zelda's
 zool
