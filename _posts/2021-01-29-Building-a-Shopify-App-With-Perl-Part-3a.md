@@ -119,7 +119,7 @@ name: k3s
 This loads some required/recommended kernel modules, it sets some raw lxc
 commands including mounting `/proc` and `/sys` as read-write. It disables some
 of the container security protections (`security.nesting` and
-`security.prividleged` being true *disables* some of the container
+`security.privileged` being true *disables* some of the container
 separations). Finally it sets up a few devices that k3s expects to exist that
 we need to fake in the container.
 
