@@ -147,7 +147,7 @@ Assuming that the A record is live, and you can now setup an SSL certificate
 for the docker registry using Letsencrypt.
 
 ```shell
-lxc exec docker-regsitry -- bash -l
+lxc exec docker-registry -- bash -l
 docker run -it --rm --name certbot -p 80:80 \
     -v "/etc/letsencrypt:/etc/letsencrypt" \
     -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
@@ -167,6 +167,7 @@ purposes here, integrating with your own system is left as a lemma for the
 reader.
 
 Create a new `htpasswd` file somewhere,
+
 ```shell
 htpasswd -cB /etc/htpasswd perigrin
 ```
@@ -174,7 +175,7 @@ htpasswd -cB /etc/htpasswd perigrin
 If we need to add another user (let's say for our [scrum master](https://twitter.com/trg404) it's as simple as running the following and supplying a password:
 
 ```shell
-lxc exec docker-registery -- htpasswd -B /etc/htpasswd trog
+lxc exec docker-registry -- htpasswd -B /etc/htpasswd trog
 ```
 
 ## I don't express a lot of things that I feel; I kind of register things
