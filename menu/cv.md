@@ -10,11 +10,25 @@ title: Chris Prather
 
 ## Work Experience
 
+### PRL/Opentrons - New York NY (remote) (500+ employees)
+
+PRL/Opentrons is a fast growing startup in the healthcare industry.
+
+#### Lead Software Engineer - 6/2021 - Present - 40 hours / week
+
+As lead engineer I am responsible for supporting the Diagnostics LIMS
+(Laboratory Information System) Team  and Sequencing/R&D team. I scaled the
+team from 5 developers and 2 contractors to 9 developers, and 8 contractors.
+
+### Senior Software Engineer - 4/2021 - 06/2021 - 40 hours / week
+
+As a senior software engineer I contributed to the Diangostic LIMS system.
+
 ### Joyent - San Francisco CA (Remote) (100 Employees)
 
 Joyent is a subsidary of Samsung Electronics specializing in Cloud Computing.
 
-#### Cloud Deployment Engineer - 06/2018 to Present - 40 hours / week
+#### Cloud Deployment Engineer - 06/2018 to 4/2021 - 40 hours / week
 
 The cloud deployment team is responsible for the preflight configuration and
 validation of machines before they were released for production use in our
@@ -30,7 +44,7 @@ system. Took over the build operations platform and duties.
 
 ##### Attention to Detail
 
-* Started transitioning preflight workflow tools to Go from Perl + Shell to improve 
+* Started transitioning preflight workflow tools to Go from Perl + Shell to improve
   maintainability by the larger team.
 * Assisted in or Performed build operations tasks for several expansions,
   requiring monitoring dozens of machines at various stages of the build process.
@@ -98,10 +112,10 @@ including finding new contracts, tracking invioces, and work assignments.
 ##### Customer Service
 
 * Identified recruited, and mainted new customers and employees.
-* Managed the team re-developing the content managent application for an 
-  Alexa Top 100 video on demand website using Perl's Catalyst (comparable 
+* Managed the team re-developing the content managent application for an
+  Alexa Top 100 video on demand website using Perl's Catalyst (comparable
   to Ruby on Rails) and MySQL.
-   
+
 ##### Oral Communication
 
 * Happy Campers: Lessons Learned From Scouting's Premiere Leadership Course
@@ -114,10 +128,10 @@ including finding new contracts, tracking invioces, and work assignments.
 ##### Problem Solving
 
 * Designed several REST APIs using JSON, Perl, Postgres and MySQL.
-* Designed a realtime sales fufillment engine, identified that the current system's 
-  failure to scale was it's syncrhonous nature. Researched message passing systems 
-  (0mq, Kafka, NSQ etc.) ended up using Rabbit MQ. Wrote the initial version of the 
-  Crixa Perl module to better fit with the RabbitMQ development style. 
+* Designed a realtime sales fufillment engine, identified that the current system's
+  failure to scale was it's syncrhonous nature. Researched message passing systems
+  (0mq, Kafka, NSQ etc.) ended up using Rabbit MQ. Wrote the initial version of the
+  Crixa Perl module to better fit with the RabbitMQ development style.
 
 ### Callsheet LLC - Los Angeles, CA (Remote) (3 employees)
 
