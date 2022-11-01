@@ -14,15 +14,60 @@ title: Chris Prather
 
 PRL/Opentrons is a fast growing startup in the healthcare industry.
 
-#### Lead Software Engineer - 6/2021 - Present - 40 hours / week
+#### Director of Software - 03/28/2021 -  Preset - 40 hours / week
+#### Lead Software Engineer - 6/2021 - 03/23/2021 - 40 hours / week
+#### Senior Software Engineer - 4/2021 - 06/2021 - 40 hours / week
 
-As lead engineer I am responsible for supporting the Diagnostics LIMS
-(Laboratory Information System) Team  and Sequencing/R&D team. I scaled the
-team from 5 developers and 2 contractors to 9 developers, and 8 contractors.
+The Software department at PRL is responsible for all in-house developed
+software, including our custom Laboratory Information Management System (LIMS),
+Client Portal, and Electronic Lab Reporting.
 
-### Senior Software Engineer - 4/2021 - 06/2021 - 40 hours / week
+##### Duties and Responsbilities
 
-As a senior software engineer I contributed to the Diangostic LIMS system.
+I participated in and oversaw the Software department as it grew from a single
+team of 5 people to several functional working groups of 2 engineering
+managers and 17 developers.
+
+##### Attention to Detail
+
+* Worked directly to improve our deployment process to be repeatable and
+transitioned from a responsibility of the senior engineers to the on-call
+engineer.
+* Established and championed an RFC process to document large scale technical
+decisions and department level policies
+* Worked with external vendors and our Tech Lead to transition our diagnosis
+reporting from sFTP to HTTP
+
+##### Customer Service
+
+* Worked with leadership in other departments to coordinate deliverables from
+software on projects ranging from a high throughput Next Generation Sequencing
+(NGS) workflow, to new diagnostic tests, to in-lab automation.
+* Developed and documented (as an RFC) our career ladder for the Software
+department
+* Developed and revised based on team feedback a hiring loop that focused on
+minimizing the impact on both candidates and team members while getting the
+best signals for suitability
+
+##### Oral Communication
+
+* Participated in weekly meetings providing updates to senior management on the
+timelines for our projects.
+* Had regular 1:1s with my direct reports and eventually my skip-level reports,
+as well as our relevant partners in Product and the PMO
+* Developed and mentored the engineering managers on the HR guided annual
+performance review process
+
+##### Problem Solving
+
+* Lead a process to migrate the department from a traditional team
+structure to ad-hoc feature teams/working groups
+* Worked with Product and the PMO to build and agile development cycle that
+focused on making sure the right people had the right conversations at the
+right time
+* Identified the need and successfully participated in the hiring process for a
+VP of Engineering for PRL
+* Identified, planned, and executed with HR a hiring roadmap
 
 ### Joyent - San Francisco CA (Remote) (100 Employees)
 
@@ -36,11 +81,11 @@ cloud services environment.
 
 ##### Duties and Responsbilities
 
-Initially maintained the UI/UX our build validation system Conch. Worked with
+Initially I maintained the UI/UX our build validation system Conch. Worked with
 the team lead to identify, interview  and hire a new developer to take over the
-maintenance of the UI/UX component. Worked on several projects related to build
+maintenance of the UI/UX component. I worked on several projects related to build
 automation, including proof of concept for a Data Center Inventory Management
-system. Took over the build operations platform and duties.
+system. I took over the build operations platform and duties.
 
 ##### Attention to Detail
 
