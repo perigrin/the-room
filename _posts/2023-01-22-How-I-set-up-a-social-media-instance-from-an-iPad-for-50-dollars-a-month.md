@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to run a social media site from an iPad for $50 a month without managing servers."
+title: "How I set up a social media site from an iPad for $50 a month without managing servers."
 author: "Chris Prather"
 categories:
 tags: docker, akkoma, render
