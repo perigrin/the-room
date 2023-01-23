@@ -1,7 +1,8 @@
 ---
-title: "Patches Welcome" or Volunteers vs Hobbists
+layout: post
+title: '"Patches Welcome" or Volunteers vs Hobbists'
 author: Chris Prather
-date: 2010-05-20T19:08:24 EDT
+date: 2010-05-20
 ---
 
 There has been a strong meme going around that I've not been paying
