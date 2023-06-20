@@ -12,10 +12,11 @@ menu:
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
-- {icon: 'github', link: 'https://www.github.com/perigrin'}
-- {icon: 'twitter', link: 'https://twitter.com/perigrin'}
-- {icon: 'envelope', link: 'mailto:chris@prather.org'}
-- {icon: 'rss-square', link: 'feed.xml'}
+- {pre: 'solid', icon: 'circle-dollar-to-slot', link: 'https://github.com/sponsors/perigrin'}
+- {pre: 'brands', icon: 'github', link: 'https://www.github.com/perigrin'}
+- {pre: 'brands', icon: 'mastodon', link: 'https://ack.nerdfight.online/perigrin'}
+- {pre: 'solid', icon: 'envelope', link: 'mailto:chris@prather.org'}
+- {pre: 'solid', icon: 'rss-square', link: 'feed.xml'}
 # - {icon: 'rss-square', link: '/rss-feed.xml'}
 
 # Customize site text
