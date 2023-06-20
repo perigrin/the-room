@@ -38,7 +38,7 @@ to need a copy of that. My recommendation is to use
 [plenv](https://github.com/tokuhirom/plenv) to set up a custom perl to work
 with. Go follow Tokuhiro-san's instructions on getting plenv setup.
 
-Once you have plenv set up you'll need to create a directory to work in on my
+Once you have plenv set up you'll need to create a directory to work, in on my
 machine we'll go with `$HOME/dev/possessive_frogs` (I used [github's random
 repo name](https://alator21.github.io/repository-name-generator/)). You can
 name yours whatever you'd like.
