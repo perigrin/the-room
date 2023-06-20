@@ -1,6 +1,10 @@
 ---
+layout: post
 title: "Part 1 - Orchestrating Movement in the Dark"
+author: "Chris Prather"
+tags: perl, roguelike, dev, corinna
 date:
+image: https://live.staticflickr.com/65535/51795827306_55b955aeee_5k.jpg
 ---
 
 ## Introduction

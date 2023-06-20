@@ -1,6 +1,10 @@
 ---
+layout: post
 title: "Part 2 - Mazes and Monsters"
+author: "Chris Prather"
+tags: perl, roguelike, dev, corinna
 date:
+image: https://live.staticflickr.com/65535/52126535318_da553d66cb_5k.jpg
 ---
 
 ## Introduction

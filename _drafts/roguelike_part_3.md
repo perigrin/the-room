@@ -1,6 +1,12 @@
 ---
-title: "Part 3"
+layout: post
+title: "Part 3 - Mastering the Generative Dungeon"
+author: "Chris Prather"
+tags: perl, roguelike, dev, corinna
+date:
+image:
 ---
+
 
 ## Introduction
 

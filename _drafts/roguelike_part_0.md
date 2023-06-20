@@ -1,6 +1,10 @@
 ---
+layout: post
 title: "Part 0 - The Setup"
+author: "Chris Prather"
+tags: perl, roguelike, dev, corinna
 date:
+image:https://live.staticflickr.com/65535/51795828961_b3d3961af5_4k.jpg
 ---
 
 ## Introductions
@@ -39,9 +43,8 @@ to need a copy of that. My recommendation is to use
 with. Go follow Tokuhiro-san's instructions on getting plenv setup.
 
 Once you have plenv set up you'll need to create a directory to work, in on my
-machine we'll go with `$HOME/dev/possessive_frogs` (I used [github's random
-repo name](https://alator21.github.io/repository-name-generator/)). You can
-name yours whatever you'd like.
+machine we'll go with `$HOME/dev/possessive_frogs` (I used [github's random repo name](https://alator21.github.io/repository-name-generator/)).
+You can name yours whatever you'd like.
 
 ```
 gh repo create --public --clone possessive_frogs
