@@ -3,7 +3,7 @@ layout: post
 title: "Part 1 - Orchestrating Movement in the Dark"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
-date:
+date: 2023-07-04
 image: https://live.staticflickr.com/65535/51795827306_55b955aeee_5k.jpg
 ---
 
@@ -12,7 +12,7 @@ image: https://live.staticflickr.com/65535/51795827306_55b955aeee_5k.jpg
 This post is part of a series of blog posts following the [roguelike tutorial](https://www.rogueliketutorials.com/)
 to demonstrate the new `class` feature in Perl 5.38.0.
 
-In this post we're gonna start where we left off in [part-0](). If you
+In this post we're gonna start where we left off in [Part 0](https://chris.prather.org/perl-roguelike-part-0.html). If you
 remember, the `Engine` class looked like this:
 
 ```
@@ -30,8 +30,8 @@ class Engine {
 	}
 
 	method render() {
-    	my $x = $WIDTH / 2;
-    	my $y = $HEIGHT / 2;
+    	my $x = $width / 2;
+    	my $y = $height / 2;
 
     	$app->draw($x, $y, 'Hello World', '#fff', '#000');
 	}
