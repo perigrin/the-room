@@ -228,8 +228,8 @@ class Engine {
     }
 
     method render() {
-        my $x = $WIDTH / 2;
-        my $y = $HEIGHT / 2;
+        my $x = $width / 2;
+        my $y = $height / 2;
 
         $app->draw($x, $y, 'Hello World', '#fff', '#000');
     }
@@ -245,3 +245,5 @@ If we save our file and then run `carton exec perl game.pl`, we should get
 `Hello World` printed nicely in roughly the middle of our terminal.
 
 Tune in for Part 1, where we turn this hello world into something moving.
+
+Thanks to [@tmtowtdi@mastodon.social](https://mastodon.social/@tmtowtdi/110651255031643872) for pointing out a capitalization bug in `render()`.
