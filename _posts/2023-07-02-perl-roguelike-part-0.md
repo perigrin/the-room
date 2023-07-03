@@ -84,7 +84,7 @@ Setting the minimum has a side effect of
 enabling `strict` as well as a bunch of other features (in this case); `say`, `state`,
 `unicode_strings`, `unicode_eval`,  `evalbytes`, `current_sub`, `fc`,
 `postderef_qq`, `bitwise`, `isa`, `signatures`, and `module_true`. Check the
-documentation for the [feature](https://perldoc.pl/5.38.0-RC1/feature) pragma for more on
+documentation for the [feature](https://perldoc.pl/5.38.0/feature) pragma for more on
 what each of these do.
 
 Next we'll need to enable the _experimental_ `class` feature. We explicitly
