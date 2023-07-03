@@ -186,8 +186,8 @@ we tell `Games::ROT` to run our main game loop: the `render` method.
 
 ```
 method render() {
-    my $x = $WIDTH / 2;
-    my $y = $HEIGHT / 2;
+    my $x = $width / 2;
+    my $y = $height / 2;
 
     $app->draw($x, $y, 'Hello World', '#fff', '#000');
 }
