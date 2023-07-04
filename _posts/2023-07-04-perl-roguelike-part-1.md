@@ -18,7 +18,7 @@ remember, the `Engine` class looked like this:
 ```
 class Engine {
 	field $height :param;
-	field $width: param;
+	field $width  :param;
 	field $app = Games::ROT->new(
     	screen_width  => $width,
     	screen_height => $height,
@@ -59,8 +59,8 @@ player is `@`, so let’s add some fields for the player location:
 
 ```
 class Engine {
-	my $width :param;
 	my $height :param;
+	my $width  :param;
 
 	field $playerX = $width / 2;
 	field $playerY = $height / 2;
