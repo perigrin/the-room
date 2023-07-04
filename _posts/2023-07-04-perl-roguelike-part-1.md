@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Part 1 - Orchestrating Movement in the Dark"
+title: "A Roguelike in Perl Part 1 - Orchestrating Movement in the Dark"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
 date: 2023-07-04

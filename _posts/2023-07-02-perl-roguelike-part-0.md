@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Rogulelike in Perl Part 0 - The Setup"
+title: "A Roguelike in Perl Part 0 - The Setup"
 author: "Chris Prather"
 categories:
 tags: perl, roguelike, dev, corinna
