@@ -17,24 +17,24 @@ remember, the `Engine` class looked like this:
 
 ```
 class Engine {
-	field $height :param;
-	field $width  :param;
-	field $app = Games::ROT->new(
-    	screen_width  => $width,
-    	screen_height => $height,
-	);
+    field $height :param;
+    field $width  :param;
+    field $app = Games::ROT->new(
+        screen_width  => $width,
+        screen_height => $height,
+    );
 
-	ADJUST {
-    	# start the app
-    	$app->run( sub { $self->render() } );
-	}
+    ADJUST {
+        # start the app
+        $app->run( sub { $self->render() } );
+    }
 
-	method render() {
-    	my $x = $width / 2;
-    	my $y = $height / 2;
+    method render() {
+        my $x = $width / 2;
+        my $y = $height / 2;
 
-    	$app->draw($x, $y, 'Hello World', '#fff', '#000');
-	}
+        $app->draw($x, $y, 'Hello World', '#fff', '#000');
+    }
 }
 
 ```
@@ -45,10 +45,10 @@ that before we start the game loop.
 
 ```
 ADJUST {
-	$app->add_event_handler(
-    	'keydown' => sub ($event) { exit }
-	);
-	$app->run( sub { $self->render() } );
+    $app->add_event_handler(
+        'keydown' => sub ($event) { exit }
+    );
+    $app->run( sub { $self->render() } );
 }
 
 ```
@@ -59,20 +59,20 @@ player is `@`, so let’s add some fields for the player location:
 
 ```
 class Engine {
-	my $height :param;
-	my $width  :param;
+    my $height :param;
+    my $width  :param;
 
-	field $playerX = $width / 2;
-	field $playerY = $height / 2;
+    field $playerX = $width / 2;
+    field $playerY = $height / 2;
 
-	[...]
+    [...]
 ```
 
 We also need to update the render method to draw the player icon.
 
 ```
 method render() {
-	$app->draw($playerX, $playerY, '@', '#fff', '#000');
+    $app->draw($playerX, $playerY, '@', '#fff', '#000');
 }
 ```
 
@@ -83,20 +83,20 @@ adjusting our ADJUST block.
 
 ```
 ADJUST {
-	$app->add_event_handler(
-    	'keydown' => sub ($event) {
-        	my %KEY_MAP = (
-            	h => sub { $player_x -= 1 },
-            	j => sub { $player_y += 1 },
-            	k => sub { $player_y -= 1 },
-            	l => sub { $player_x += 1 },
-            	q => sub { exit }
-        	);
-        	$KEY_MAP{$event->key}->();
-    	}
-	);
+    $app->add_event_handler(
+        'keydown' => sub ($event) {
+            my %KEY_MAP = (
+                h => sub { $player_x -= 1 },
+                j => sub { $player_y += 1 },
+                k => sub { $player_y -= 1 },
+                l => sub { $player_x += 1 },
+                q => sub { exit }
+            );
+            $KEY_MAP{$event->key}->();
+        }
+    );
 
-	$app->run( sub { $self->render() } );
+    $app->run( sub { $self->render() } );
 }
 ```
 
@@ -125,38 +125,38 @@ use experimental 'class';
 use Games::ROT;
 
 class Engine {
-	field $height :param;
-	field $width: param;
+    field $height :param;
+    field $width: param;
 
-	field $player_x = $width / 2;
-	field $player_y = $height / 2;
+    field $player_x = $width / 2;
+    field $player_y = $height / 2;
 
-	field $app = Games::ROT->new(
-    	screen_width  => $width,
-    	screen_height => $height,
-	);
+    field $app = Games::ROT->new(
+        screen_width  => $width,
+        screen_height => $height,
+    );
 
-	ADJUST {
-    	$app->add_event_handler(
-        	'keydown' => sub ($event) {
-            	my %KEY_MAP = (
-                	h => sub { $player_x -= 1 },
-                	j => sub { $player_y += 1 },
-                	k => sub { $player_y -= 1 },
-                	l => sub { $player_x += 1 },
-                	q => sub { exit }
-            	);
-            	# lets execute the action now
-            	$KEY_MAP{$event->key}->();
-        	}
-    	);
-    	$app->run( sub { $self->render() } );
-	}
+    ADJUST {
+        $app->add_event_handler(
+            'keydown' => sub ($event) {
+                my %KEY_MAP = (
+                    h => sub { $player_x -= 1 },
+                    j => sub { $player_y += 1 },
+                    k => sub { $player_y -= 1 },
+                    l => sub { $player_x += 1 },
+                    q => sub { exit }
+                );
+                # lets execute the action now
+                $KEY_MAP{$event->key}->();
+            }
+        );
+        $app->run( sub { $self->render() } );
+    }
 
-	method render() {
-    	$app->clear();
-    	$app->draw($player_x, $player_y, '@', '#fff', '#000');
-	}
+    method render() {
+        $app->clear();
+        $app->draw($player_x, $player_y, '@', '#fff', '#000');
+    }
 }
 
 my $engine = Engine->new( width => 80, height => 50 );
