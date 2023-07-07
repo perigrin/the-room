@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Part 2 - Mazes and Monsters"
+title: "A Roguelike in Perl Part 2 - Mazes and Monsters"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
-date:
+date: 2023-07-11
 image: https://live.staticflickr.com/65535/52126535318_da553d66cb_5k.jpg
 ---
 
@@ -13,7 +13,7 @@ This post is part of a series of blog posts following the [roguelike
 tutorial](https://www.rogueliketutorials.com/) to demonstrate the new `class`
 feature in Perl 5.38.0.
 
-In this post we're gonna start where we left off in [part-1](). If you don't
+In this post we're gonna start where we left off in [Part 1](https://chris.prather.org/perl-roguelike-part-1.html). If you don't
 remember what the code looked like, go back and refresh yourself. From now on
 the listing is gonna get a little large for us to copy it every time.
 
@@ -33,7 +33,7 @@ Let's start by creating a new class right before our Engine class.
 class Entity { }
 
 class Engine {
-	[...]
+    [...]
 }
 ```
 
@@ -43,11 +43,11 @@ kind of icon, and let's give them unique colors too.
 ```
 
 class Entity {
-	field $x :param;
-	field $y :param;
-	field $char :param;
-	field $fg :param //= '#fff';
-	field $bg :param //= '#000';
+    field $x :param;
+    field $y :param;
+    field $char :param;
+    field $fg :param //= '#fff';
+    field $bg :param //= '#000';
 }
 
 ```
@@ -61,23 +61,23 @@ some methods for that.
 
 ```
 class Entity {
-	field $x :param;
-	field $y :param;
-	field $char :param;
-	field $fg :param //= '#fff';
-	field $bg :param //= '#000';
+    field $x :param;
+    field $y :param;
+    field $char :param;
+    field $fg :param //= '#fff';
+    field $bg :param //= '#000';
 
-	method x { $x }
-	method y { $y }
-	method char { $char }
-	method fg { $fg }
-	method bg { $bg }
+    method x { $x }
+    method y { $y }
+    method char { $char }
+    method fg { $fg }
+    method bg { $bg }
 }
 
 ```
 
-Remember back in part-0 where I talked about how the new class system in Perl
-was designed to default to encapsulation? This is an example of that.If we
+Remember back in [Part 0](https://chris.prather.org/perl-roguelike-part-0.html) where I talked about how the new class system in Perl
+was designed to default to encapsulation? This is an example of that. If we
 don't explicitly make a way to access the variables, they really shouldn't be
 easily visible outside the scope of the class. In Perl's traditional object
 system, every object was an explicit data structure, usually a hash ref, and
@@ -108,22 +108,22 @@ do is move about, so let's add a move method that updates their location:
 
 ```
 class Entity {
-	field $x :param;
-	field $y :param;
-	field $char: param;
-	field $fg :param //= '#fff';
-	field $bg :param //= '#000';
+    field $x :param;
+    field $y :param;
+    field $char: param;
+    field $fg :param //= '#fff';
+    field $bg :param //= '#000';
 
-	method x { $x }
-	method y { $y }
-	method char { $char }
-	method fg { $fg }
-	method bg { $bg }
+    method x { $x }
+    method y { $y }
+    method char { $char }
+    method fg { $fg }
+    method bg { $bg }
 
-	method move($dx, $dy) {
-    	$x += $dx;
-    	$y += $dy;
-	}
+    method move($dx, $dy) {
+        $x += $dx;
+        $y += $dy;
+    }
 }
 ```
 
@@ -132,23 +132,23 @@ for our player first.
 
 ```
 class Engine {
-	field $height :param;
-	field $width: param;
+    field $height :param;
+    field $width: param;
 
-	field $player = Entity->new(
-   	x	=> $width / 2,
-   	y	=> $height / 2;
-   	char => '@',
-   	fg   => '#fff',
-   	bg   => '#000',
-	);
+    field $player = Entity->new(
+    x   => $width / 2,
+    y   => $height / 2;
+    char => '@',
+    fg   => '#fff',
+    bg   => '#000',
+    );
 
-	field $app = Games::ROT->new(
-    	screen_width  => $width,
-    	screen_height => $height,
-	);
+    field $app = Games::ROT->new(
+        screen_width  => $width,
+        screen_height => $height,
+    );
 
-	[...]
+    [...]
 
 }
 ```
@@ -159,14 +159,14 @@ look something like this:
 
 ```
 method render() {
-	$app->clear();
-	$app->draw(
-    	$player->x,
-    	$player->y,
-    	$player->char,
-    	$player->fg,
-    	$player->bg
-	);
+    $app->clear();
+    $app->draw(
+        $player->x,
+        $player->y,
+        $player->char,
+        $player->fg,
+        $player->bg
+    );
 }
 ```
 
@@ -175,13 +175,13 @@ when we start adding more entities for NPCs. Lastly, we're gonna need to update
 our movement handlers:
 
 ```
-	my %KEY_MAP = (
-    	h => sub { $player->move(-1,0) },
-    	j => sub { $player->move(0,-1) },
-    	k => sub { $player->move(0,1)  },
-    	l => sub { $player->move(1,0)  },
-    	q => sub { exit }
-	);
+    my %KEY_MAP = (
+        h => sub { $player->move(-1,0) },
+        j => sub { $player->move(0,-1) },
+        k => sub { $player->move(0,1)  },
+        l => sub { $player->move(1,0)  },
+        q => sub { exit }
+    );
 
 ```
 
@@ -193,28 +193,28 @@ the `$player` field declaration let's add a new one for `@npcs`
 
 ```
 class Engine {
-	field $height :param;
-	field $width: param;
+    field $height :param;
+    field $width  :param;
 
-	field $player = Entity->new(
-   	x	=> $width / 2,
-   	y	=> $height / 2;
-   	char => '@',
-   	fg   => '#fff',
-   	bg   => '#000',
-	);
+    field $player = Entity->new(
+        x   => $width / 2,
+        y   => $height / 2;
+        char => '@',
+        fg   => '#fff',
+        bg   => '#000',
+    );
 
-	field @npcs = (
-    	Entity->new(
-        	x => $width / 2 - 5,
-        	y => $height / 2,
-        	char => 'N',
-        	fg => '#0f0',
-        	bg => '#000',
-    	),
-	);
+    field @npcs = (
+        Entity->new(
+            x => $width / 2 - 5,
+            y => $height / 2,
+            char => 'N',
+            fg => '#0f0',
+            bg => '#000',
+        ),
+    );
 
-	[...]
+    [...]
 
 }
 ```
@@ -224,10 +224,10 @@ alone in a void. Let's adjust the `render` method.
 
 ```
 method render() {
-	$app->clear();
-	for my $e (@npcs, $player) {
-    	$app->draw($e->x, $e->y, $e->char, $e->fg, $e->bg);
-	}
+    $app->clear();
+    for my $e (@npcs, $player) {
+        $app->draw($e->x, $e->y, $e->char, $e->fg, $e->bg);
+    }
 }
 ```
 
@@ -242,22 +242,22 @@ Just above the Entity class let's add a new `GameMap` class
 class GameMap { }
 
 class Entity {
-	field $x :param;
-	field $y :param;
-	field $char: param;
-	field $fg :param //= '#fff';
-	field $bg :param //= '#000';
+    field $x :param;
+    field $y :param;
+    field $char: param;
+    field $fg :param //= '#fff';
+    field $bg :param //= '#000';
 
-	method x { $x }
-	method y { $y }
-	method char { $char }
-	method fg { $fg }
-	method bg { $bg }
+    method x { $x }
+    method y { $y }
+    method char { $char }
+    method fg { $fg }
+    method bg { $bg }
 
-	method move($dx, $dy) {
-    	$x += $dx;
-    	$y += $dy;
-	}
+    method move($dx, $dy) {
+        $x += $dx;
+        $y += $dy;
+    }
 }
 
 ```
@@ -267,34 +267,31 @@ those, and a method to check if we're in the bounds.
 
 ```
 class GameMap {
-	field $height :param;
-	field $width :param;
+    field $height :param;
+    field $width :param;
 
-	method is_in_bounds($x, $y) {
-    	0 <= $x < $width && 0 <= $y < $height
-	}
+    method is_in_bounds($x, $y) {
+        0 <= $x < $width && 0 <= $y < $height
+    }
 }
 ```
 
 A `GameMap` is also traditionally made up of Tiles, which know whether the tile
-is “walkable” (True if it’s a floor, False if its a wall),  “transparent”
-(again, True for floors, False for walls), and how to render the tile to the
+is “walkable” (True if it’s a floor, False if its a wall), and how to render the tile to the
 screen. We don't currently have Tiles, so let's leave the `GameMap` for a second
 and build ourselves a Tile class.
 
 ```
 class Tile {
-	field $walkable	:param;
-	field $transparent :param;
-	field $char    	:param //= '';
-	field $fg      	:param //= '#fff';
-	field $bg      	:param //= '#000';
+    field $walkable :param;
+    field $char     :param //= '';
+    field $fg       :param //= '#fff';
+    field $bg       :param //= '#000';
 
-	method is_walkable() { $walkable }
-	method is_transparent { $transparent }
-	method char() { $char }
-	method fg() { $fg }
-	method bg() { $bg }
+    method is_walkable() { $walkable }
+    method char() { $char }
+    method fg() { $fg }
+    method bg() { $bg }
 }
 
 ```
@@ -305,24 +302,23 @@ about and reader methods for them. Now that we can have tiles, let's set up our
 
 ```
 GameMap {
-	field $height :param;
-	field $width :param;
+    field $height :param;
+    field $width :param;
 
-	field @tiles;
+    field @tiles;
 
-	my sub FLOOR_TILE() {
-    	Tile->new(
-        	walkable	=> 1,
-        	transparent => 1,
-        	char    	=> '.',
-        	fg      	=> '#333',
-    	);
-	}
+    my sub FLOOR_TILE() {
+        Tile->new(
+            walkable    => 1,
+            char        => '.',
+            fg          => '#333',
+        );
+    }
 
-	ADJUST {
-    	# draw the floor
-    	@tiles = map { [map { FLOOR_TILE() } 0..$width] } 0..$height;
-	}
+    ADJUST {
+        # draw the floor
+        @tiles = map { [map { FLOOR_TILE() } 0..$width] } 0..$height;
+    }
 }
 ```
 
@@ -337,13 +333,13 @@ We’ll also add a `render` method to the map to allow it to draw itself.
 field @tiles = map { [map { FLOOR_TILE() } 0..$width] } 0..$height;
 
 method render($term) {
-	for my $y (0..$#tiles) {
-    	my @row = $tiles[$y]->@*;
-    	for my $x (0..$#row) {
-        	my $tile = $row[$x];
-        	$term->draw($x, $y, $tile->char, $tile->fg, $tile->bg)
-    	}
-	}
+    for my $y (0..$#tiles) {
+        my @row = $tiles[$y]->@*;
+        for my $x (0..$#row) {
+            my $tile = $row[$x];
+            $term->draw($x, $y, $tile->char, $tile->fg, $tile->bg)
+        }
+    }
 }
 ```
 
@@ -352,16 +348,16 @@ for it.
 
 ```
 class Engine {
-	field $height :param;
-	field $width: param;
+    field $height :param;
+    field $width: param;
 
-	field $map = GameMap->new(
-    	height => $height,
-    	width  => $width,
-	);
+    field $map = GameMap->new(
+        height => $height,
+        width  => $width,
+    );
 
-	field $player = Entity->new(
-	[...]
+    field $player = Entity->new(
+    [...]
 )
 ```
 
@@ -369,11 +365,11 @@ Then we update Engine's `render` method to call the one in the map.
 
 ```
 method render() {
-	$app->clear();
-	$map->render($app);
-	for my $e (@npcs, $player) {
-    	$app->draw($e->x, $e->y, $e->char, $e->fg, $e->bg);
-	}
+    $app->clear();
+    $map->render($app);
+    for my $e (@npcs, $player) {
+        $app->draw($e->x, $e->y, $e->char, $e->fg, $e->bg);
+    }
 }
 ```
 
@@ -386,19 +382,18 @@ update the ADJUST block to add some.
 
 ```
 my sub WALL_TILE() {
-	Tile->new(
-    	walkable	=> 0,
-    	transparent => 0,
-    	char    	=> '#',
-    	bg      	=> '#000064',
-	);
+    Tile->new(
+        walkable    => 0,
+        char        => '#',
+        bg          => '#000064',
+    );
 }
 
 field @tiles = map { [map { FLOOR_TILE() } 0..$width] } 0..$height;
 
 ADJUST {
-	# draw a little wall in the room
-	@tiles[22][30..32] = map { WALL_TILE() } (1..3);
+    # draw a little wall in the room
+    @tiles[22][30..32] = map { WALL_TILE() } (1..3);
 }
 ```
 
@@ -412,35 +407,35 @@ Let's update our movement actions.
 class Engine {
 [...]
 
-	ADJUST {
-    	my sub movement_action($dx, $dy) {
-        	my ($x, $y) = ($player->x + $dx, $player->y + $dy);
-        	return if !$map->is_in_bounds($x, $y);
-        	return if !$map->tile_at($dx, $dy)->is_walkable;
-        	$player->move($dx,$dy);
-    	}
+    ADJUST {
+        my sub movement_action($dx, $dy) {
+            my ($x, $y) = ($player->x + $dx, $player->y + $dy);
+            return if !$map->is_in_bounds($x, $y);
+            return if !$map->tile_at($dx, $dy)->is_walkable;
+            $player->move($dx,$dy);
+        }
 
-    	$app->add_event_handler(
-        	'keydown' => sub ($event) {
-            	my %KEY_MAP = (
-                	h => sub { movement_action(-1, 0) },
-                	j => sub { movement_action( 0,-1) },
-                	k => sub { movement_action( 0, 1) },
-                	l => sub { movement_action(-1, 0) },
-                	q => sub { exit }
-            	);
-            	# lets execute the action now
-            	$KEY_MAP{$event->key}->();
-        	}
-    	);
-    	$app->run( sub { $self->render() } );
-	}
+        $app->add_event_handler(
+            'keydown' => sub ($event) {
+                my %KEY_MAP = (
+                    h => sub { movement_action(-1, 0) },
+                    j => sub { movement_action( 0,-1) },
+                    k => sub { movement_action( 0, 1) },
+                    l => sub { movement_action(-1, 0) },
+                    q => sub { exit }
+                );
+                # lets execute the action now
+                $KEY_MAP{$event->key}->();
+            }
+        );
+        $app->run( sub { $self->render() } );
+    }
 
-	my sub handle_input($event) {
-    	my %KEY_MAP = (
-    	);
+    my sub handle_input($event) {
+        my %KEY_MAP = (
+        );
 
-    	return $MOVE_KEYS{$event->key};
+        return $MOVE_KEYS{$event->key};
 }
 ```
 
@@ -452,14 +447,14 @@ so that those checks will actually work.
 
 ```
 class GameMap {
-	field $width   :param;
-	field $height  :param;
+    field $width   :param;
+    field $height  :param;
 
-	field @tiles = ([]);
+    field @tiles = ([]);
 
-	method tile_at($x, $y) { $tiles[$y][$x] }
+    method tile_at($x, $y) { $tiles[$y][$x] }
 
-	[...]
+    [...]
 }
 ```
 
@@ -480,151 +475,147 @@ use experimental 'class';
 use Games::ROT;
 
 class Tile {
-	field $walkable :param;
-	field $transparent :param;
-	field $char :param //= '';
-	field $fg :param //= '#fff';
-	field $bg :param //= '#000';
+    field $walkable :param;
+    field $char :param //= '';
+    field $fg :param //= '#fff';
+    field $bg :param //= '#000';
 
-	method is_walkable() { $walkable }
-	method is_transparent { $transparent }
-	method char() { $char }
-	method fg() { $fg }
-	method bg() { $bg }
+    method is_walkable() { $walkable }
+    method char() { $char }
+    method fg() { $fg }
+    method bg() { $bg }
 }
 
 class GameMap {
-	field $width   :param;
-	field $height  :param;
+    field $width   :param;
+    field $height  :param;
 
-	method is_in_bounds($x, $y) {
-    	return 0 <= $x < $width && 0 <= $y < $height;
-	}
+    method is_in_bounds($x, $y) {
+        return 0 <= $x < $width && 0 <= $y < $height;
+    }
 
-	field @tiles;
+    field @tiles;
 
-	my sub FLOOR_TILE() {
-    	Tile->new(
-        	walkable	=> 1,
-        	transparent => 1,
-        	char    	=> '.',
-        	fg      	=> '#333'
-    	);
-	}
+    my sub FLOOR_TILE() {
+        Tile->new(
+            walkable    => 1,
+            char        => '.',
+            fg          => '#333'
+        );
+    }
 
-	my sub WALL_TILE() {
-    	Tile->new(
-        	walkable	=> 0,
-        	transparent => 0,
-        	char    	=> '#',
-    	);
-	}
+    my sub WALL_TILE() {
+        Tile->new(
+            walkable    => 0,
+            char        => '#',
+        );
+    }
 
-	ADJUST {
-    	# draw the floor
-    	@tiles = map { [map { FLOOR_TILE() } 0..$width] } 0..$height;
+    ADJUST {
+        # draw the floor
+        @tiles = map { [map { FLOOR_TILE() } 0..$width] } 0..$height;
 
-    	# draw a little wall in the room
-    	$tiles[22]->@[30..32] = map { WALL_TILE() } 0..2;
-	}
+        # draw a little wall in the room
+        $tiles[22]->@[30..32] = map { WALL_TILE() } 0..2;
+    }
 
-	method render($term) {
-    	state $i = 0;
-    	for my $y (0..$height) {
-        	for my $x (0..$width) {
-            	my $tile = $self->tile_at($x, $y);
-            	$term->draw($x, $y, $tile->char, $tile->fg, $tile->bg);
-        	}
-    	}
-	}
+    method render($term) {
+        state $i = 0;
+        for my $y (0..$height) {
+            for my $x (0..$width) {
+                my $tile = $self->tile_at($x, $y);
+                $term->draw($x, $y, $tile->char, $tile->fg, $tile->bg);
+            }
+        }
+    }
 
-	method tile_at($x, $y) {
-    	return $tiles[$y][$x];
-	}
+    method tile_at($x, $y) {
+        return $tiles[$y][$x];
+    }
 }
 
 class Entity {
-	field $x :param;
-	field $y :param;
-	field $char: param;
-	field $fg :param //= '#fff';
-	field $bg :param //= '#000';
+    field $x :param;
+    field $y :param;
+    field $char: param;
+    field $fg :param //= '#fff';
+    field $bg :param //= '#000';
 
-	method x { $x }
-	method y { $y }
-	method char { $char }
-	method fg { $fg }
-	method bg { $bg }
+    method x { $x }
+    method y { $y }
+    method char { $char }
+    method fg { $fg }
+    method bg { $bg }
 
-	method move($dx, $dy) {
-    	$x += $dx;
-    	$y += $dy;
-	}
+    method move($dx, $dy) {
+        $x += $dx;
+        $y += $dy;
+    }
 }
 
 class Engine {
-	field $height :param;
-	field $width :param;
+    field $height :param;
+    field $width :param;
 
-	field $player = Entity->new(
-   	x	=> $width / 2,
-   	y	=> $height / 2,
-   	char => '@',
-   	fg   => '#fff',
-   	bg   => '#000',
-	);
+    field $player = Entity->new(
+    x   => $width / 2,
+    y   => $height / 2,
+    char => '@',
+    fg   => '#fff',
+    bg   => '#000',
+    );
 
-	field @npcs = (
-    	Entity->new(
-        	x => $player->x - 5,
-        	y => $player->y,
-        	char => 'N',
-        	fg => '#0f0',
-        	bg => '#000',
-    	),
-	);
+    field @npcs = (
+        Entity->new(
+            x => $player->x - 5,
+            y => $player->y,
+            char => 'N',
+            fg => '#0f0',
+            bg => '#000',
+        ),
+    );
 
-	field $app = Games::ROT->new(
-    	screen_width  => $width,
-    	screen_height => $height,
-	);
+    field $app = Games::ROT->new(
+        screen_width  => $width,
+        screen_height => $height,
+    );
 
-	field $map = GameMap->new(
-    	width   => $width,
-    	height  => $height,
-	);
+    field $map = GameMap->new(
+        width   => $width,
+        height  => $height,
+    );
 
-	ADJUST {
-    	my sub movement_action($dx, $dy) {
-        	my ($x, $y) = ($player->x + $dx, $player->y + $dy);
-        	return unless $map->is_in_bounds($x, $y);
-        	return unless $map->tile_at($x, $y)->is_walkable;
-        	$player->move($dx,$dy);
-    	}
+    ADJUST {
+        my sub movement_action($dx, $dy) {
+            my ($x, $y) = ($player->x + $dx, $player->y + $dy);
+            return unless $map->is_in_bounds($x, $y);
+            return unless $map->tile_at($x, $y)->is_walkable;
+            $player->move($dx,$dy);
+        }
 
-    	$app->add_event_handler(
-        	'keydown' => sub ($event) {
-            	my %KEY_MAP = (
-                	h => sub { movement_action(-1, 0) },
-                	j => sub { movement_action( 0, 1) },
-                	k => sub { movement_action( 0,-1) },
-                	l => sub { movement_action( 1, 0) },
-                	q => sub { exit }
-            	);
-            	# lets execute the action now
-            	$KEY_MAP{$event->key}->();
-        	}
-    	);
-    	$app->run( sub { $self->render() } );
-	}
+        $app->add_event_handler(
+            'keydown' => sub ($event) {
+                my %KEY_MAP = (
+                    h => sub { movement_action(-1, 0) },
+                    j => sub { movement_action( 0, 1) },
+                    k => sub { movement_action( 0,-1) },
+                    l => sub { movement_action( 1, 0) },
+                    q => sub { exit }
+                );
+                # lets execute the action now
+                $KEY_MAP{$event->key}->();
+            }
+        );
+        $app->run( sub { $self->render() } );
+    }
 
-	method render() {
-    	$app->clear();
-    	$map->render($app);
-    	for my $e (@npcs, $player) {
-        	$app->draw($e->x, $e->y, $e->char, $e->fg, $e->bg);
-    	}
-	}
+    method render() {
+        $app->clear();
+        $map->render($app);
+        for my $e (@npcs, $player) {
+            $app->draw($e->x, $e->y, $e->char, $e->fg, $e->bg);
+        }
+    }
 }
 
 my $engine = Engine->new(width => 80, height => 50);

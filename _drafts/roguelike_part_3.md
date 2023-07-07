@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "Part 3 - Mastering the Generative Dungeon"
+title: "A Roguelike in Perl Part 3 - Mastering the Generative Dungeon"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
-date:
-image:
+date: 2023-07-11
+image: https://live.staticflickr.com/65535/52935948484_15fc2dc3c0_k.jpg
 ---
-
 
 ## Introduction
 
@@ -49,9 +48,9 @@ When you're done, you should a directory now that looks something like this:
 .
 ├── game.pl
 └── lib
-	├── Engine.pm
-	├── Entities.pm
-	└── GameMap.pm
+    ├── Engine.pm
+    ├── Entities.pm
+    └── GameMap.pm
 ```
 
 ### Getting Started
@@ -60,13 +59,13 @@ Let's get rid of that wall, we're not going to need it if we're building a
 whole dungeon. We can just remove the ADJUST block in the GameMap class.
 
 ```
-	[...]
-	field @tiles = map { [map { WALL_TILE() } 0..$width] } 0..$height;
+    [...]
+    field @tiles = map { [map { WALL_TILE() } 0..$width] } 0..$height;
 
-	# ADJUST BLOCK WAS HERE
+    # ADJUST BLOCK WAS HERE
 
-	method render($term) {
-	[...]
+    method render($term) {
+    [...]
 ```
 
 Now we could stuff all the dungeon generation code into the GameMap class, but
@@ -85,23 +84,23 @@ use warnings;
 use experimental 'class';
 
 clss RectangularRoom {
-	field $x1 :param('x');
-	field $y1 :param('y');
-	field $height :param;
-	field $width :param;
+    field $x1 :param('x');
+    field $y1 :param('y');
+    field $height :param;
+    field $width :param;
 
-	field $x2 = $x1 + $width;
-	field $y2 = $y1 + $height;
+    field $x2 = $x1 + $width;
+    field $y2 = $y1 + $height;
 
-	method center() {
-    	my $x = int($x1 + $width / 2);
-    	my $y = int($y1 + $height / 2);
-    	return [$x, $y];
-	}
+    method center() {
+        my $x = int($x1 + $width / 2);
+        my $y = int($y1 + $height / 2);
+        return [$x, $y];
+    }
 
-	method inner() {
-    	[$x1 + 1 .. $x2], [$y1 + 1 .. $y2];
-	}
+    method inner() {
+        [$x1 + 1 .. $x2], [$y1 + 1 .. $y2];
+    }
 }
 ```
 
@@ -130,33 +129,33 @@ just after the RectangularRoom class, with a `generate_dungeon` method.
 }
 
 class SimpleDungeonGenerator {
-	use GameMap;
+    use GameMap;
 
-	field $width :param;
-	field $height :param;
+    field $width :param;
+    field $height :param;
 
-	sub generate_dungeon() {
-    	my $map = GameMap->new(
-        	width  => $width,
-        	height => $height,
-    	);
+    sub generate_dungeon() {
+        my $map = GameMap->new(
+            width  => $width,
+            height => $height,
+        );
 
-    	my $room_1 = RectangularRoom->new(
-        	x => 20,
-        	y => 15,
-        	width => 10,
-        	heigh => 15,
-    	);
-    	my $room_2 = RectangularRoom->new(
-        	x => 35,
-        	y => 15,
-        	width => 10,
-        	heigh => 15,
-    	);
+        my $room_1 = RectangularRoom->new(
+            x => 20,
+            y => 15,
+            width => 10,
+            heigh => 15,
+        );
+        my $room_2 = RectangularRoom->new(
+            x => 35,
+            y => 15,
+            width => 10,
+            heigh => 15,
+        );
 
-    	$map->_tiles_to_floor($room_1->inner);
-    	$map->_tiles_to_floor($room_2->inner);
-	}
+        $map->_tiles_to_floor($room_1->inner);
+        $map->_tiles_to_floor($room_2->inner);
+    }
 }
 ```
 
@@ -170,11 +169,11 @@ Let's add that to our GameMap class.
 
 ```
 method _tiles_to_floor($x_slice, $y_slice) {
-	# for every row in the $y_slice
-	for my $y (@$y_slice) {
-    	# convert the $x_slice columns to FLOOR_TILE()s
-    	$tiles[$y]->@[@$x_slice] = map FLOOR_TILE(), @$x_slice;
-	}
+    # for every row in the $y_slice
+    for my $y (@$y_slice) {
+        # convert the $x_slice columns to FLOOR_TILE()s
+        $tiles[$y]->@[@$x_slice] = map FLOOR_TILE(), @$x_slice;
+    }
 }
 ```
 
@@ -185,13 +184,13 @@ dungeon generation function.
 ```
 [...]
 field $app = Games::ROT->new(
-	screen_width  => $width,
-	screen_height => $height,
+    screen_width  => $width,
+    screen_height => $height,
 );
 
 field $map = SimpleDungeonGenerator->new(
-	width => $width,
-	height => $height
+    width => $width,
+    height => $height
 )->generate_dungeon();
 
 ADJUST {
@@ -209,11 +208,11 @@ my sub tunnel_between($map, $start, $end) {
     my ($x2, $y2) = @$end;
     warn "$x1, $y1 -> $x2, $y2";
     if (rand() < 0.5) {
-   	 $map->_tiles_to_floor([min($x1, $x2)..max($x1, $x2)],[$y1]);
-   	 $map->_tiles_to_floor([$x2],[min($y1, $y2)..max($y1, $y2)]);
+     $map->_tiles_to_floor([min($x1, $x2)..max($x1, $x2)],[$y1]);
+     $map->_tiles_to_floor([$x2],[min($y1, $y2)..max($y1, $y2)]);
     } else {
-   	 $map->_tiles_to_floor([min($x1, $x2)..max($x1, $x2)],[$y2]);
-   	 $map->_tiles_to_floor([$x1],[min($y1, $y2)..max($y1, $y2)]);
+     $map->_tiles_to_floor([min($x1, $x2)..max($x1, $x2)],[$y2]);
+     $map->_tiles_to_floor([$x1],[min($y1, $y2)..max($y1, $y2)]);
     }
 }
 ```
@@ -227,8 +226,8 @@ package at the top of the class.
 
 ```
 class SimpleDungeonGenerator {
-	use GameMap;
-	use List::Util qw(min max any);
+    use GameMap;
+    use List::Util qw(min max any);
 ```
 
 Now we just update our `generate_dungeon` function to use the `tunnel_between`
@@ -251,25 +250,25 @@ add a method to our RectangularRoom to check for this.
 ```
 method intersects($other) {
     if (ref $other eq 'HASH') {
-   	 if (
-   		 $x2 < $other->{x1} ||
-   		 $y2 < $other->{y1} ||
-   		 $other->{x2} < $x1 ||
-   		 $other->{y2} < $y1
-   	 ) { return 0 }
-   	 return 1
+     if (
+         $x2 < $other->{x1} ||
+         $y2 < $other->{y1} ||
+         $other->{x2} < $x1 ||
+         $other->{y2} < $y1
+     ) { return 0 }
+     return 1
     }
 
-	if ($other isa RectangularRoom) {
-    	return $other->intersects({
-        	x1 => $x1,
-        	y1 => $y1,
-        	x2 => $x2,
-        	y2 => $y2,
-    	});
-	}
+    if ($other isa RectangularRoom) {
+        return $other->intersects({
+            x1 => $x1,
+            y1 => $y1,
+            x2 => $x2,
+            y2 => $y2,
+        });
+    }
 
-	die "$other is not a RectangularRoom object";
+    die "$other is not a RectangularRoom object";
 }
 ```
 
@@ -286,48 +285,48 @@ and have a more general solution for polygonal rooms, and not just rectangles.
 Okay let's finally update the generate_dungeon function
 
 ```
-field $width	:param;
+field $width    :param;
 field $height   :param;
-field $rooms	:param(room_count);
+field $rooms    :param(room_count);
 field $min_size :param(min_room_size);
 field $max_size :param(max_room_size);
 field $player   :param;
 
 my sub tunnel_between($map, $start, $end) {
-	[...]
+    [...]
 }
 
 method generate_dungeon() {
-	my $map = GameMap->new(width  => $width, height => $height);
+    my $map = GameMap->new(width  => $width, height => $height);
 
-	my @rooms;
-	for (0..$rooms) {
-    	my $room_width = int($min_size + rand($max_size + 1 - $min_size));
-    	my $room_height = int($min_size + rand($max_size + 1 - $min_size));
+    my @rooms;
+    for (0..$rooms) {
+        my $room_width = int($min_size + rand($max_size + 1 - $min_size));
+        my $room_height = int($min_size + rand($max_size + 1 - $min_size));
 
-    	my $room = RectangularRoom->new(
-        	x => int(0 + rand($width - $room_width)),
-        	y => int(0 + rand($height - $room_height)),
-        	width  => $room_width,
-        	height => $room_height,
-    	);
+        my $room = RectangularRoom->new(
+            x => int(0 + rand($width - $room_width)),
+            y => int(0 + rand($height - $room_height)),
+            width  => $room_width,
+            height => $room_height,
+        );
 
-    	# if the new room intersects with a current room, skip it
-    	next if any { $_->intersects($room) } @rooms;
+        # if the new room intersects with a current room, skip it
+        next if any { $_->intersects($room) } @rooms;
 
-    	# otherwise, dig out the floor
-    	$map->_tiles_to_floor($room->inner);
+        # otherwise, dig out the floor
+        $map->_tiles_to_floor($room->inner);
 
-    	# tunnel between the previous room and this one
-    	warn "Rooms ".scalar @rooms;
-    	tunnel_between($map, $rooms[-1]->center, $room->center) if @rooms;
+        # tunnel between the previous room and this one
+        warn "Rooms ".scalar @rooms;
+        tunnel_between($map, $rooms[-1]->center, $room->center) if @rooms;
 
-    	# add the room to the list
-    	push @rooms, $room;
-	}
+        # add the room to the list
+        push @rooms, $room;
+    }
 
-	$player->move($rooms[0]->center->@*);
-	return $map;
+    $player->move($rooms[0]->center->@*);
+    return $map;
 }
 ```
 
@@ -336,11 +335,11 @@ to initialize the player to the top left corner of the map in`Engine.pm`
 
 ```
 field $player = Entity->new(
-	x	=> 0,
-	y	=> 0,
-	char => '@',
-	fg   => '#fff',
-	bg   => '#000',
+    x   => 0,
+    y   => 0,
+    char => '@',
+    fg   => '#fff',
+    bg   => '#000',
 );
 ```
 
