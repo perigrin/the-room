@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Roguelike in Perl Part 2 - Mazes and Monsters"
+title: "A Roguelike in Perl Part 2 - Entities and Obstacles"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
 date: 2023-07-11
