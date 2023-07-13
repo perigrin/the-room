@@ -3,7 +3,7 @@ layout: post
 title: "A Roguelike in Perl Part 3 - Mastering the Generative Dungeon"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
-date: 2023-07-11
+date: 2023-07-13
 image: https://live.staticflickr.com/65535/52935948484_15fc2dc3c0_k.jpg
 ---
 
