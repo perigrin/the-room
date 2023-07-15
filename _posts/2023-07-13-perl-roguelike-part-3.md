@@ -208,11 +208,11 @@ my sub tunnel_between($map, $start, $end) {
     my ($x2, $y2) = @$end;
     warn "$x1, $y1 -> $x2, $y2";
     if (rand() < 0.5) {
-     $map->_tiles_to_floor([min($x1, $x2)..max($x1, $x2)],[$y1]);
-     $map->_tiles_to_floor([$x2],[min($y1, $y2)..max($y1, $y2)]);
+        $map->_tiles_to_floor([min($x1, $x2)..max($x1, $x2)],[$y1]);
+        $map->_tiles_to_floor([$x2],[min($y1, $y2)..max($y1, $y2)]);
     } else {
-     $map->_tiles_to_floor([min($x1, $x2)..max($x1, $x2)],[$y2]);
-     $map->_tiles_to_floor([$x1],[min($y1, $y2)..max($y1, $y2)]);
+        $map->_tiles_to_floor([min($x1, $x2)..max($x1, $x2)],[$y2]);
+        $map->_tiles_to_floor([$x1],[min($y1, $y2)..max($y1, $y2)]);
     }
 }
 ```
@@ -335,8 +335,8 @@ to initialize the player to the top left corner of the map in`Engine.pm`
 
 ```
 field $player = Entity->new(
-    x   => 0,
-    y   => 0,
+    x    => 0,
+    y    => 0,
     char => '@',
     fg   => '#fff',
     bg   => '#000',
