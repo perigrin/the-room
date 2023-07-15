@@ -136,11 +136,11 @@ class Engine {
     field $width: param;
 
     field $player = Entity->new(
-    x   => $width / 2,
-    y   => $height / 2;
-    char => '@',
-    fg   => '#fff',
-    bg   => '#000',
+        x    => $width / 2,
+        y    => $height / 2;
+        char => '@',
+        fg   => '#fff',
+        bg   => '#000',
     );
 
     field $app = Games::ROT->new(
