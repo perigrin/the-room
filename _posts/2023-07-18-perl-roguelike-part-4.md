@@ -2,8 +2,8 @@
 title: "Part 4 - Field of View"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
-date:
-image:
+date: 2023-07-18
+image: https://live.staticflickr.com/65535/52935933344_5f062eb740_b.jpg
 ---
 
 ## Introduction
