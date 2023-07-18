@@ -12,9 +12,10 @@ image:
 This post is part of a series of blog posts following the [roguelike tutorial](https://www.rogueliketutorials.com/)
 to demonstrate the new `class` feature in Perl 5.38.0.
 
-In this post we're gonna start where we left off in [part-4](). If you don't
-remember what the code looked like you can refresh yourself with the listing
-[here](https://github.com/perigrin/posessive_frogs/tree/part-5).
+In this post we're gonna start where we left off in
+[part 4](http://chris.prather.org/perl-roguelike-part-4.md). If you don't remember
+what the code looked like you can refresh yourself with the listing
+[here](https://github.com/perigrin/posessive_frogs/tree/part-4).
 
 We have a darkened dungeon you can explore and while that can be exciting, it
 lacks a certain element of danger. Where are the monsters that are supposed to
