@@ -1,5 +1,5 @@
 ---
-title: "Part 4 - Field of View"
+title: "A Roguelike in Perl Part 4 - Field of View"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
 date: 2023-07-18
