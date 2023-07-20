@@ -3,8 +3,7 @@ layout: post
 title: "A Roguelike in Perl Part 5 - Knowing where your enemies are, and how to kick them"
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
-date:
-image:
+date: 2023-07-20
 ---
 
 ## Introduction
