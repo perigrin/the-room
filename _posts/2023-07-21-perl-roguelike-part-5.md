@@ -4,6 +4,7 @@ title: "A Roguelike in Perl Part 5 - Knowing where your enemies are, and how to 
 author: "Chris Prather"
 tags: perl, roguelike, dev, corinna
 date: 2023-07-20
+image: https://live.staticflickr.com/65535/52935768441_5b2fc123d8_h.jpg
 ---
 
 ## Introduction
