@@ -10,3 +10,6 @@ title: A Perl Roguelike Tutorial
 * [Part 1](https://chris.prather.org/perl-roguelike-part-1.html) Orchestrating Movement in the Dark
 * [Part 2](https://chris.prather.org/perl-roguelike-part-2.html) Entities and Obstacles
 * [Part 3](https://chris.prather.org/perl-roguelike-part-3.html) - Mastering the Generative Dungeon
+* [Part 4](https://chris.prather.org/perl-roguelike-part-4.html)
+* [Part 5](https://chris.prather.org/perl-roguelike-part-5.html)
+* [Part 6](https://chris.prather.org/perl-roguelike-part-6.html)
