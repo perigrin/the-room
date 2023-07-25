@@ -214,7 +214,6 @@ ADJUST {
 }
 ```
 
-
 One last minor thing before we get started. We added a param `blocks_moement`
 to the Entity class, and had it default to 0. This really seems backwards, like
 most of our entities are going to be corporeal and block movement, we should
@@ -279,15 +278,14 @@ Strength bonus and the defender rolling a 1d20 and adding their Armor bonus. If
 the attacker rolls higher than the defender, they hit. Damage is calculated by
 taking the difference of the two rolls.[^2]
 
-So we're going to need some abilities: Strength, Armor, Damage, and Hit Points. Let's add a new class to our Entities module.
+So we're going to need some abilities: Strength, Armor, Damage, and Hit Points. 
+Let's add a new class to our Entities module.
 
 ```
-
 class Abilities {
     use List::Util qw(min);
 
     field $strength :param;
-    field $damage   :param //= $strength;
     field $armor    :param //= 1;
     field $max_hp   :param(hp);
     field $hp = $max_hp;
@@ -297,12 +295,10 @@ class Abilities {
     method hp()       { $hp }
     method change_hp($delta) { $hp += $delta }
 }
-
 ```
 
 Let's walk through the nuance of this a little. Our `$strength` score must be
-passed in, but we can either explicitly set `$damage` _or_ we'll use our
-strength modifier. Our `$armor` defaults to a +1 bonus, and we have to
+passed in. Our `$armor` defaults to a +1 bonus, and we have to
 explicitly set our max HP. We have a separate `hp` field to track the _current_
 HP for the entity, but that is entirely internal so we're free to alias the
 `max_hp` field's constructor arg to just `hp`.
@@ -445,9 +441,11 @@ if ( my $e = $map->has_entity_at( $x, $y ) ) {
 }
 ```
 
-Now if we run things we should be able to attack our enenmies … but they don't actually die. We need to do something about that.
+Now if we run things we should be able to attack our enenmies … but they don't 
+actually die. We need to do something about that.
 
-Let's update the MeleeAttackAction a little to check for if we've killed the defender.
+Let's update the MeleeAttackAction a little to check for if we've killed the 
+defender.
 
 ```
 class MeleeAttackAction :isa(Action) {
@@ -548,7 +546,8 @@ sub hobgoblin() {
 }
 ```
 
-We should also update the GameMap with a function that runs through the Mobs and performs their next actions.
+We should also update the GameMap with a function that runs through 
+the Mobs and performs their next actions.
 
 ```
 method remove_entity($e) {
@@ -565,7 +564,9 @@ method update_entities() {
 }
 ```
 
-And we need to trigger this update somewhere, let's do it right after we make a move in the Engine.
+And we need to trigger this update somewhere, let's do it 
+right after we make a move in the Engine.
+
 ```
 # lets execute the action now
 $KEY_MAP{ $event->key }->perform();
@@ -613,6 +614,8 @@ one that looks like an `@`). If the mob can't see a player, don't do anything.
 Next we use a new function `Games::ROT::AStar`'s `get_path()` to give us a path
 to the player. The A* pathfinding algorithm is very well known and considered a
 pretty solid choice, and it happens to be the one that Games::ROT implements.
+If you've been following along, you'll need to update `Games::ROT` to the 
+latest version: `cpanm https://github.com/perigrin/perl-games-rot.git` should work.
 
 If the mob can't find a path to the player, bail. Otherwise, create a new
 `MovementAction` to take the mob one step closer to the player. Remember that
