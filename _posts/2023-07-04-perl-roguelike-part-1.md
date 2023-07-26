@@ -62,8 +62,8 @@ class Engine {
     my $height :param;
     my $width  :param;
 
-    field $playerX = $width / 2;
-    field $playerY = $height / 2;
+    field $player_x = $width / 2;
+    field $player_y = $height / 2;
 
     [...]
 ```
@@ -72,7 +72,7 @@ We also need to update the render method to draw the player icon.
 
 ```
 method render() {
-    $app->draw($playerX, $playerY, '@', '#fff', '#000');
+    $app->draw($player_x, $player_y, '@', '#fff', '#000');
 }
 ```
 
@@ -107,11 +107,26 @@ because it's defined within the scope of the class, has access to the field
 variables in that class. We adjust the player's position by one in each
 direction. Notice we've also moved quit into its own mapping, rather than an if
 statement. At the end we look up the correct key mapping and we just run the
-subroutine that's associated with it.
+subroutine that's associated with it. Swapping in this code should allow us to
+move around.
 
-Swapping in this code should allow us to move around. That's where we'll leave
-off for now. Next time we'll refactor things a little bit and add a non player
-character, because playing by yourself in an empty room can get boring.
+If you run this code you'll see we're leaving a trail behind us. We need to
+clear the screen between each draw.
+
+```
+method render() {
+    $app->clear();
+    $app->draw($player_x, $player_y, '@', '#fff', '#000');
+}
+```
+
+I'd like to give a shout out to Jeremy for pointing out that I hadn't actually
+explained where the `$app->clear()` came in and some leftover typos that had
+crept in from earlier versions of this tutorial's code. They're cleaned up now.
+
+That's where we'll leave off for now. Next time we'll refactor things a little
+bit and add a non player character, because playing by yourself in an empty
+room can get boring.
 
 Here's the full code listing:
 
@@ -161,4 +176,3 @@ class Engine {
 
 my $engine = Engine->new( width => 80, height => 50 );
 ```
-
