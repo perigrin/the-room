@@ -278,8 +278,8 @@ Strength bonus and the defender rolling a 1d20 and adding their Armor bonus. If
 the attacker rolls higher than the defender, they hit. Damage is calculated by
 taking the difference of the two rolls.[^2]
 
-So we're going to need some abilities: Strength, Armor, Damage, and Hit Points. 
-Let's add a new class to our Entities module.
+So we're going to need some abilities: Strength, Armor, and Hit Points. Let's
+add a new class to our Entities module.
 
 ```
 class Abilities {
@@ -441,10 +441,10 @@ if ( my $e = $map->has_entity_at( $x, $y ) ) {
 }
 ```
 
-Now if we run things we should be able to attack our enenmies … but they don't 
+Now if we run things we should be able to attack our enenmies … but they don't
 actually die. We need to do something about that.
 
-Let's update the MeleeAttackAction a little to check for if we've killed the 
+Let's update the MeleeAttackAction a little to check for if we've killed the
 defender.
 
 ```
@@ -546,7 +546,7 @@ sub hobgoblin() {
 }
 ```
 
-We should also update the GameMap with a function that runs through 
+We should also update the GameMap with a function that runs through
 the Mobs and performs their next actions.
 
 ```
@@ -564,7 +564,7 @@ method update_entities() {
 }
 ```
 
-And we need to trigger this update somewhere, let's do it 
+And we need to trigger this update somewhere, let's do it
 right after we make a move in the Engine.
 
 ```
@@ -614,7 +614,7 @@ one that looks like an `@`). If the mob can't see a player, don't do anything.
 Next we use a new function `Games::ROT::AStar`'s `get_path()` to give us a path
 to the player. The A* pathfinding algorithm is very well known and considered a
 pretty solid choice, and it happens to be the one that Games::ROT implements.
-If you've been following along, you'll need to update `Games::ROT` to the 
+If you've been following along, you'll need to update `Games::ROT` to the
 latest version: `cpanm https://github.com/perigrin/perl-games-rot.git` should work.
 
 If the mob can't find a path to the player, bail. Otherwise, create a new
@@ -664,9 +664,13 @@ little as I will have to catch back up and try to write two a week as well as
 the code to go with them.
 
 Our code has gotten too big to easily just show it all below. If you'd like to
-see the full code listing you can check [here](https://github.com/perigrin/posessive_frogs/tree/part-6).
+see the full code listing you can check [here][part-6].
+
+[part-6]: https://github.com/perigrin/posessive_frogs/tree/part-6
 
 [^1]: Knave 2e is just finishing a [successful kickstarter](https://www.kickstarter.com/projects/questingbeast/knave-rpg-second-edition)
 
-[^2]: Damage isn't calculated this way in Knave but it is in Maze Rats, and in
-Cairn and it makes life easier when we don't have equipment for another week.
+[^2]: Damage isn't calculated this way in Knave but it is in
+[Maze Rats](http://questingblog.com/maze-rats/), and in
+[Cairn](https://cairnrpg.com/) and it makes life easier when we don't have
+equipment for another week.
