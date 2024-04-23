@@ -670,7 +670,4 @@ see the full code listing you can check [here][part-6].
 
 [^1]: Knave 2e is just finishing a [successful kickstarter](https://www.kickstarter.com/projects/questingbeast/knave-rpg-second-edition)
 
-[^2]: Damage isn't calculated this way in Knave but it is in
-[Maze Rats](http://questingblog.com/maze-rats/), and in
-[Cairn](https://cairnrpg.com/) and it makes life easier when we don't have
-equipment for another week.
+[^2]: Damage isn't calculated this way in Knave but it is in [Maze Rats](http://questingblog.com/maze-rats/), and in [Cairn](https://cairnrpg.com/) and it makes life easier when we don't have equipment for another week.
