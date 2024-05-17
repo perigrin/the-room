@@ -183,9 +183,10 @@ class at [The Perl and Raku Conference in Las Vegas][tprc-2024] this year.
 [tprc-2024]: https://tprc.us/tprc-2024-las/
 
 ## Credits
+
 The Photo is [white concrete house near bare tree under blue sky during daytime][photo] by [Simon Hurry][simon] on [Unsplash][unsplash].
+
 [photo]: https://unsplash.com/photos/white-concrete-house-near-bare-tree-under-blue-sky-during-daytime-Fv-Y6lnl6pA
 [simon]: https://unsplash.com/@bullterriere
 [unsplash]: https://unsplash.com
 ```
-
