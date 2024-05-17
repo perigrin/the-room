@@ -9,8 +9,6 @@ image: https://images.unsplash.com/photo-1616294252621-1d7d366f9079?q=80&w=2532&
 
 ## Where the world ends is where you must begin.
 
-> The world had moved on since then. The world had emptied.
-
 I've had [a class][class] accepted at the Perl and Raku Conference in Las Vegas this
 year. I'm going to be talking about how to build video games in Perl with a
 focus on Roguelikes and RPGs. While preparing for this class I started looking
