@@ -41,7 +41,7 @@ start.
 Because of all the work I had done trying to get SDL, SDL2::FFI, and TCOD
 installed I had dug quite a bit into the [FFI::Platypus][ffi-platypus] and
 [Alien::Build][alien-build] ecosystem. I had started down the road of trying to
-build an Alien::TCOD but I had gotten stuck on the fact that [libtcod][[libtcod]
+build an Alien::TCOD but I had gotten stuck on the fact that [libtcod][libtcod]
 wants to be installed via Vcpkg and I have zero experience with that, let alone
 how to automate it in an Alien::Build.
 
