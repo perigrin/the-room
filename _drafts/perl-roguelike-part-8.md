@@ -63,3 +63,6 @@ index 30b4a3c..cbc9163 100644
        method next_action ($map) {
            state $fov = Games::ROT::FOV->new();
 ```
+
+The reason we're doing this is we're going to add some new entities that don't
+have abilities. We're gonna add stuff to cary!
