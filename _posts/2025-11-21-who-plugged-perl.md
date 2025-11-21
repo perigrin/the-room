@@ -202,3 +202,9 @@ doesn't care. We had the features. We had the innovation happening on CPAN. We
 had passionate, brilliant people building amazing things. But we spent crucial
 years arguing on mailing lists and IRC. By the time we got our act together,
 we'd lost a generation and that's on us.
+
+## Colophon
+
+The photo is "A Dark Mysterious Corridor with a Figure in Sight" by
+[Victoria Wang](https://unsplash.com/@satou1983) on
+[Unsplash](https://unsplash.com/photos/a-dark-mysterious-corridor-with-a-figure-in-sight-9D3PpbavMQ0).
