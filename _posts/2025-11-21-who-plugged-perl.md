@@ -1,18 +1,26 @@
-# Who P-P-P-Plugged Perl?
+---
+layout: post
+title: "Who P-P-P-Plugged Perl?"
+author: "Chris Prather"
+tags: perl, history
+date: 2025-11-21
+image: https://images.unsplash.com/photo-1744441800604-9d8dcb06c291?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
 
-The movie _Who Framed Roger Rabbit_ is based on a deeply weird novel by Gary K.
-Wolf in which Roger Rabbit actually is a murderer (there are several) and is
-killed halfway through the book—which doesn't stop him, he is a toon after all.
-Reading [What Killed Perl?](https://entropicthoughts.com/what-killed-perl) kind
-of reminds me of that. There are a bunch of stories people believe are true,
-but looking into what actually happened, those stories are mostly just that...
-stories.
+The movie _Who Framed Roger Rabbit_ is based on a deeply weird novel by
+Gary K. Wolf in which Roger Rabbit actually is a murderer (there are
+several) and is killed halfway through the book—which doesn't stop him,
+he is a toon after all. Reading [What Killed
+Perl?](https://entropicthoughts.com/what-killed-perl) kind of reminds me
+of that. There are a bunch of stories people believe are true, but
+looking into what actually happened, those stories are mostly just
+that... stories.
 
 I've spent my career in the Perl community, and the story I witnessed is
 different than the ones we tell.
 
-The Rise and Fall of Perl is a much more complicated story, where one of the
-main characters is Perl itself holding a smoking gun.
+The Rise and Fall of Perl is a much more complicated story, where one of
+the main characters is Perl itself holding a smoking gun.
 
 ## The Phantom Menace
 
