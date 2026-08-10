@@ -1,12 +1,15 @@
 # Two Perls
 
 So I gave [a talk at TPRC this year](https://youtu.be/iAiJgwu5M_s) about the tools we're going to need if we
-want to keep writing Perl in a world full of language models, and somewhere in
-the middle of it I waved my hand at a slide and said something like "there's a
-way to think about Perl's types that doesn't depend on the interpreter, and it
-turns out to matter a lot," and then I moved on because I had a lot of slides
-left. A few people cornered me afterward and asked what I meant. This is me
-finally answering them, at more length than either of us probably wanted.
+want to keep writing Perl in a world full of language models, and one of the
+threads I kept tugging on was types. I made a claim in passing and then mostly
+kept moving, because I had a whole paper's worth of argument sitting behind it
+and a lot of slides still to go: that Perl has *already had* a static type
+system since 1987, that we've simply never enforced it, and that it lives in the
+*operators* rather than in the *values*. We don't need to *add* a type system to
+Perl. We need to expose the one we've had the whole time. It came back around in
+the Q&A — someone stopped me and asked, more or less, what I actually meant by
+that. This is the long version of the answer I didn't have room for on stage.
 
 The thing I need to get across first is a distinction most of us never make,
 because for thirty years there's been no reason to. There are two things in the
