@@ -19,7 +19,7 @@ the same word for both and almost always that's fine.
 I'm going to write the *program* — the thing Larry
 and the porters have been polishing since the Reagan administration — as `perl`,
 lowercase, in code font. And I'm going to write the *language* as Perl, with a capital P. `perl` is a very good implementation of Perl. It is also the only one there has
-ever been, and I've come to believe that's a bigger problem than it looks.
+ever been. I've come to believe that's a bigger problem than it looks.
 
 ## Only perl can parse Perl
 
