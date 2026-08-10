@@ -136,6 +136,15 @@ delete computations entirely, because it *knows* nothing is going to sneak in
 and mutate the world behind its back. Optimizers love SSA because SSA has
 already done the hard part — it's pinned every value down to one identity.
 
+If you've written any Rust, you've already lived in a version of this. A `let`
+binding is immutable by default; when you want a "new" value you don't mutate the
+old one, you *shadow* it — `let x = f(x)` — which quietly makes a fresh binding
+and leaves the old value sitting untouched behind it. That's SSA in a friendlier
+coat: every assignment is a new, immutable value, and mutation is the special
+case you have to ask for, out loud, with `mut`. Rust took the discipline SSA
+imposes *inside* a compiler and surfaced it into the language — which is why Rust
+is the easiest place to actually feel what SSA is before we drag Perl into it.
+
 So I go to put Perl into SSA, and I immediately hit the question that turns out
 to contain everything. I've got a node in my graph holding a value. What *type*
 is it?
