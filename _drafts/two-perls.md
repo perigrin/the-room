@@ -1,6 +1,6 @@
 # Two Perls
 
-So I gave a talk at TPRC this year about the tools we're going to need if we
+So I gave [a talk at TPRC this year](https://youtu.be/iAiJgwu5M_s) about the tools we're going to need if we
 want to keep writing Perl in a world full of language models, and somewhere in
 the middle of it I waved my hand at a slide and said something like "there's a
 way to think about Perl's types that doesn't depend on the interpreter, and it
