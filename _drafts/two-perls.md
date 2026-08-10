@@ -89,12 +89,25 @@ that dragged me into this in the first place. I want Perl to be fast.
 I have to be careful, because it's easy to say something dumb here. `perl` is
 not a naive interpreter. It compiles your source into an optree and runs real
 optimization passes over it. It is, honestly, already an optimizing compiler.
-What it *can't* do is get below its own per-operation dispatch. Every `+` in
-your program goes through `pp_add`, which takes two SVs, works out at runtime
-what they are, adds them, and boxes the answer back up into another SV. That
-box-everything, decide-at-runtime, one-op-at-a-time discipline is the ceiling.
-It's why "fast Perl" has, for its entire life, meant "Perl, except we rewrote
-the hot loop in C." You don't make Perl fast. You leave Perl.
+What it *can't* do is get below its own machinery — and there's more of that than
+just the boxes. Every `+` in your program goes through `pp_add`, which takes two
+SVs, works out at runtime what they are, adds them, and boxes the answer back
+into another SV. And it *reaches* `pp_add` through the runloop: the dispatch loop
+that walks the optree one op at a time, calling each op's C function through a
+pointer. Two taxes, paid on everything — the SV wraps every *value*, the runloop
+dispatches every *operation*. That's the ceiling, and it's why "fast Perl" has,
+for its whole life, meant "Perl, except we rewrote the hot loop in C." You don't
+make Perl fast. You leave Perl.
+
+And "fast" was never only about the clock. The other thing `perl` can't easily do
+is hand you a *single static binary* — the Go trick, where you build once and
+ship one file that just runs. `perl` is an interpreter that has to be *present*,
+dynamically loading your XS and dragging your CPAN tree along at startup, and
+folding all of that into one self-contained executable is famously miserable.
+(Ask anyone who's tried to get a non-programmer to install something off CPAN.)
+So "make Perl fast" quietly bundles three wishes: stop boxing every value, stop
+dispatching every op, and just let me *ship the thing*. All three are facts about
+`perl`. Not one of them is a fact about Perl.
 
 So the thing that's actually off the table isn't optimization in general. It's a
 specific and specifically popular *kind* of optimization: the sort built on SSA
@@ -107,8 +120,10 @@ research fantasy. It's a shipping language a lot of people use to do exactly
 that. A dynamic-feeling language *can* get native speed by figuring out its own
 types and feeding them to a real backend.
 
-Perl can't. Not today, and not while a Perl value means an SV. Figuring out
-*why* is the whole game.
+Perl can't — not today. The runloop and the binary are real, but they're the
+legible kind of problem; the *deep* one, the one that turns out to be the same
+problem as understanding what Perl even is, is the SV. So that's the thread I'm
+going to pull. Figuring out why is the whole game.
 
 ## Katamari Damacy with your data
 
