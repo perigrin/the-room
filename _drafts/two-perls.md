@@ -14,10 +14,7 @@ that. This is the long version of the answer I didn't have room for on stage.
 What I need to get across first is a distinction most of us never make,
 because for thirty years there's been no reason to. There are two things in the
 world called "Perl." One is a language. The other is a program. We use
-the same word for both and almost always that's fine. But
-every so often the difference between them is the whole ballgame,
-and this is one of those times, so I'm going to be annoying about it for the
-rest of the post.
+the same word for both and almost always that's fine.
 
 I'm going to write the *program* — the thing you `apt install`, the C that Larry
 and the porters have been polishing since the Reagan administration — as `perl`,
