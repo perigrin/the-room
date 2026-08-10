@@ -2,14 +2,10 @@
 
 So I gave [a talk at TPRC this year](https://youtu.be/iAiJgwu5M_s) about the tools we'll need if we
 want to keep writing Perl in a world full of language models, and one of the
-threads I kept tugging on was types. I made a claim in passing and then kept
-moving, because I had a whole paper's worth of argument behind it
-and a lot of slides still to go: that Perl has *already had* a static type
-system since 1987, that we've never enforced it, and that it lives in the
-*operators* rather than in the *values*. We don't need to *add* a type system to
-Perl. We need to expose the one we've had the whole time. It came back around in
-the Q&A — someone stopped me and asked, more or less, what I meant by
-that. This is the long version of the answer I didn't have room for on stage.
+threads I kept tugging on was types. The claim I didn't have enough stage time
+for: we don't need to *add* a type system to Perl. It's had one since 1987 —
+unenforced, and living in the *operators* rather than the *values*. Someone in
+the Q&A asked what I meant. This is the long answer.
 
 What I need to get across first is a distinction most of us never make,
 because for thirty years there's been no reason to. There are two things in the
