@@ -1,102 +1,434 @@
 # Two Perls
 
-*Working outline for the prose — the spine, not the draft itself yet. Voice to be punched up by perigrin.*
+So I gave a talk at TPRC this year about the tools we're going to need if we
+want to keep writing Perl in a world full of language models, and somewhere in
+the middle of it I waved my hand at a slide and said something like "there's a
+way to think about Perl's types that doesn't depend on the interpreter, and it
+turns out to matter a lot," and then I moved on because I had a lot of slides
+left. A few people cornered me afterward and asked what I meant. This is me
+finally answering them, at more length than either of us probably wanted.
 
-**Venue:** The Room. Follow-up to the TPRC 2026 talk *"Perl, Agentic Programming, and the Tools We Need"* — fills in the type-system aside mentioned in passing there. Concept note lives in the commonplace book: `pages/two-perls.md`.
-**Length target:** ~2000–2800 words. Body + epilogue.
-**Voice:** chris.prather.org register — analogy-forward, conversational. Draft gets us close; perigrin punches it up.
+The thing I need to get across first is a distinction most of us never make,
+because for thirty years there's been no reason to. There are two things in the
+world called "Perl." One of them is a language. The other is a program. We use
+the same word for both and almost all of the time that's completely fine. But
+every so often the difference between them turns out to be the whole ballgame,
+and this is one of those times, so I'm going to be annoying about it for the
+rest of the post.
 
-## The distinction the whole piece rests on
+I'm going to write the *program* — the thing you `apt install`, the C that Larry
+and the porters have been polishing since the Reagan administration — as `perl`,
+lowercase, in code font. And I'm going to write the *language* — the thing you
+mean when you say "I wrote it in Perl" — as Perl, with a capital P. `perl` is an
+implementation of Perl. It's a very good one. It is also the only one there has
+ever been, and I've come to believe that's a bigger problem than it looks.
 
-- **Perl** = the language. What values *mean*. Implementation-independent.
-- **`perl`** = one implementation. What the interpreter *stores* and *does*.
-- Typography is load-bearing: `Perl` vs `perl` held apart throughout. The distinction *is* the argument.
+## Only perl can parse Perl
 
-## Thesis line (working — keep verbatim, punch up later)
+You've heard the line. *Only `perl` can parse Perl.* We say it a little
+ruefully and a little proudly, and it's more or less true, and there are real
+reasons for it. But listen to what it's actually admitting: we have never
+written the language down. There is no document I can hand you — or hand a
+compiler, or a language server, or GPT — that says what Perl *is*. There's the
+program, and the program's behavior, and a thirty-year tradition of running the
+one to find out about the other.
 
-> An SV carries the machinery for every possible future a Scalar might have. SSA is a decision to only worry about *right now*. There should be no way to bridge them — but Perl has a latent static type system that gets us there.
+Which was fine! For a long time the whole loop was: a human writes some Perl,
+`perl` runs it, and if you want to know what a piece of code means you ask
+`perl` by running it and seeing what happens. The implementation was the
+specification. And since there was exactly one implementation, the spec was
+never *ambiguous* — it was just unavailable, except by execution.
 
-## Refrain
+The trouble starts the moment something that *isn't* `perl` needs to understand
+your code. A refactoring tool. A syntax highlighter that wants to get the hard
+cases right. A static analyzer. A second implementation. A language model
+rewriting a function it's never seen before. None of these have `perl`'s runtime
+underneath them to fall back on. They can't just "run it and see." They need a
+description of the language, and we never made one, so they guess.
 
-> If we didn't have `perl`, what kind of implementation could we have?
+And there are really only two ways to guess. You can try to *reimplement `perl`*
+— chase its behavior corner by corner, forever. This is the road PPI and the
+`B::` modules and every brave soul who's ever written a Perl parser has walked,
+and it never quite ends, because you're chasing a moving, undocumented target
+whose only definition is itself. Or you can use *heuristics* — pattern-match
+your way to *probably right*, which is what the linters and the editors and
+increasingly the LLMs do. Both of those are guessing. Neither can ever be
+finished, because the third option — "go read the spec" — doesn't exist. The
+spec is the program.
 
-Pose at the top. Answer twice at the end: a fast Perl, yes — but really, *the ability to ask the question at all.*
+That little circle is, I think, the thing quietly holding Perl back. Every tool
+we might want is either impossibly expensive to build or doomed to be
+approximate, and it's not because Perl is uniquely cursed. It's because we let
+the language dissolve into its one implementation, so there's nothing to build
+against except the interpreter itself.
 
-## Arc — body
+Which is the question I actually want to chew on here. If we didn't have `perl`
+— if we could set the interpreter down for a minute and stop letting it answer
+for us — what kind of implementation *could* we have?
 
-1. **Two Perls, the foreclosure (open + refrain).** Perl the language vs `perl` the implementation, never pried apart — "only `perl` can parse Perl," "Perl is whatever `perl` does." Not tidy philosophy, a cage: if Perl just *is* `perl`, then `perl` is the only Perl there can be. **So: if we didn't have `perl`, what could we have?**
-2. **What `perl` forecloses.** Not optimization — `perl` already optimizes, up to its own per-op SV-dispatch ceiling (`pp_add` unboxing SVs on every `+`). What's off the table is the *common modern kind*: an SSA-based optimizing compiler, and with it **Julia's move** — infer concrete types into LLVM for native speed. A dynamic language can get there; Julia is the existence proof. Perl can't, while a value means an SV.
-3. **Why `perl` blocks it — the Katamari SV.** `perl`'s answer to "what is a value" is the SV: machinery for every possible future a scalar might have — mutable, ref-counted, dynamically retypeable, a universal ball of magic. Overkill for SSA, which only worries about *right now*. Designed for a world of mutation/aliasing/retyping; SSA is the world that deleted all three. While "Perl value" means "SV," the fast Perl stays impossible.
-4. **The paradox + thesis.** SV (every future) vs SSA (only now) — should be no bridge. But *Perl* — the language, not `perl` — has a latent static type system that gets us there. (Thesis line here.)
-5. **Recovering it — the licensed bridge.** The two tests; "is `"42"` a number? *maybe*"; the behavioral contracts are the *proof* the SV's open futures don't happen *here* → licence to drop to `i64`. Where they can't be ruled out, keep the SV. A **licensed** bridge, value by value — not universal. SV features map one-for-one to the guards (mutable→no-aliasing, ref-counted→lifetime-not-value, retypeable→type-is-fixed, magic→no-magic/overload/tie). The SV is a checklist of everything you must rule out; the contracts are that same checklist from the language side.
-6. **The shape (rjbs's five, offstage, tight).** Value lattice with ephemeral tops and storable leaves; `Scalar <: List` correcting the naive sibling tree; context = generic dispatch; DualVar free in SV-land, a decision anywhere else. Gesture; let the formal doc carry depth.
-7. **Remove `perl` — refrain answered.** The SSA/LLVM target can't fall back to an SV, so it can't cheat — the latent static types must carry the *whole* bridge or it fails, and the failure is the map. "If we didn't have `perl`" → an implementation that knows what Perl *is*, and can therefore make it fast. Description-of-Perl and bridge-to-fast are one artifact.
+## I just want it to be fast
 
-## Epilogue
+Let me pick the least abstract version of that question, because it's the one
+that dragged me into this in the first place. I want Perl to be fast.
 
-Speed was one answer — and not even the main one. Types make development easier everywhere (Python, TypeScript, Ruby, Go, Rust); that's old news. The fresh part for Perl: the work you do to go *fast* is *defining what correct behavior even is*, and once the compiler knows that, the language can finally tell the **developer** "this doesn't make sense" instead of silently DWIMing nonsense. Speed and kindness-to-the-developer fall out of one artifact.
+I have to be careful, because it's easy to say something dumb here. `perl` is
+not a naive interpreter. It compiles your source into an optree and runs real
+optimization passes over it. It is, honestly, already an optimizing compiler.
+What it *can't* do is get below its own per-operation dispatch. Every `+` in
+your program goes through `pp_add`, which takes two SVs, works out at runtime
+what they are, adds them, and boxes the answer back up into another SV. That
+box-everything, decide-at-runtime, one-op-at-a-time discipline is the ceiling.
+It's why "fast Perl" has, for its entire life, meant "Perl, except we rewrote
+the hot loop in C." You don't make Perl fast. You leave Perl.
 
-The **two Katamaris**: the SV balls up every possible *future* for the machine; without a type system, the *developer* balls up every value they run across, sensible or not. The same latent static type system un-balls both.
+So the thing that's actually off the table isn't optimization in general. It's a
+specific and specifically popular *kind* of optimization: the sort built on SSA
+form, which is the intermediate representation basically every serious
+optimizing compiler on the planet is built around. And with it, the trick I
+actually want, which is the one Julia pulls off. Julia feels dynamic to write,
+but its compiler infers concrete types and hands them to LLVM, and what comes
+out the far end is native machine code running at C-ish speeds. That's not a
+research fantasy. It's a shipping language a lot of people use to do exactly
+that. A dynamic-feeling language *can* get native speed by figuring out its own
+types and feeding them to a real backend.
 
-And the point underneath all of it: while Perl means only "what `perl` executes," we can't even have the *conversation* about what Perl is — `perl`'s implementation keeps getting in the way (someone always reaches for an SV). Speed was just the case concrete enough to make it undeniable. That conversation-we-couldn't-have is the tool the talk was really asking for.
+Perl can't. Not today, and not while a Perl value means an SV. Figuring out
+*why* is the whole game.
 
-## Closing button
+## Katamari Damacy with your data
 
-The irony: **TIMTOWTDI** — there's more than one way to do it — for the language that has allowed itself exactly *one* way to *be done*: `perl`. The most pluralist language ever made, an implementation monoculture. Reclaiming "more than one way" at the level of *implementations* — to run, to reason about, to define Perl — is the whole project. Larry's motto, finally pointed at `perl` itself.
+SSA — Static Single Assignment — is a way of writing a program down so that
+every value is assigned exactly once and then never changes. It sounds like a
+bookkeeping rule and it's secretly a superpower. Once every value is written
+once and immutable, the optimizer can actually reason about it. It can prove
+things. It can move work around, fold constants, keep a value in a register,
+delete computations entirely, because it *knows* nothing is going to sneak in
+and mutate the world behind its back. Optimizers love SSA because SSA has
+already done the hard part — it's pinned every value down to one identity.
 
----
+So I go to put Perl into SSA, and I immediately hit the question that turns out
+to contain everything. I've got a node in my graph holding a value. What *type*
+is it?
 
-## The model (toolkit for the drafter)
+`perl` has an instant answer, and it's useless: it's an SV. And what's an SV?
+It's a scalar in the only sense `perl` knows — a heap-allocated,
+reference-counted, dynamically-retypeable box with room for an integer *and* a
+float *and* a string, plus the capacity to carry magic, to be overloaded, to be
+tied, to turn into a dualvar. An SV is a container built to hold any scalar Perl
+will ever have and to be able to *become* any other scalar at runtime.
 
-### rjbs's five (offstage — appear as "the natural objections," unattributed), each given a home
-1. **sigil / storage types** (`$ @ %`) — compile-time; the static form of context. `splice $x` fails for the same reason `+` coerces: an op demanding a type system of an operand declared in another.
-2. **runtime data types** (SV/AV/HV) — `perl`'s *representation* type system, one target among possible targets. Evidence it's separate from Perl's: one SV carries Str, Num, Int, **and** DualVar — many latent types, one representation.
-3. **value context** (what `+` does) — operators are typed generics over the lattice (`+ : (Num,Num)→Num`); "numeric context" is just implicit argument coercion to the signature. ③ and ④ are the same thing.
-4. **Int/Num/Str TCs** — the latent value lattice (the round-trip+behavior kernel). Scope honestly: only *some* type constraints are transformation-safety assertions; arbitrary predicate TCs (regex, `->where`) are a superset layered on the kernel.
-5. **lists** — an **ephemeral** type (see below); the concept that un-flattens the category error.
+It's Katamari Damacy with your data. If you never played it: you roll a little
+sticky ball around a room and everything it bumps into sticks to it and it grows
+and grows until you're shoving a cow and a bicycle and a small building around
+the screen. That's the SV. Every value in your program rolls along accreting the
+machinery for everything it might one day need to be.
 
-### Three type systems
-- **Perl's latent types** (what a value means) — invariant.
-- **Each target's representation type system** — `perl`'s SV/IV/PV; LLVM's i64/double/ptr; C-native. Separate, per-implementation. `Int → IV` and `Int → i64` are *coercions the implementation chooses*.
-- Joined by coercions the compiler must **license**.
+And here's the rub — SSA has *already designed all of that away*. The whole
+point of SSA is that values are immutable and assigned once. The mutation the SV
+exists to support? Gone. The runtime retyping? Gone. So putting an SV on every
+node means paying, on every single value, for a pile of capabilities the form
+guarantees you'll never touch. The `42` in your loop counter is immutable and
+used once. It does not need a heap box that *could* have become a tied,
+overloaded dualvar. It just needs to be `42`.
 
-### Value lattice (by the two tests)
-`None <: { Undef, Bool, Int <: Num <: Str, Ref <: {ScalarRef, ArrayRef, HashRef, CodeRef, Object}, DualVar, Regex, Glob } <: Scalar <: List`
-- **Ephemeral tops** (`Scalar`, `List`, `None`) — no storage of their own; only handled transiently in context.
-- **Storable leaves** — the concrete types variables actually hold.
-- **Ephemeral = uncommitted supertype with no storage form.** `Scalar` is *only ever* ephemeral: a stored value is always narrowed to a subtype. As a *static type*, `Scalar` is the "top / not-yet-narrowed" annotation (the `Parm → TOP` case) — same uncommitted top, two binding times.
+I want to be clear this isn't me dunking on the SV. The SV is *great*. `perl`
+makes every value an SV and it works, and it's the right call for what `perl`
+is. The SV is designed to be a mutable, ref-counted, dynamically-retypeable,
+universal ball of magic — that's its job and it does it perfectly. The problem
+is just that its job is the exact opposite of SSA's. It's built for a world of
+mutation and aliasing and runtime retyping, and SSA is the world that deleted
+all three. It's not wrong. It's overkill, on purpose.
 
-### Scalar <: List (by the two tests — corrects the naive sibling tree)
-- Round-trip: any scalar `$s → ($s) → $s` (singleton, lossless). ✓ Behavioral: singleton satisfies list ops. ✓ → **Scalar <: List**.
-- Strict: multi-element and empty lists don't round-trip back → `List ⊀ Scalar`. The scalars are exactly the length-≤1 lists.
-- Ephemeral types are **arity classes**: None(0) <: Scalar(1) <: List(n). Subtype direction *predicts* the coercion asymmetry: `@a = ($x)` free upcast; `$s = @a` lossy downcast.
+## The bridge that shouldn't be there
 
-### Context = generic dispatch / return-type polymorphism
-- Context is the type a generic function dispatches on. Monomorphic ops (`+`) → just arg coercion; polymorphic (`reverse`, `localtime`) → context selects the instance.
-- List/scalar context = return-type polymorphism (Haskell-typeclass-shaped, baked into the grammar). `wantarray` = reflecting on the discriminator. `reverse` is the multimethod proof (list: reverse a list; scalar: reverse a string).
+Here's where I landed, and it's the sentence this whole post is really about:
 
-### DualVar
-- A promoted *representation* fact that became a genuine Perl type (constructible via `dualvar()`, seen in `$!`). Once semantic-level, invariant. **Every target must implement it in its own type system or explicitly exclude it** — free in SV-land (both slots already there), a struct-or-exclusion in i64-land. Same fact as the guard `DualVar ∉ Int/Num`.
+> An SV carries the machinery for every possible future a scalar might have. SSA
+> is a decision to only worry about *right now*. There should be no way to bridge
+> them — but Perl has a latent static type system that gets us there.
 
-### The two tests (from the formal doc)
-1. **Syntactic preservation** (round-trip): `C(v) ≡ id_S(v)`.
-2. **Semantic fulfillment** (behavioral contracts).
-Both required. (Distinguishes membership from mere coercion — a hashref stringifies but isn't a Str.)
+Sit with the first two sentences, because they really are opposites. The SV is
+about *potential* — it holds every future open, keeps every option alive,
+refuses to commit to anything. SSA is about *commitment* — this value, here, is
+this, full stop, no becoming. One is a hedge against every possibility; the
+other is a decision. You shouldn't be able to have both. How do you take a value
+whose entire nature is that it *could be anything* and pin it down to being one
+specific thing, right now?
 
-## Examples to use
-- Is `42` a number? **yes.** `"hello"`? **no.** `"42"`? **maybe.** — *when does it matter?*
-- `1 + 2` is NOT trivially runtime-free: `+` on Int-*typed SVs* still carries SV semantics (magic, overload, tie, dualvar, int/float promotion).
-- `reverse` (list vs scalar) — context selects the instance.
-- `$!` / `dualvar(404, "Not Found")` — two faces, one value.
-- `@a = ($x)` free vs `$s = @a` lossy — the subtype direction derives the asymmetry.
+The answer is that Perl — the language, not `perl` — has a type system we've
+never bothered to write down, and it happens to be exactly the tool for
+collapsing "every possible future" into "this, right now." Let me show you,
+because it's simpler than it sounds and it's hiding in plain sight.
 
-## Honest edges (present, don't fake-close)
-- **Scalar↔List fixed point** — the formal doc leaves it an unformalized circular dependency (Knaster–Tarski conjecture). The `Scalar <: List` result straightens it into an ordering, but uniqueness is still conjectured. Present as the honest edge.
-- **TC scope** — formalizing the transformation-safety kernel, not all type constraints.
+## Is "42" a number?
 
-## Sources (primary — local copies in scratchpad/chalk-grab, originals in chalk repo docs/)
-- `docs/architecture/perl-type-system-formal.md` — axioms, lattice, soundness (75K).
-- `docs/architecture/perl-type-system-practical.md` — the doc rjbs reviewed.
-- `docs/plans/2026-06-06-three-axis-codegen-and-typed-ir-contract.md` — latent ≠ representation; unboxing guards = contract violators; LLVM as forcing function.
-- `docs/architecture/typed-ir-representation.md` — finalized typed-IR contract.
-- gist `2-perl-types-formal.md` (perigrin) — summary of the formal treatment.
+Start with the dumbest question I can think of. Is `42` a number? Sure. Is
+`"hello"` a number? No. Now: is `"42"` — the *string* — a number?
+
+Yes? No? ...Maybe.
+
+That "maybe" isn't a cop-out. It's the whole idea in one word. Whether `"42"` is
+a number depends on what you're about to *do* with it and which sense of
+"number" you mean, and — this is the important part — it does not depend even a
+little on how `perl` happens to be storing it right now. There are two clean
+tests hiding under the maybe.
+
+The first is a **round trip**. Take the value, convert it to the type you're
+asking about, convert it back, and see if you got the same thing.
+
+```perl
+my $x    = "42";
+my $n    = 0 + $x;    # 42
+my $back = "$n";      # "42"
+$back eq $x;          # true — nothing lost, "42" really is a number
+```
+
+Try the same thing with `"hello"` and it falls apart:
+
+```perl
+my $x    = "hello";
+my $n    = 0 + $x;    # 0, and a warning if you asked for one
+my $back = "$n";      # "0"
+$back eq $x;          # false — you just lost your value
+```
+
+That's the line between *being* a type and merely *coercing* to one, and it
+matters. A hashref stringifies to something like `HASH(0x561f3a...)`, but you
+can't turn that string back into the hash, so a hashref is emphatically not a
+string. It coerces. It isn't.
+
+The second test is about **behavior**, because surviving the round trip isn't
+quite enough. The string `"NaN"` round-trips through numeric conversion just
+fine — out and back, no loss. But it doesn't *behave* like a number: `NaN`
+isn't equal to itself, `NaN - NaN` isn't zero. Right shape, wrong behavior, so
+it isn't really a number either.
+
+Two tests, then: does it survive the round trip, and does it behave? Run those
+over all of Perl's values and a hierarchy just falls out — integers are a kind
+of number, numbers are a kind of string, references are their own thing —
+without anyone declaring a single type. That's what I mean by a *latent* type
+system: the types are already *in* the values whether you wrote them down or
+not. And it's a *static* one in the sense that matters here: a compiler can
+recover these types by inference, the way Julia does, without you annotating
+anything. Latent, because it was always there. Static, because a machine can
+find it before the program runs.
+
+## The SV is a checklist
+
+Here's the part that made me put my coffee down, because it's where the airy
+type-theory stuff and the grubby compiler problem turn out to be the same thing
+wearing two hats.
+
+Go back to the SV — the ball of magic, the machinery for every possible future.
+Write out what that machinery is actually *for*. It's mutable, so a value might
+change. It's ref-counted, so it might be shared. It's dynamically retypeable, so
+it might turn into something else. It carries magic and overloading and the
+dualvar trick, so an innocent-looking `+` might secretly be running somebody's
+code.
+
+Now write out what you have to *prove* in order to drop a value out of its SV and
+into a bare machine integer: that nobody's going to mutate it, that its lifetime
+is a storage detail and not part of the value, that its type is genuinely fixed,
+that there's no magic or overload or tie lurking.
+
+Those are the same list. Read it one way and the SV is a checklist of everything
+that could possibly go wrong with a Perl value. Read it the other way — from the
+language's side — and the type system's behavioral rules are that same checklist:
+`NaN` isn't a number, a dualvar isn't an integer, tie and overload break the
+operation's contract. The conditions that make a value "really an integer" are,
+one for one, the conditions that make it safe to compile as one.
+
+Which means writing down what the value *is* and earning the right to make it
+fast aren't two jobs. They're one. The description of the language and the
+license to optimize it are the same artifact. That's the bridge that shouldn't
+exist: the latent static type system spans it value by value, exactly where it
+can prove the SV's open futures don't actually happen here. And where it *can't*
+prove that — real magic, an honest dualvar, an actual tie — you keep the SV, and
+you should. It's a licensed bridge, not a magic wand, which is exactly why I
+trust it.
+
+## But Perl's types aren't one thing
+
+When I started showing this idea around, something happened that I have to tell
+you about, because it's the most Perl thing imaginable. Some of the sharpest
+Perl people I know — people who understand `perl`'s guts far better than I do —
+heard "Perl's type system" and immediately reached for the SV. To explain what a
+dualvar *is*, they reached for how `perl` stores it. And they had a genuinely
+good objection, which is that "Perl's types" isn't one thing at all. There are
+the sigils, `$` and `@` and `%`, which are real and enforced at compile time —
+you can't `splice` a scalar. There are the storage types, SV and AV and HV.
+There's *context*, the thing that decides what `+` does to its operands. There's
+the Int/Num/Str business I've been describing. And there are lists, which don't
+seem to slot in anywhere. Wasn't I mashing five different things into one pile
+and calling it a type system?
+
+I think the answer — and it took me an embarrassingly long time to get here — is
+that yes, they're five different things, and the entire trick is giving each one
+its right home instead of flattening them into a single tree. Very quickly,
+because every one of these deserves its own post:
+
+The sigils are context bound at compile time — `$` versus `@` is the static
+version of the exact discrimination context does at runtime. The SV/AV/HV layer
+is `perl`'s *representation*, its private type system for storing values, and the
+whole load-bearing point of this essay is that it's just one target's choice.
+LLVM's representation is `i64` and `double`. `perl`'s is the SV. Turning a Perl
+integer into a `perl` IV, or into an LLVM `i64`, is a coercion the
+*implementation* picks. It is not a fact about Perl.
+
+Context is the one I find genuinely beautiful, so let me indulge. What does `+`
+do to its operands? It demands they be numbers. But that's not a separate
+mysterious machine — it's just that `+` is a typed function, `(Num, Num) → Num`,
+and Perl quietly coerces the arguments to fit, the way any language coerces
+arguments at a call boundary. And when a function is *polymorphic* on context —
+`reverse` reverses a list in list context and reverses a string in scalar
+context —
+
+```perl
+my @r = reverse(1, 2, 3);   # (3, 2, 1)
+my $s = reverse "hello";    # "olleh"
+```
+
+— then context is simply the type it's being dispatched on. `wantarray` is the
+language handing a function a mirror so it can see which type it's being asked
+for. That's return-type polymorphism, the thing Haskell needs a whole typeclass
+mechanism to pull off, sitting right there in Perl's grammar the entire time. We
+just never called it by its name.
+
+And here's my favorite consequence, the one that actually made me trust the
+framework instead of just liking it. Run the two tests on the *sigils
+themselves*. Is a scalar a subtype of a list? A scalar in list context becomes a
+one-element list; a one-element list in scalar context is the scalar back again.
+Round-trips cleanly. A *multi*-element list forced back into a scalar loses
+everything but a count. So the round trip only survives for one-element lists —
+which means a scalar *is* a list, specifically the one-element kind. Scalar is a
+subtype of List. That quietly demolishes the tidy diagram everyone draws with
+Scalar and List sitting side by side as siblings, and — better — it *explains*
+something you already know in your hands: assigning a scalar into a list is free
+and lossless, and assigning a list into a scalar throws information away.
+
+```perl
+my @a = ($x);    # free — widening to the supertype
+my $n = @a;      # lossy — narrowing to the subtype, you get a count
+```
+
+The framework didn't need me to tell it any of that. It told *me*, and corrected
+my own diagram on the way. That's when a model has earned its keep — when it
+starts arguing with the person who built it and turns out to be right.
+
+Dualvars end up in exactly the right place too. A dualvar — `$!` is the one
+everybody's met, the error variable that's a readable string one way and an
+error number the other —
+
+```perl
+open my $fh, '<', '/nope' or do {
+    warn "message: $!";        # No such file or directory
+    warn "number:  ", 0 + $!;  # 2
+};
+```
+
+— costs nothing in SV-land, because an SV already has a string slot and a number
+slot sitting right next to each other. Ask any *other* implementation to
+represent it and it turns into a real decision: build a little two-faced struct
+for it, or refuse to compile it at all. Same value; free in one representation, a
+design choice in another. Which is this whole essay compressed into a single
+data type: representation is a separate, per-target type system, not a fact about
+the language.
+
+## Throwing perl out of the room
+
+Here's the move that ties it together, and it's why "make Perl fast" turns out
+to be the same project as "understand Perl."
+
+Point Perl at an SSA-based, LLVM-style target — one that genuinely cannot hold
+an SV and cannot fall back on `perl`'s runtime for anything — and it can't cheat.
+There's no interpreter in the room to ask. Either the intermediate
+representation carries enough real information to lower each value to a machine
+type, or it fails, loudly, right there. And that failure isn't a bug. It's a
+map. Every place the target chokes is a place we hadn't finished saying what
+Perl *is* — a spot where we were still quietly leaning on `perl` to mean
+something on our behalf.
+
+This is the difference between two projects that sound identical and aren't.
+Reimplementing `perl` is chasing the interpreter's behavior forever; that's the
+bottomless pit. *Re-deriving Perl* is the opposite: throw the interpreter out,
+pick your starting axioms — a static type system, say — and see how much of the
+language falls back out of them. Whatever re-derives cleanly *was* Perl, the
+language. Whatever you can't get without reaching back for the SV was only ever
+`perl`, the program. A compiler that can't link `libperl` turns out to be the
+sharpest instrument I've ever found for telling the two apart, precisely because
+it refuses to let me confuse them.
+
+And here's the payoff I still find a little startling: "can lower this without a
+runtime" and "can optimize this past `perl`'s per-op dispatch" are the *same
+requirement*. The information a runtime-free target forces into the IR is exactly
+the information an optimizer needs to go fast. So the description of Perl and the
+road to a fast Perl are one artifact. You don't write down what Perl is and then,
+as a separate step, make it fast. Writing it down *is* making it fast.
+
+So — if we didn't have `perl`, what could we have? We could have an
+implementation that knows what Perl *is*, independent of how any one program
+happens to store it, and can therefore compile it to something that flies.
+That's the answer. That's the thing I was waving at on the slide.
+
+## The other Katamari
+
+But speed was only ever the concrete case — the version of the argument sharp
+enough to draw blood. It isn't really the point.
+
+Types make development nicer, and I don't need to sell anyone on that anymore;
+Python grew them, TypeScript is nothing but, Ruby's sprouting them, Go and Rust
+were born with them. Old news. The fresh part, for Perl specifically, is *why*
+they'd show up: the work you do to make the language fast is the work of defining
+what correct behavior even is. And once the compiler knows what correct behavior
+is, it can tell the *developer* when they've wandered outside it — instead of
+silently doing something, anything, and handing back a plausible-looking wrong
+answer.
+
+Because here's the other Katamari, the one aimed at us instead of the machine.
+`perl`'s SV rolls up every possible future of a value for the runtime's sake. But
+without a type system, *we* do the same thing: we roll up every value we run into
+— a number, a string, an array in the wrong slot, a typo — and Perl cheerfully
+sticks it to the ball and does *something* with it, whether or not that something
+makes any sense. The same latent static type system that un-rolls the machine's
+Katamari un-rolls ours. Speed and being-kind-to-the-developer fall out of the
+very same artifact, because they're both just "the language finally knowing what
+it means."
+
+And underneath even that is the thing I actually care about most. As long as
+"Perl" means only "whatever `perl` executes," we can't even *have the
+conversation* about what Perl is. I watched it happen over and over while I was
+working on this: every time somebody tried to talk about the language, the
+implementation walked in and sat down — someone reached for an SV, and we were
+back to talking about `perl` again. Speed was just the case concrete enough that
+the interruption became impossible to ignore. The tool my talk was really
+reaching for isn't a faster interpreter and it isn't a smarter linter. It's the
+ability to talk about the language at all, apart from its one program — to teach
+it, to tool it, to reason about it, to reimplement it, to *argue* about it on
+solid ground.
+
+## The most pluralist language in the world
+
+There's an irony at the bottom of all of this that I can't stop turning over.
+
+Perl's motto — the thing Larry gave us, the whole spirit of the culture — is
+**TIMTOWTDI**. There Is More Than One Way To Do It. It is the most pluralist
+language ever made. It will happily give you seventeen ways to write the same
+loop and refuse, on principle, to bless one of them as correct.
+
+And it has allowed itself exactly *one* way to be *done*. One implementation. The
+most pluralist language in the world has been, at the level that matters most, a
+monoculture — not because anyone decided it should be, but because we let the
+language quietly collapse into its program and stopped noticing there was a seam
+there at all.
+
+Reclaiming the plural at *that* level — more than one way to run Perl, more than
+one way to reason about Perl, more than one way to *define* Perl — is the whole
+project. It's Larry's own motto, finally turned around and pointed at `perl`
+itself. Chalk, the compiler I've been building and will no doubt bore you with in
+later posts, is my run at it: not to replace `perl` — I'm not that foolish, and I
+don't want to — but to prove there *can* be a second Perl, and in the proving, to
+finally write down what the first one has been all along.
+
+That's the part I keep coming back to. Somewhere in trying to make it fast, I
+stopped being able to tell whether I was building a compiler or just, at long
+last, taking dictation.
