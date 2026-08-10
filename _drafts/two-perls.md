@@ -16,7 +16,7 @@ because for thirty years there's been no reason to. There are two things in the
 world called "Perl." One is a language. The other is a program. We use
 the same word for both and almost always that's fine.
 
-I'm going to write the *program* — the thing you `apt install`, the C that Larry
+I'm going to write the *program* — the thing Larry
 and the porters have been polishing since the Reagan administration — as `perl`,
 lowercase, in code font. And I'm going to write the *language* — the thing you
 mean when you say "I wrote it in Perl" — as Perl, with a capital P. `perl` is an
