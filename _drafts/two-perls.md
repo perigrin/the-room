@@ -4,8 +4,7 @@ So I gave [a talk at TPRC this year](https://youtu.be/iAiJgwu5M_s) about the too
 want to keep writing Perl in a world full of language models, and one of the
 threads I kept tugging on was types. The claim I didn't have enough stage time
 for: we don't need to *add* a type system to Perl. It's had one since 1987 —
-unenforced, and living in the *operators* rather than the *values*. Someone in
-the Q&A asked what I meant. This is the long answer.
+unenforced, and living in the *operators* rather than the *values*.
 
 What I need to get across first is a distinction most of us never make,
 because for thirty years there's been no reason to. There are two things in the
