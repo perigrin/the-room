@@ -42,6 +42,18 @@ Which was fine! For a long time the whole loop was: a human writes some Perl,
 specification. And since there was exactly one implementation, the spec was
 never *ambiguous* — it was just unavailable, except by execution.
 
+It's the arrangement Britain has with its constitution. There isn't one — not a
+single written document you can pull off a shelf and read. What counts as
+constitutional is scattered across old statutes, centuries of court rulings, and
+unwritten convention, and what it actually *means* mostly gets settled when a
+case comes up and a court rules on it. `perl` is Perl's court. There's no
+founding text for the language, so what's genuinely Perl — as opposed to the
+current interpreter's administrative habit — only gets decided when some program
+forces the question and `perl` hands down a verdict. And an unwritten
+constitution is exactly as hard to reform, to hand to a second court, or to tell
+settled principle apart from accident, as you'd guess. Writing it down isn't a
+tidying exercise. It's a constitutional act.
+
 The trouble starts the moment something that *isn't* `perl` needs to understand
 your code. A refactoring tool. A syntax highlighter that wants to get the hard
 cases right. A static analyzer. A second implementation. A language model
@@ -337,6 +349,43 @@ design choice in another. Which is this whole essay compressed into a single
 data type: representation is a separate, per-target type system, not a fact about
 the language.
 
+## The list `perl` can't count to
+
+Here's a smaller one that kept embarrassing me while I wrote this. Every time I
+tried to pin down what a Perl *list* is, I'd reach for some obvious property —
+and the property would turn out to belong to `perl`, not to Perl.
+
+Are lists finite? Feels obvious. But nothing in the *language* says so. Write
+`my @x = 1..9**9**9` and that's a perfectly legal Perl list; `perl` just tries
+to build the whole thing at once and eats all your memory. That's not Perl
+drawing a line — that's `perl` running out of RAM.
+
+Fine, are they at least eager? Also no. Nothing in Perl says `1..9**9**9` *has*
+to be built the instant you name it. `perl` happens to be eager; Raku is lazy; a
+third implementation could be lazier still and only do the work when you ask for
+something that genuinely needs the whole list. Watch:
+
+```perl
+my @x = 1 .. 9**9**9;
+print $x[-1];
+```
+
+`perl` dies. Not because the answer is hard — the last element of a range is
+just its endpoint, `9**9**9` — but because `perl` insisted on constructing all
+of it first. An implementation that hadn't inherited that habit would just print
+the number. Same Perl program, different `perl`, and one of them can't count to
+the end of a range it wrote itself. It even fails at the *wrong moment*: eager
+`perl` blows up at *construction*, when the only honest time to struggle with an
+unbounded list is when you ask it something that truly needs the whole thing.
+
+So finite, eager, when-the-side-effects-fire — none of it is written into Perl.
+It's all `perl`. And after you've watched that happen three times in a row, a
+genuinely unsettling question surfaces: for *any* given behavior, how would we
+even know whether it belongs to the language or to the interpreter? We've never
+had a second implementation to check against. The only spec is `perl`, so by
+default everything `perl` does gets to call itself Perl — and we have no way,
+sitting here, to sort the essential from the accidental.
+
 ## Throwing perl out of the room
 
 Here's the move that ties it together, and it's why "make Perl fast" turns out
@@ -352,14 +401,25 @@ Perl *is* — a spot where we were still quietly leaning on `perl` to mean
 something on our behalf.
 
 This is the difference between two projects that sound identical and aren't.
-Reimplementing `perl` is chasing the interpreter's behavior forever; that's the
-bottomless pit. *Re-deriving Perl* is the opposite: throw the interpreter out,
-pick your starting axioms — a static type system, say — and see how much of the
-language falls back out of them. Whatever re-derives cleanly *was* Perl, the
-language. Whatever you can't get without reaching back for the SV was only ever
-`perl`, the program. A compiler that can't link `libperl` turns out to be the
-sharpest instrument I've ever found for telling the two apart, precisely because
-it refuses to let me confuse them.
+Reimplementing `perl` means chasing the interpreter's behavior forever — the
+bottomless pit. *Re-deriving Perl* is the inductive opposite: throw the
+interpreter out entirely, then add back only the things you're *forced* to add
+to make real Perl programs work. Whatever you're forced to put back is Perl, the
+language; whatever you never reach for was only ever `perl`, the program. And
+notice what that does to the unanswerable question from a moment ago — you don't
+settle it by thinking harder, you settle it by *building the second
+implementation and watching what it can't do without.* A compiler that can't
+link `libperl` is the sharpest instrument I've found for telling the two apart,
+precisely because it refuses to let me confuse them.
+
+And this is where the range `perl` couldn't count to comes back. Where `perl`
+can actually run a program, it's your oracle — you match its *behavior*, mind,
+not its SVs. But `1 .. 9**9**9` is a program `perl` can't run; it just dies. Out
+past the edge of what the interpreter can build, the oracle goes quiet, and you
+don't get to look the answer up — you get to *decide* it. Choosing that the
+program prints its endpoint is the exact moment re-deriving Perl turns into
+making Perl *better* than `perl`. The interpreter's limits stop being the
+language's.
 
 And here's the payoff I still find a little startling: "can lower this without a
 runtime" and "can optimize this past `perl`'s per-op dispatch" are the *same
@@ -402,7 +462,12 @@ And underneath even that is the thing I actually care about most. As long as
 conversation* about what Perl is. I watched it happen over and over while I was
 working on this: every time somebody tried to talk about the language, the
 implementation walked in and sat down — someone reached for an SV, and we were
-back to talking about `perl` again. Speed was just the case concrete enough that
+back to talking about `perl` again. That's the foreclosure with teeth: it isn't
+just that the conversation keeps getting derailed — it's that, with only one
+implementation, the conversation has no ground under it. "Is that the language or
+the interpreter?" isn't a hard question; it's an *unanswerable* one, until
+there's a second Perl to decide it against. Speed was just the case concrete
+enough that
 the interruption became impossible to ignore. The tool my talk was really
 reaching for isn't a faster interpreter and it isn't a smarter linter. It's the
 ability to talk about the language at all, apart from its one program — to teach
