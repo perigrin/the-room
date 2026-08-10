@@ -18,8 +18,7 @@ the same word for both and almost always that's fine.
 
 I'm going to write the *program* — the thing Larry
 and the porters have been polishing since the Reagan administration — as `perl`,
-lowercase, in code font. And I'm going to write the *language* — the thing you
-mean when you say "I wrote it in Perl" — as Perl, with a capital P. `perl` is an
+lowercase, in code font. And I'm going to write the *language* as Perl, with a capital P. `perl` is an
 implementation of Perl. It's a very good one. It is also the only one there has
 ever been, and I've come to believe that's a bigger problem than it looks.
 
