@@ -32,7 +32,7 @@ Which was fine! For a long time the whole loop was: a human writes some Perl,
 specification. And since there was exactly one implementation, the spec was
 never *ambiguous* — only unavailable, except by execution.
 
-It's the arrangement Britain has with its constitution. There isn't one — not a
+It's the arrangement Britain has with its constitution: there isn't one — not a
 single written document you can pull off a shelf and read. What counts as
 constitutional is scattered across old statutes, centuries of court rulings, and
 unwritten convention, and what it *means* mostly gets settled when a
