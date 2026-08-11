@@ -73,8 +73,8 @@ if we could take advantage of 40 years of research?
 
 ## I want Perl to be good
 
-Let me pick the least abstract version of that question, because it's the one
-that dragged me into this. I want Perl to be fast.
+Let me pick the least abstract version of that question: I want Perl to be fast.
+Fast and Good aren't synonymous, but Fast helps a language get better.
 
 I have to be careful, because it's easy to say something dumb here. `perl` is
 not a naive interpreter. It compiles your source into an optree and runs real
