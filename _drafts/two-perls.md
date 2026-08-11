@@ -324,23 +324,17 @@ back to talking about `perl` again.
 
 ## The most pluralist language in the world
 
-There's an irony at the bottom of all of this.
+There's an irony at the bottom of all this. Perl's motto — Larry's, the whole
+spirit of the thing — is **TIMTOWTDI**: There Is More Than One Way To Do It. The
+most pluralist language ever made will hand you nine ways to write a loop and
+refuse, on principle, to bless one.
 
-Perl's motto — the thing Larry gave us, the whole spirit of the culture — is
-**TIMTOWTDI**. There Is More Than One Way To Do It. It is the most pluralist
-language ever made. It will happily give you nine ways to write the same
-loop and refuse, on principle, to bless one of them as correct.
+And it has allowed itself exactly *one* way to be *done*. One implementation —
+not by anyone's decision, but because we let the language collapse into its
+program and stopped seeing the seam.
 
-And it has allowed itself exactly *one* way to be *done*. One implementation. The
-most pluralist language in the world has been, at the level that matters most, a
-monoculture — not because anyone decided it should be, but because we let the
-language quietly collapse into its program and stopped noticing there was a seam
-there at all.
-
-Reclaiming the plural at *that* level — more than one way to run Perl, more than
-one way to reason about Perl, more than one way to *define* Perl — is the whole
-project. It's Larry's own motto, finally turned around and pointed at `perl`
-itself. Chalk, the compiler I've been building and will no doubt bore you with in
-later posts, is my run at it: not to replace `perl` — I'm not that foolish, and I
-don't want to — but to prove there *can* be a second Perl, and in the proving, to
-finally write down what the first one has been all along.
+Reclaiming the plural *there* — more than one way to run Perl, to reason about
+it, to *define* it — is the whole project: Larry's motto turned on `perl` itself.
+Chalk is my run at it. Not to replace `perl`, but to prove there *can* be a
+second Perl — and in the proving, to finally write down what the first has been
+all along.
