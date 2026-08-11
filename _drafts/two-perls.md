@@ -86,7 +86,7 @@ pointer. That's why "fast Perl" has,
 for its whole life, meant "Perl, except we rewrote the hot loop in C." You don't
 make Perl fast. You leave Perl.
 
-And "fast" was never only about the clock. The other thing `perl` can't easily do
+"Fast" isn't just about clock speed. The other thing `perl` can't easily do
 is hand you a *single static binary* — the Go trick, where you build once and
 ship one file that just runs. `perl` is an interpreter that has to be *present*,
 dynamically loading your XS and dragging your CPAN tree along at startup, and
