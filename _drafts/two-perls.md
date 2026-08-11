@@ -110,18 +110,14 @@ delete computations entirely, because it *knows* nothing will sneak in
 and mutate the world behind its back. Optimizers love SSA because SSA has
 already done the hard part — it's pinned every value to one identity.
 
-If you've written Rust, Erlang, or Elixir, you've already lived in a version of
-this. Erlang is the purest: variables are *single assignment* — the SA in SSA,
-made law. `X = 5` binds `X` once and for all; `X = 6` isn't a reassignment, it's
-a failed match. Want a new value? New name — `X1 = X + 1` — which is exactly the
-renaming an SSA pass does for you, except Erlang programmers have done it by hand
-for thirty years. Elixir loosens the knot: names rebind, but the data underneath
-is immutable and the old binding lives on in any closure that captured it. Rust
-calls the same trick *shadowing* — `let x = f(x)`, a fresh binding rather than a
-mutation — with real mutation the special case you ask for out loud, `mut`. Three
-dialects of one idea: a value is assigned once and never changes, and a "new"
-value is a new binding. That's SSA, surfaced into the language — which is why
-these are the easiest places to feel what it is before we drag Perl into it.
+If you've written any Rust, you've already lived in a version of this. A `let`
+binding is immutable by default; when you want a "new" value you don't mutate the
+old one, you *shadow* it — `let x = f(x)` — a fresh binding that leaves the old
+value untouched behind it. That's SSA in a friendlier coat: every assignment is a
+new, immutable value, and mutation is the special case you ask for out loud, with
+`mut`. Rust took the discipline SSA imposes *inside* a compiler and surfaced it
+into the language, which is why it's the easiest place to feel what SSA is before
+we drag Perl into it.
 
 So I go to put Perl into SSA, and I hit the question that
 contains everything. I've got a node in my graph holding a value. What *type*
