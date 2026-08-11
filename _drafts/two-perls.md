@@ -267,9 +267,6 @@ always there to infer.
 
 ## Throwing perl out of the room
 
-Here's the move that ties it together, and it's why "make Perl fast" turns out
-to be the same project as "understand Perl."
-
 Point Perl at an SSA-based, LLVM-style target — one that genuinely cannot hold
 an SV and cannot fall back on `perl`'s runtime for anything — and it can't cheat.
 There's no interpreter in the room to ask. Either the intermediate
