@@ -132,11 +132,7 @@ SV in an SSA form.
 
 I want to be clear this isn't me dunking on the SV. The SV is *great*. `perl`
 makes every value an SV and it works, and it's the right call for what `perl`
-is. The SV is designed to be a mutable, ref-counted, dynamically-retypeable,
-universal ball of magic — that's its job and it does it perfectly. Its job is
-just the exact opposite of SSA's. It's built for a world of
-mutation and aliasing and runtime retyping, and SSA is the world that deleted
-all three. It's not wrong. It's overkill, on purpose.
+is.
 
 ## The bridge that shouldn't be there
 
