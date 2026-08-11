@@ -155,13 +155,14 @@ That "it depends" isn't a cop-out. It's the whole idea. Whether `"42"` is
 a number depends on what you're about to *do* with it and which sense of
 "number" you mean. Two clean tests hide under that "it depends."
 
-The first — and the more intuitive — is **behavior**. Does the value actually
-behave like a number? A real number equals itself, and arithmetic on it means
-something. The string `"NaN"` is the classic fake: it *looks* numeric, but ask
-it to behave and it won't — `NaN` isn't equal to itself, `NaN - NaN` isn't zero.
-Right shape, wrong behavior, so it isn't really a number. That's the test your
-gut already runs — and it's murder to automate, because "behaves correctly"
-means checking every operation the type has.
+The first — the more intuitive — is **behavior**. Does the value actually
+behave like a number? Real numbers do arithmetic that makes sense — add one and
+it grows, subtract it from itself and you get zero. The string `"Inf"` is the
+classic counter example: everyone thinks of it as just "a really big number,"
+but ask it to behave and it won't — `Inf + 1` is still `Inf`, and `Inf - Inf`
+isn't zero, it's `NaN`. Right shape, wrong behavior, so it isn't really a number.
+That's the test your gut already runs — and it's murder to automate, because
+"behaves correctly" means checking every operation the type has.
 
 The second test is mechanical, and it's the one a compiler can actually run: a
 **round trip**. Convert the value to the type you're asking about, convert it
@@ -189,7 +190,7 @@ can't turn that string back into the hash, so a hashref is emphatically not a
 string. It coerces. It isn't. Round-trip is really a membership test — is this
 value *really* a `Num`? — and since each type is just the subset of a broader one
 whose values survive the trip, stacking those tests is what carves out the
-subtype lattice. It isn't perfect, though: `"NaN"` sails right through it, so
+subtype lattice. It isn't perfect, though: `"Inf"` sails right through it, so
 behavior still decides the hard cases.
 
 Two tests, then: does it behave, and does it survive the round trip? Run those
