@@ -62,8 +62,8 @@ increasingly the LLMs do. Neither can ever be
 finished, because the third option — "go read the spec" — doesn't exist.
 
 I think this quietly holds Perl back. Every tool
-we might want is either impossibly expensive to build or doomed to be
-approximate, and not because Perl is uniquely cursed. It's because we let
+we might want is either prohibitively expensive to build or doomed to be
+approximate. It's because we let
 the language dissolve into its one implementation, so there's nothing to build
 against except the interpreter itself.
 
