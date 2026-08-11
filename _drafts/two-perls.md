@@ -101,7 +101,7 @@ comes out the far end is native machine code running at highly optimized speeds.
 
 ## Katamari Damacy with your data
 
-SSA — Static Single Assignment — is a way of writing a program down so that
+SSA is a way of writing a program down so that
 every value is assigned exactly once and then never changes. It sounds like a
 bookkeeping rule and it's secretly a superpower. Once every value is written
 once and immutable, the optimizer can reason about it. It can prove
