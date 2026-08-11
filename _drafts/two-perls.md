@@ -160,7 +160,7 @@ asking about, convert it back, and see if you got the same thing.
 
 ```perl
 my $x    = "42";
-my $n    = 0 + $x;    # 42
+my $n    = 0 + $x;    # adding 0 to string "numifies" it, coercing it to a number
 my $back = "$n";      # "42"
 $back eq $x;          # true — nothing lost, "42" really is a number
 ```
