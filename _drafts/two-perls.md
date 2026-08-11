@@ -88,9 +88,9 @@ make Perl fast. You leave Perl.
 
 "Fast" isn't just about clock speed. Another thing `perl` can't easily do
 is hand you a *single binary* — the Go trick, where you build once and
-ship one file that just runs. `perl` is an interpreter that has to be *present*,
-dynamically loading your XS and dragging your CPAN tree along at startup, and
-folding all of that into one self-contained executable is famously miserable.
+ship one file that just runs. The interpreter has to be present, dynamically loading your XS and dragging your
+CPAN tree along at startup. Folding all of that into one self-contained
+executable can be notoriously miserable.
 (Ask anyone who's tried to get a non-programmer to install something off CPAN.)
 So "make Perl fast" quietly bundles three wishes: stop boxing every value, stop
 dispatching every op, and just let me *ship the thing*. All three are facts about
