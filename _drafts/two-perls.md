@@ -146,8 +146,8 @@ show you — it's simpler than it sounds and it's hiding in plain sight.
 
 ## Is "42" a number?
 
-Start with the dumbest question I can think of. Is `42` a number? Sure. Is
-`"hello"` a number? No. Now: is `"42"` — the *string* — a number?
+Is `42` a number? Sure. Is `"hello"` a number? No. Is `"42"` — the *string* — a
+number?
 
 Yes? No? ...Maybe.
 
