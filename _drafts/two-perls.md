@@ -113,9 +113,7 @@ already done the hard part — it's pinned every value to one identity.
 If you've written any Rust, you've already lived in a version of this. A `let`
 binding is immutable by default; when you want a "new" value you don't mutate the
 old one, you *shadow* it — `let x = f(x)` — a fresh binding that leaves the old
-value untouched behind it. That's SSA in a friendlier coat: every assignment is a
-new, immutable value, and mutation is the special case you ask for out loud, with
-`mut`. Rust took the discipline SSA imposes *inside* a compiler and surfaced it
+value untouched behind it. Rust took the discipline SSA imposes *inside* a compiler and surfaced it
 into the language, which is why it's the easiest place to feel what SSA is before
 we drag Perl into it.
 
