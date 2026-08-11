@@ -299,8 +299,8 @@ and easy to implement. It isn't the point.
 Types make development nicer, and I shouldn't need to sell anyone on that anymore;
 Python grew them, TypeScript is nothing but, Ruby's sprouting them, Go and Rust
 were born with them. Old news. The fresh part, for Perl specifically, is *why*
-they'd show up: the work you do to make the language fast is the work of defining
-what correct behavior even is. And once the compiler knows what correct behavior
+they'd show up: the work you do to make the language stand alone is the work of defining a
+theory of what correct Perl behavior even is, and why. Once the compiler knows what correct behavior
 is, it can tell the *developer* when they've wandered outside it — instead of
 silently doing something, anything, and handing back a plausible-looking wrong
 answer.
