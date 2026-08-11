@@ -114,8 +114,7 @@ If you've written any Rust, you've already lived in a version of this. A `let`
 binding is immutable by default; when you want a "new" value you don't mutate the
 old one, you *shadow* it — `let x = f(x)` — a fresh binding that leaves the old
 value untouched behind it. Rust took the discipline SSA imposes *inside* a compiler and surfaced it
-into the language, which is why it's the easiest place to feel what SSA is before
-we drag Perl into it.
+into the language.
 
 So I go to put Perl into SSA, and I hit the question that
 contains everything. I've got a node in my graph holding a value. What *type*
