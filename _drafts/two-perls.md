@@ -81,7 +81,7 @@ interpreter `perl` is not naive. It compiles your source into an optree and runs
 optimization passes over it. What it can't do is get out of its own way. Every `+` in your program goes through `pp_add`, which takes two
 SVs, works out at runtime what they are, adds them, and boxes the answer back
 into another SV. And it *reaches* `pp_add` through the runloop: the dispatch loop
-that walks the optree one op at a time, calling each op's C function through a
+walking the optree one op at a time, calling each op's C function through a
 pointer. Two taxes, paid on everything — the SV wraps every *value*, the runloop
 dispatches every *operation*. That's the ceiling, and it's why "fast Perl" has,
 for its whole life, meant "Perl, except we rewrote the hot loop in C." You don't
