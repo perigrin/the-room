@@ -94,16 +94,10 @@ executable can be notoriously miserable.
 So "make Perl fast" bundles three wishes: stop boxing every value, stop
 dispatching every op, and let me ship one thing.
 
-So what's off the table isn't optimization in general. It's a
-specific and specifically popular *kind* of optimization: the sort built on SSA
-form, the intermediate representation basically every serious
-optimizing compiler on the planet is built around. And with it, the trick I
-want, the one Julia pulls off. Julia feels dynamic to write,
-but its compiler infers concrete types and hands them to LLVM, and what comes
-out the far end is native machine code running at C-ish speeds. That's not a
-research fantasy. It's a shipping language a lot of people use to do exactly
-that. A dynamic-feeling language *can* get native speed by figuring out its own
-types and feeding them to a real backend.
+Basically every serious optimizing compiler on the planet is built around Static
+Single Assignment (SSA) form. And with it, the trick I want. Julia feels dynamic
+to write, but its compiler infers concrete types and hands them to LLVM, and what
+comes out the far end is native machine code running at highly optimized speeds.
 
 Perl can't — not today. The runloop and the binary are real, but they're the
 legible kind of problem; the *deep* one, the one that is the same
