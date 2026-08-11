@@ -186,9 +186,11 @@ $back eq $x;          # false — you just lost your value
 That's the line between *being* a type and merely *coercing* to one, and it
 matters. A hashref stringifies to something like `HASH(0x561f3a...)`, but you
 can't turn that string back into the hash, so a hashref is emphatically not a
-string. It coerces. It isn't. The round trip is cheaper, but it isn't perfect —
-`"NaN"` sails right through it — which is why behavior is the test that actually
-decides.
+string. It coerces. It isn't. Round-trip is really a membership test — is this
+value *really* a `Num`? — and since each type is just the subset of a broader one
+whose values survive the trip, stacking those tests is what carves out the
+subtype lattice. It isn't perfect, though: `"NaN"` sails right through it, so
+behavior still decides the hard cases.
 
 Two tests, then: does it behave, and does it survive the round trip? Run those
 over all of Perl's values and a hierarchy just falls out — integers are a kind
