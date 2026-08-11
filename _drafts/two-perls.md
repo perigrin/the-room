@@ -116,11 +116,8 @@ old one, you *shadow* it — `let x = f(x)` — a fresh binding that leaves the 
 value untouched behind it. Rust took the discipline SSA imposes *inside* a compiler and surfaced it
 into the language.
 
-So I go to put Perl into SSA, and I hit the question that
-contains everything. I've got a node in my graph holding a value. What *type*
-is it?
-
-`perl` has an instant answer, and it's useless: it's an SV. And what's an SV?
+So I go to put Perl into SSA — `perl` implements scalar values as something
+called an SV. And what's an SV?
 It's a scalar in the only sense `perl` knows — a heap-allocated,
 reference-counted, dynamically-retypeable box with room for an integer *and* a
 float *and* a string, plus the capacity to carry magic, to be overloaded, to be
