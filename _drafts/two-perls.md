@@ -39,7 +39,8 @@ unwritten convention, and what it *means* mostly gets settled when a
 case comes up and a court rules on it. `perl` is Perl's court. There's no
 founding text for the language, so what's genuinely Perl — as opposed to the
 current interpreter's administrative habit — only gets decided when some program
-forces the question and `perl` hands down a verdict. And an unwritten
+forces the question and `perl` hands down a verdict. And that verdict is codified on the spot — it *becomes*
+Perl, precedent, the thing the next tool has to match. An unwritten
 constitution is exactly as hard to reform, to hand to a second court, or to tell
 settled principle apart from accident, as you'd guess. Writing it down isn't
 tidying. It's a constitutional act.
