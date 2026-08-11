@@ -205,9 +205,9 @@ does, without you annotating anything.
 
 ## The SV is a checklist
 
-Here's the part that made me put my coffee down, because it's where the airy
-type-theory stuff and the grubby compiler problem turn out to be the same thing
-wearing two hats.
+Turns out the ivory-tower type-theory stuff solves the grubby compiler problem.
+If you unwind all the mutations made to an SV as a series of coercions between
+immutable values, you get the same list of behaviors.
 
 Go back to the SV — the ball of magic, the machinery for every possible future.
 Write out what that machinery is actually *for*. It's mutable, so a value might
