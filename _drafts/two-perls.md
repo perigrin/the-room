@@ -276,23 +276,20 @@ map. Every place the target chokes is a place we hadn't finished saying what
 Perl *is* — a spot where we were still quietly leaning on `perl` to mean
 something on our behalf.
 
-Where `perl` can actually run a program, it's your oracle — you match its *behavior*, mind,
-not its SVs. But `1 .. 9**9**9` is a program `perl` can't run; it just dies. Out
-past the edge of what the interpreter can build, the oracle goes quiet, and you
-don't get to look the answer up — you get to *decide* it. Choosing that the
-program prints its endpoint is the
-exact moment re-deriving Perl turns into making Perl *better* than `perl`. The
-interpreter's limits stop being the language's.
+Where `perl` can actually run a program, it's your oracle — you match its
+*behavior*, mind, not its SVs. But `my @x = 1..9**9**9; say $x[0]` stumps it:
+`9**9**9` overflows to infinity, and `perl` insists on building the whole endless
+list before it will hand you a single element — so it dies without answering.
+Out past the edge of what the interpreter can build, the oracle goes quiet: you
+don't look the answer up, you *decide* it. Decide that a Perl does only the work
+you asked — hand back `1`, stop — and that's the moment re-deriving Perl turns
+into making Perl *better* than `perl`. The interpreter's limits stop being the
+language's.
 
 And here's the payoff I still find a little startling: The information a runtime-free target forces into the IR is exactly
 the information an optimizer needs to go fast. So the description of Perl and the
 road to a fast Perl are one artifact. You don't write down what Perl is and then,
 as a separate step, make it fast. Writing it down *is* making it fast.
-
-So — if we didn't have `perl`, what could we have? We could have an
-implementation that knows what Perl *is*, independent of how any one program
-happens to store it, and can therefore compile it to something that flies.
-That's the answer. That's the thing I was waving at on the slide.
 
 ## The other Katamari
 
