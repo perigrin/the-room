@@ -63,8 +63,8 @@ finished, because the third option — "go read the spec" — doesn't exist.
 
 I think this quietly holds Perl back. Every tool
 we might want is either prohibitively expensive to build or doomed to be
-approximate. It's because we let
-the language dissolve into its one implementation, so there's nothing to build
+approximate. We let
+the language evolve into a singular implementation, so there's nothing to build
 against except the interpreter itself.
 
 Which is the question I want to chew on here. If we didn't have `perl`
