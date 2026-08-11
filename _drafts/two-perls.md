@@ -320,20 +320,11 @@ And underneath even that is the thing I care about most. As long as
 conversation* about what Perl is. I watched it happen over and over while I was
 working on this: every time somebody tried to talk about the language, the
 implementation walked in and sat down — someone reached for an SV, and we were
-back to talking about `perl` again. That's the foreclosure with teeth: it isn't
-just that the conversation keeps getting derailed — it's that, with only one
-implementation, the conversation has no ground under it. "Is that the language or
-the interpreter?" isn't a hard question; it's an *unanswerable* one, until
-there's a second Perl to decide it against. Speed was just the case concrete
-enough that the interruption became impossible to ignore. The tool my talk was
-reaching for isn't a faster interpreter and it isn't a smarter linter.
-It's the ability to talk about the language at all, apart from its one program —
-to teach it, to tool it, to reason about it, to reimplement it, to *argue* about
-it on solid ground.
+back to talking about `perl` again.
 
 ## The most pluralist language in the world
 
-There's an irony at the bottom of all of this that I can't stop turning over.
+There's an irony at the bottom of all of this.
 
 Perl's motto — the thing Larry gave us, the whole spirit of the culture — is
 **TIMTOWTDI**. There Is More Than One Way To Do It. It is the most pluralist
