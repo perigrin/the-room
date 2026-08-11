@@ -197,11 +197,11 @@ Two tests, then: does it behave, and does it survive the round trip? Run those
 over all of Perl's values and a hierarchy just falls out — integers are a kind
 of number, numbers are a kind of string, references are their own thing —
 without anyone declaring a single type. That's what I mean by a *latent* type
-system: the types are already *in* the values whether you wrote them down or
-not. And it's a *static* one in the sense that matters here: a compiler can
-recover these types by inference, the way Julia does, without you annotating
-anything. Latent, because it was always there; static, because a machine can
-find it before the program runs.
+system: the types are already in the system. And notice: we define a value by
+the operators that can meaningfully apply to it, and we already know what types
+those operators take — `+` takes numbers, `.` takes strings. So just by looking
+at what operations are done, we can infer what those values should be, like Julia
+does, without you annotating anything.
 
 ## The SV is a checklist
 
