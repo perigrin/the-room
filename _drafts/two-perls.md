@@ -53,8 +53,10 @@ is more trouble than it's worth, and tells you about one run anyway. So they nee
 a description of the language, and we never made one, so they guess.
 
 And there are only two ways to guess. You can try to *reimplement `perl`*
-— chase its behavior corner by corner, forever. Or you can use *heuristics* —
-pattern-match
+— chase its behavior corner by corner, forever. Every attempt I know of inherits
+`perl`'s choices wholesale — porting its C, or chasing its test suite until it
+passes — or breaks compatibility so hard it becomes a *different* language, or was
+abandoned years ago. Or you can use *heuristics* — pattern-match
 your way to *probably right*, which is what the linters and the editors and
 increasingly the LLMs do. Both are guessing. Neither can ever be
 finished, because the third option — "go read the spec" — doesn't exist. The
