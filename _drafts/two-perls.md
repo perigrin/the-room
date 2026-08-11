@@ -228,7 +228,21 @@ Stop describing `perl` and start describing Perl and it all falls out.
 
 **Values.** Static — one committed datum, the way SSA wants them. They have
 types, and the types form a lattice: `Int <: Num <: Str <: Scalar`, `Scalar <:
-List`, references off to the side.
+List`, references off to the side. Two of those edges run backwards from how
+most people picture them. `Num <: Str` makes a number a *sub*type of a string —
+the narrower thing, not the wider — and the round trip is why: every number
+stringifies and comes back intact, but not every string survives the trip the
+other way. `Scalar <: List` makes a lone scalar a one-element list, which is why
+`my @a = ($x)` costs nothing and `my $s = @a` throws away everything but the
+count. Widening up the lattice is free; narrowing down loses something — the
+lattice telling you which conversions are safe.
+
+That tower is a spine, not a census. The same two tests place the rest of the
+zoo, and they don't all land on the spine: a vstring like `v1.2.3` *looks* like
+a number and is a flat string of three bytes, so it sits under `Str`; a `qr//`
+is a reference like any other, off to the side; a `format` isn't a scalar value
+at all — it lives with subs and filehandles in the symbol table. Behavior puts
+each one where it goes. Appearance doesn't get a vote.
 
 **Coercions and dispatching**, driven by *type signals*. This is what people mean by context,
 and it isn't a type — it's a signal of what type is expected next. `+` signals
