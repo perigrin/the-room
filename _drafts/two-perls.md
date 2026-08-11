@@ -153,9 +153,7 @@ Yes? No? ...It depends.
 
 That "it depends" isn't a cop-out. It's the whole idea. Whether `"42"` is
 a number depends on what you're about to *do* with it and which sense of
-"number" you mean, and — this is the important part — it does not depend at all
-on how `perl` happens to be storing it right now. Two clean
-tests hide under that "it depends."
+"number" you mean. Two clean tests hide under that "it depends."
 
 The first is a **round trip**. Take the value, convert it to the type you're
 asking about, convert it back, and see if you got the same thing.
