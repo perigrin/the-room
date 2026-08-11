@@ -296,7 +296,7 @@ as a separate step, make it fast. Writing it down *is* making it fast.
 But speed was only ever the concrete case — the version of the argument obvious
 and easy to implement. It isn't the point.
 
-Types make development nicer, and I don't need to sell anyone on that anymore;
+Types make development nicer, and I shouldn't need to sell anyone on that anymore;
 Python grew them, TypeScript is nothing but, Ruby's sprouting them, Go and Rust
 were born with them. Old news. The fresh part, for Perl specifically, is *why*
 they'd show up: the work you do to make the language fast is the work of defining
