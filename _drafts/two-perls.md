@@ -218,77 +218,68 @@ describing what a value *is* and earning the right to make it fast turn out to b
 the same act; where the guards hold you drop the SV, where they don't you keep
 it. A licensed bridge, not a magic wand.
 
-## But Perl's types aren't one thing
+## Not one thing, and not five
 
-When I started showing this idea around, something happened that I have to tell
-you about, because it's the most Perl thing imaginable. Some of the sharpest
-Perl people I know — people who understand `perl`'s guts far better than I do —
-heard "Perl's type system" and immediately reached for the SV. To explain what a
-dualvar *is*, they reached for how `perl` stores it. And they had a genuinely
-good objection: "Perl's types" isn't one thing. There are
-the sigils, `$` and `@` and `%`, real and enforced at compile time —
-you can't `splice` a scalar. There are the storage types, SV and AV and HV.
-There's *context*, the thing that decides what `+` does to its operands. There's
-the Int/Num/Str business I've been describing. And there are lists, which don't
-seem to slot in anywhere. Wasn't I mashing five different things into one pile
-and calling it a type system?
+When I've heard or had this conversation in the past, the sharpest Perl people I
+know immediately reach for structural types or the interpreter types (SV et al.)
+… and they usually object to this more traditional type system. "Perl's types"
+isn't one thing, they'll tell me. There are sigils (`$ @ %`, enforced at compile
+time; you can't `splice` a scalar). There's SV/AV/HV storage. There's *context*.
+There's the Int/Num/Str business. And there are lists, which don't slot in
+anywhere. Five different things — wasn't I mashing them into a pile and calling
+it a type system?
 
-I think the answer — and it took me an embarrassingly long time to get here — is
-that yes, they're five different things, and the entire trick is giving each one
-its right home instead of flattening them into a single tree. Very quickly,
-because every one of these deserves its own post:
+Not a pile — but not five things either. Stop describing `perl` and start
+describing Perl and they fall into three. And there's no single tree to commit a
+category error with, because two of the three aren't hierarchies at all.
 
-The sigils are context bound at compile time — `$` versus `@` is the static
-version of the exact discrimination context does at runtime. The SV/AV/HV layer
-is `perl`'s *representation*, its private type system for storing values, and the
-whole load-bearing point of this essay is that it's just one target's choice.
-LLVM's representation is `i64` and `double`. `perl`'s is the SV. Turning a Perl
-integer into a `perl` IV, or into an LLVM `i64`, is a coercion the
-*implementation* picks. It is not a fact about Perl.
+**Values.** Static — one committed datum, the way SSA wants them. They have
+types, and the types form a lattice: `Int <: Num <: Str <: Scalar`, `Scalar <:
+List`, references off to the side. SV/AV/HV is just `perl`'s way of storing a
+value; it leaves when `perl` leaves. The sigils are that same split drawn at
+compile time. Int/Num/Str and lists are only ever a question of where a value
+sits on the lattice.
 
-Context is the one I find genuinely beautiful, so let me indulge. What does `+`
-do to its operands? It demands they be numbers. But that's not a separate
-mysterious machine — `+` is a typed function, `(Num, Num) → Num`,
-and Perl coerces the arguments to fit, the way any language coerces
-arguments at a call boundary. And when a function is *polymorphic* on context —
-`reverse` reverses a list in list context and reverses a string in scalar
-context —
+(That `Scalar <: List` isn't a decree — it's what the two tests report when you
+run them on the sigils themselves. A scalar in list context is a one-element
+list, and it round-trips; a longer list forced back to a scalar keeps only its
+count. So a scalar *is* a list, the one-element kind — which is why `@a = ($x)`
+is free and `$n = @a` throws information away. The framework corrected my own
+diagram there. That's when I started trusting it.)
 
-```perl
-my @r = reverse(1, 2, 3);   # (3, 2, 1)
-my $s = reverse "hello";    # "olleh"
-```
-
-— then context is simply the type it's being dispatched on. `wantarray` is the
-language handing a function a mirror so it can see which type it's being asked
-for. That's return-type polymorphism, the thing Haskell needs a whole typeclass
-mechanism to pull off, sitting right there in Perl's grammar the entire time. We
-never called it by its name.
-
-And here's my favorite consequence, the one that made me trust the
-framework instead of just liking it. Run the two tests on the *sigils
-themselves*. Is a scalar a subtype of a list? A scalar in list context becomes a
-one-element list; a one-element list in scalar context is the scalar back again.
-Round-trips cleanly. A *multi*-element list forced back into a scalar loses
-everything but a count. So the round trip only survives for one-element lists —
-which means a scalar *is* a list, specifically the one-element kind. Scalar is a
-subtype of List. That quietly demolishes the tidy diagram everyone draws with
-Scalar and List sitting side by side as siblings, and — better — it *explains*
-something you already know in your hands: assigning a scalar into a list is free
-and lossless, and assigning a list into a scalar throws information away.
+**Coercions**, driven by a *type signal*. This is what people mean by context,
+and it isn't a type — it's a signal of what type is expected next. `+` signals
+"Num." `my @x = …` signals "List." A value answers two ways. It **coerces**: a
+static value plus an expected type gives you what it should become, computed on
+the spot and never stored (storing every answer at once is the SV again). Or the
+*operation* **dispatches** on the signal — `reverse` runs a different computation
+depending on what's asked:
 
 ```perl
-my @a = ($x);    # free — widening to the supertype
-my $n = @a;      # lossy — narrowing to the subtype, you get a count
+my @r = reverse(1, 2, 3);   # (3, 2, 1)  — list expected
+my $s = reverse "hello";    # "olleh"    — scalar expected
 ```
 
-The framework didn't need me to tell it any of that. It told *me*, and corrected
-my own diagram on the way. That's when a model has earned its keep — when it
-starts arguing with the person who built it and turns out to be right.
+`wantarray` is a function reaching out to read the signal it was handed —
+return-type polymorphism, the thing Haskell needs typeclasses for, sitting in
+the grammar. Coercion and dispatch are siblings, a value answering "what's
+wanted of me here." And the signal is right there in the source, which is why
+none of it *has* to wait for runtime: a compiler reads the context at each call
+site and settles it then and there. `perl` just chooses to ask at runtime
+instead.
 
-Dualvars end up in exactly the right place too. A dualvar — `$!` is the one
-everybody's met, the error variable that's a readable string one way and an
-error number the other —
+**Enforcement** — the one nobody lists, and the only one that matters. `perl`
+checks whether a coercion *exists*: `splice $x` is rejected, because nothing
+turns a scalar into an array. But let a coercion exist, however deranged, and
+`perl` runs it without a word — `"hello" + 5` is `5`, and `[1,2,3] + 5` adds five
+to a memory address. The machinery to say *no* is right there; it says no to
+`splice $x` and yes to adding a string to a number. `perl` enforces that a
+coercion is *possible* and never that it's *sane*. That isn't a missing type
+system. It's a type system with the one useful check switched off.
+
+One value breaks the "static" rule, and it's the exception that proves it. A
+dualvar — `$!`, the error variable — carries a message *and* a number,
+independently:
 
 ```perl
 open my $fh, '<', '/nope' or do {
@@ -297,13 +288,11 @@ open my $fh, '<', '/nope' or do {
 };
 ```
 
-— costs nothing in SV-land, because an SV already has a string slot and a number
-slot sitting right next to each other. Ask any *other* implementation to
-represent it and it turns into a real decision: build a little two-faced struct
-for it, or refuse to compile it at all. Same value; free in one representation, a
-design choice in another. This whole essay compressed into a single
-data type: representation is a separate, per-target type system, not a fact about
-the language.
+That's a value pretending to be a box: SV-shaped, the one place `perl`'s
+representation pokes up through the language. Every other value commits to a
+single datum and lets coercion compute the rest. The dualvar refuses to commit —
+which is exactly why it's cleanly neither a string nor a number, and why, to
+explain it, even the best Perl programmers reach back for the SV.
 
 ## The list `perl` can't count to
 
