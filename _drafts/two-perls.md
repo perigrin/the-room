@@ -99,11 +99,6 @@ Single Assignment (SSA) form. And with it, the trick I want. Julia feels dynamic
 to write, but its compiler infers concrete types and hands them to LLVM, and what
 comes out the far end is native machine code running at highly optimized speeds.
 
-Perl can't — not today. The runloop and the binary are real, but they're the
-legible kind of problem; the *deep* one, the one that is the same
-problem as understanding what Perl even is, is the SV. So that's the thread I'm
-going to pull. Figuring out why is the whole game.
-
 ## Katamari Damacy with your data
 
 SSA — Static Single Assignment — is a way of writing a program down so that
