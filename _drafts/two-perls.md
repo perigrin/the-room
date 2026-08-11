@@ -224,8 +224,7 @@ When I've heard or had this conversation in the past, the sharpest Perl people I
 know immediately reach for structural types or the interpreter types (SV et al.)
 … and they usually object to this more traditional type system.
 
-But stop describing `perl` and start describing Perl and it falls into three. And there's no single tree to commit a
-category error with, because two of the three aren't hierarchies at all.
+Stop describing `perl` and start describing Perl and it all falls out.
 
 **Values.** Static — one committed datum, the way SSA wants them. They have
 types, and the types form a lattice: `Int <: Num <: Str <: Scalar`, `Scalar <:
