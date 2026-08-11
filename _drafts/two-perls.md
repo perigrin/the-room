@@ -91,9 +91,8 @@ is hand you a *single binary* — the Go trick, where you build once and
 ship one file that just runs. The interpreter has to be present, dynamically loading your XS and dragging your
 CPAN tree along at startup. Folding all of that into one self-contained
 executable can be notoriously miserable.
-So "make Perl fast" quietly bundles three wishes: stop boxing every value, stop
-dispatching every op, and just let me *ship the thing*. All three are facts about
-`perl`. Not one of them is a fact about Perl.
+So "make Perl fast" bundles three wishes: stop boxing every value, stop
+dispatching every op, and let me ship one thing.
 
 So what's off the table isn't optimization in general. It's a
 specific and specifically popular *kind* of optimization: the sort built on SSA
