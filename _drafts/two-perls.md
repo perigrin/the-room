@@ -245,11 +245,10 @@ my $s = reverse "hello";    # "olleh"    — scalar expected
 
 `wantarray` is a function reaching out to read the signal it was handed —
 return-type polymorphism, the thing Haskell needs typeclasses for, sitting in
-the grammar. Coercion and dispatch are siblings, a value answering "what's
-wanted of me here." And the signal is right there in the source, which is why
+the grammar. Coercion and dispatch are siblings, the inference engine answering "what's
+wanted here." And the signal is right there in the source, which is why
 none of it *has* to wait for runtime: a compiler reads the context at each call
-site and settles it then and there. `perl` just chooses to ask at runtime
-instead.
+site and settles it then and there.
 
 **Enforcement** — the one nobody lists, and the only one that matters. `perl`
 checks whether a coercion *exists*: `splice $x` is rejected, because nothing
