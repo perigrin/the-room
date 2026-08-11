@@ -209,33 +209,13 @@ Turns out the ivory-tower type-theory stuff solves the grubby compiler problem.
 If you unwind all the mutations made to an SV as a series of coercions between
 immutable values, you get the same list of behaviors.
 
-Go back to the SV — the ball of magic, the machinery for every possible future.
-Write out what that machinery is actually *for*. It's mutable, so a value might
-change. It's ref-counted, so it might be shared. It's dynamically retypeable, so
-it might turn into something else. It carries magic and overloading and the
-dualvar trick, so an innocent-looking `+` might secretly be running somebody's
-code.
-
-Now write out what you have to *prove* in order to drop a value out of its SV and
-into a bare machine integer: that nobody's going to mutate it, that its lifetime
-is a storage detail and not part of the value, that its type is genuinely fixed,
-that there's no magic or overload or tie lurking.
-
-Those are the same list. Read it one way and the SV is a checklist of everything
-that could go wrong with a Perl value. Read it the other way — from the
-language's side — and the type system's behavioral rules are that same checklist:
-`NaN` isn't a number, a dualvar isn't an integer, tie and overload break the
-operation's contract. The conditions that make a value "really an integer" are,
-one for one, the conditions that make it safe to compile as one.
-
-Which means writing down what the value *is* and earning the right to make it
-fast aren't two jobs. They're one. The description of the language and the
-license to optimize it are the same artifact. That's the bridge that shouldn't
-exist: the latent static type system spans it value by value, exactly where it
-can prove the SV's open futures don't happen here. And where it *can't*
-prove that — real magic, an honest dualvar, an actual tie — you keep the SV, and
-you should. It's a licensed bridge, not a magic wand, which is why I
-trust it.
+Read that list from the compiler's side and it's everything you have to rule out
+to drop a value into a bare machine integer — no mutation, no aliasing, no magic,
+no overload, no tie, no dualvar. Read it from the language's side and it's the
+contracts that make a value *really* an integer. Same list, one for one. So
+describing what a value *is* and earning the right to make it fast turn out to be
+the same act; where the guards hold you drop the SV, where they don't you keep
+it. A licensed bridge, not a magic wand.
 
 ## But Perl's types aren't one thing
 
