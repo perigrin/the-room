@@ -46,7 +46,7 @@ tidying. It's a constitutional act.
 
 The trouble starts the moment something that *isn't* `perl` needs to understand
 your code. A refactoring tool. A syntax highlighter that wants to get the hard
-cases right. A static analyzer. A second implementation. A language model
+cases right. A static analyzer. A language model
 rewriting a function it's never seen before. None of these have `perl`'s runtime
 underneath them to fall back on. They can't just "run it and see." They need a
 description of the language, and we never made one, so they guess.
