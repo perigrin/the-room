@@ -266,55 +266,6 @@ every other typed language gives — and no annotations, because the types were
 always there to infer. That's what "expose the type system we already have"
 means. Not bolt one on. Flip on the check `perl` left off.
 
-One value breaks the "static" rule, and it's the exception that proves it. A
-dualvar — `$!`, the error variable — carries a message *and* a number,
-independently:
-
-```perl
-open my $fh, '<', '/nope' or do {
-    warn "message: $!";        # No such file or directory
-    warn "number:  ", 0 + $!;  # 2
-};
-```
-
-That's a value pretending to be a box: SV-shaped, the one place `perl`'s
-representation pokes up through the language. Every other value commits to a
-single datum and lets coercion compute the rest. The dualvar refuses to commit —
-which is exactly why it's cleanly neither a string nor a number, and why, to
-explain it, even the best Perl programmers reach back for the SV.
-
-## The list `perl` can't count to
-
-Here's a smaller one that kept embarrassing me while I wrote this. Every time I
-tried to pin down what a Perl *list* is, I'd reach for some obvious property —
-and the property would belong to `perl`, not to Perl.
-
-Are lists finite? Feels obvious. But nothing in the *language* says so. Write
-`my @x = 1..9**9**9` and that's a perfectly legal Perl list; `perl` just tries
-to build the whole thing at once and eats all your memory. That's not Perl
-drawing a line — that's `perl` running out of RAM.
-
-Fine, are they at least eager? Also no. Nothing in Perl says `1..9**9**9` *has*
-to be built the instant you name it. `perl` happens to be eager; Raku is lazy; a
-third implementation could be lazier still and only do the work when you ask for
-something that genuinely needs the whole list. Watch:
-
-```perl
-my @x = 1 .. 9**9**9;
-print $x[-1];
-```
-
-`perl` dies. Not because the answer is hard — the last element of a range is
-just its endpoint, `9**9**9` — but because `perl` insisted on constructing all
-of it first. An implementation that hadn't inherited that habit would just print
-the number. Same Perl program, different `perl`, and one of them can't count to
-the end of a range it wrote itself. It even fails at the *wrong moment*: eager
-`perl` blows up at *construction*, when the only honest time to struggle with an
-unbounded list is when you ask it something that truly needs the whole thing.
-
-So finite, eager, when-the-side-effects-fire — none of it is written into Perl.
-It's all `perl`.
-
 ## Throwing perl out of the room
 
 Here's the move that ties it together, and it's why "make Perl fast" turns out
@@ -342,8 +293,7 @@ the second implementation and watching what it can't do without.* A compiler
 that can't link `libperl` is the sharpest instrument I've found for telling the
 two apart, precisely because it refuses to let me confuse them.
 
-And this is where the range `perl` couldn't count to comes back. Where `perl`
-can actually run a program, it's your oracle — you match its *behavior*, mind,
+Where `perl` can actually run a program, it's your oracle — you match its *behavior*, mind,
 not its SVs. But `1 .. 9**9**9` is a program `perl` can't run; it just dies. Out
 past the edge of what the interpreter can build, the oracle goes quiet, and you
 don't get to look the answer up — you get to *decide* it. Choosing that the
