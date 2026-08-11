@@ -284,9 +284,7 @@ program prints its endpoint is the
 exact moment re-deriving Perl turns into making Perl *better* than `perl`. The
 interpreter's limits stop being the language's.
 
-And here's the payoff I still find a little startling: "can lower this without a
-runtime" and "can optimize this past `perl`'s per-op dispatch" are the *same
-requirement*. The information a runtime-free target forces into the IR is exactly
+And here's the payoff I still find a little startling: The information a runtime-free target forces into the IR is exactly
 the information an optimizer needs to go fast. So the description of Perl and the
 road to a fast Perl are one artifact. You don't write down what Perl is and then,
 as a separate step, make it fast. Writing it down *is* making it fast.
