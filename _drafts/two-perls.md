@@ -328,7 +328,7 @@ There's an irony at the bottom of all of this.
 
 Perl's motto — the thing Larry gave us, the whole spirit of the culture — is
 **TIMTOWTDI**. There Is More Than One Way To Do It. It is the most pluralist
-language ever made. It will happily give you seventeen ways to write the same
+language ever made. It will happily give you nine ways to write the same
 loop and refuse, on principle, to bless one of them as correct.
 
 And it has allowed itself exactly *one* way to be *done*. One implementation. The
