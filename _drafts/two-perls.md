@@ -67,9 +67,9 @@ approximate. We let
 the language evolve into a singular implementation, so there's nothing to build
 against except the interpreter itself.
 
-Which is the question I want to chew on here. If we didn't have `perl`
-— if we could set the interpreter down for a minute and stop letting it answer
-for us — what kind of implementation *could* we have?
+The question I want to chew on here: if we didn't have `perl` but we wanted to
+capture as many of Perl's semantics as possible — what would that involve? What
+if we could take advantage of 40 years of research?
 
 ## I just want it to be fast
 
