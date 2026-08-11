@@ -212,7 +212,8 @@ immutable values, you get the same list of behaviors.
 Read that list from the compiler's side and it's everything you have to rule out
 to drop a value into a bare machine integer — no mutation, no aliasing, no magic,
 no overload, no tie, no dualvar. Read it from the language's side and it's the
-contracts that make a value *really* an integer. Same list, one for one. So
+contracts that make a value *really* an integer, *really* a string, *really* a
+dualvar. Same list, one for one. So
 describing what a value *is* and earning the right to make it fast turn out to be
 the same act; where the guards hold you drop the SV, where they don't you keep
 it. A licensed bridge, not a magic wand.
