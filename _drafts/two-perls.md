@@ -276,19 +276,6 @@ map. Every place the target chokes is a place we hadn't finished saying what
 Perl *is* — a spot where we were still quietly leaning on `perl` to mean
 something on our behalf.
 
-This is the difference between two projects that sound identical and aren't.
-Reimplementing `perl` means chasing the interpreter's behavior forever — the
-bottomless pit. *Re-deriving Perl* is the inductive opposite: throw the
-interpreter out entirely, then add back only the things you're *forced* to add
-to make real Perl programs work. Whatever you're forced to put back is Perl, the
-language; whatever you never reach for was only ever `perl`, the program. This
-is how you settle the question that has no answer while `perl` is the only
-spec — whether a given behavior belongs to the language or the
-interpreter. You don't settle it by thinking harder; you settle it by *building
-the second implementation and watching what it can't do without.* A compiler
-that can't link `libperl` is the sharpest instrument I've found for telling the
-two apart, precisely because it refuses to let me confuse them.
-
 Where `perl` can actually run a program, it's your oracle — you match its *behavior*, mind,
 not its SVs. But `1 .. 9**9**9` is a program `perl` can't run; it just dies. Out
 past the edge of what the interpreter can build, the oracle goes quiet, and you
