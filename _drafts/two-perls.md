@@ -250,14 +250,21 @@ wanted here." And the signal is right there in the source, which is why
 none of it *has* to wait for runtime: a compiler reads the context at each call
 site and settles it then and there.
 
-**Enforcement** — the one nobody lists, and the only one that matters. `perl`
-checks whether a coercion *exists*: `splice $x` is rejected, because nothing
-turns a scalar into an array. But let a coercion exist, however deranged, and
-`perl` runs it without a word — `"hello" + 5` is `5`, and `[1,2,3] + 5` adds five
-to a memory address. The machinery to say *no* is right there; it says no to
-`splice $x` and yes to adding a string to a number. `perl` enforces that a
-coercion is *possible* and never that it's *sane*. That isn't a missing type
-system. It's a type system with the one useful check switched off.
+**Enforcement** — the one nobody lists, and the only one Perl doesn't already
+have. `perl` checks whether a coercion *exists* — `splice $x` is rejected,
+because nothing turns a scalar into an array — but never whether an existing
+coercion is *sane*. `"hello" + 5` is `5`; `[1,2,3] + 5` adds five to a memory
+address; both run without a word.
+
+That missing check is the whole game. The values, the lattice, the coercions,
+the dispatch, the inference that reads them straight off the source — all of it
+is already here. Add the one step where the system sees `"hello" + 5` lose
+everything and *says so* — a warning you can't wave off, or a flat refusal — and
+the latent type system becomes a working one: the string-to-zero bug caught
+before it ships, a newcomer handed guardrails instead of a footgun, the same help
+every other typed language gives — and no annotations, because the types were
+always there to infer. That's what "expose the type system we already have"
+means. Not bolt one on. Flip on the check `perl` left off.
 
 One value breaks the "static" rule, and it's the exception that proves it. A
 dualvar — `$!`, the error variable — carries a message *and* a number,
