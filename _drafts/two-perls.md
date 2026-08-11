@@ -126,13 +126,9 @@ plus the capacity to carry magic, to be overloaded, to be tied, to turn into a
 dualvar. Every value in your program rolls along accreting the machinery for
 everything it might one day need to be.
 
-And here's the rub — SSA has *already designed all of that away*. The whole
-point of SSA is that values are immutable and assigned once. The mutation the SV
-exists to support? Gone. The runtime retyping? Gone. So putting an SV on every
-node means paying, on every single value, for a pile of capabilities the form
-guarantees you'll never touch. The `42` in your loop counter is immutable and
-used once. It does not need a heap box that *could* have become a tied,
-overloaded dualvar. It needs to be `42`.
+The whole point of SSA is that values are immutable and assigned once. SV is
+defined to be the ultimate mutable data structure. It's a total waste to use an
+SV in an SSA form.
 
 I want to be clear this isn't me dunking on the SV. The SV is *great*. `perl`
 makes every value an SV and it works, and it's the right call for what `perl`
