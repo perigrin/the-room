@@ -155,8 +155,17 @@ That "it depends" isn't a cop-out. It's the whole idea. Whether `"42"` is
 a number depends on what you're about to *do* with it and which sense of
 "number" you mean. Two clean tests hide under that "it depends."
 
-The first is a **round trip**. Take the value, convert it to the type you're
-asking about, convert it back, and see if you got the same thing.
+The first — and the more intuitive — is **behavior**. Does the value actually
+behave like a number? A real number equals itself, and arithmetic on it means
+something. The string `"NaN"` is the classic fake: it *looks* numeric, but ask
+it to behave and it won't — `NaN` isn't equal to itself, `NaN - NaN` isn't zero.
+Right shape, wrong behavior, so it isn't really a number. That's the test your
+gut already runs — and it's murder to automate, because "behaves correctly"
+means checking every operation the type has.
+
+The second test is mechanical, and it's the one a compiler can actually run: a
+**round trip**. Convert the value to the type you're asking about, convert it
+back, and see if you got the same thing.
 
 ```perl
 my $x    = "42";
@@ -177,15 +186,11 @@ $back eq $x;          # false — you just lost your value
 That's the line between *being* a type and merely *coercing* to one, and it
 matters. A hashref stringifies to something like `HASH(0x561f3a...)`, but you
 can't turn that string back into the hash, so a hashref is emphatically not a
-string. It coerces. It isn't.
+string. It coerces. It isn't. The round trip is cheaper, but it isn't perfect —
+`"NaN"` sails right through it — which is why behavior is the test that actually
+decides.
 
-The second test is about **behavior**, because surviving the round trip isn't
-quite enough. The string `"NaN"` round-trips through numeric conversion just
-fine — out and back, no loss. But it doesn't *behave* like a number: `NaN`
-isn't equal to itself, `NaN - NaN` isn't zero. Right shape, wrong behavior, so
-it isn't really a number either.
-
-Two tests, then: does it survive the round trip, and does it behave? Run those
+Two tests, then: does it behave, and does it survive the round trip? Run those
 over all of Perl's values and a hierarchy just falls out — integers are a kind
 of number, numbers are a kind of string, references are their own thing —
 without anyone declaring a single type. That's what I mean by a *latent* type
