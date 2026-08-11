@@ -58,9 +58,8 @@ And there are only two ways to guess. You can try to *reimplement `perl`*
 passes — or breaks compatibility so hard it becomes a *different* language, or was
 abandoned years ago. Or you can use *heuristics* — pattern-match
 your way to *probably right*, which is what the linters and the editors and
-increasingly the LLMs do. Both are guessing. Neither can ever be
-finished, because the third option — "go read the spec" — doesn't exist. The
-spec is the program.
+increasingly the LLMs do. Neither can ever be
+finished, because the third option — "go read the spec" — doesn't exist.
 
 That little circle is, I think, what quietly holds Perl back. Every tool
 we might want is either impossibly expensive to build or doomed to be
