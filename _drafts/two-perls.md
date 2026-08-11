@@ -232,7 +232,7 @@ List`, references off to the side.
 
 **Coercions and dispatching**, driven by *type signals*. This is what people mean by context,
 and it isn't a type — it's a signal of what type is expected next. `+` signals
-"Num." `my @x = …` signals "List." A value answers two ways. It **coerces**: a
+"Num." `my @x = …` signals "List." The inference engine answers two ways. It **coerces**: a
 static value plus an expected type gives you what it should become, computed on
 the spot and never stored (storing every answer at once is the SV again). Or the
 *operation* **dispatches** on the signal — `reverse` runs a different computation
