@@ -344,7 +344,3 @@ itself. Chalk, the compiler I've been building and will no doubt bore you with i
 later posts, is my run at it: not to replace `perl` — I'm not that foolish, and I
 don't want to — but to prove there *can* be a second Perl, and in the proving, to
 finally write down what the first one has been all along.
-
-That's the part I keep coming back to. Somewhere in trying to make it fast, I
-stopped being able to tell whether I was building a compiler or just, at long
-last, taking dictation.
