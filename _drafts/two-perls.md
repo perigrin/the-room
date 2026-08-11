@@ -47,9 +47,10 @@ tidying. It's a constitutional act.
 The trouble starts the moment something that *isn't* `perl` needs to understand
 your code. A refactoring tool. A syntax highlighter that wants to get the hard
 cases right. A static analyzer. A language model
-rewriting a function it's never seen before. None of these have `perl`'s runtime
-underneath them to fall back on. They can't just "run it and see." They need a
-description of the language, and we never made one, so they guess.
+rewriting a function it's never seen before. None of them can lean on `perl` the way you do. They *could* run it and see — but
+executing arbitrary code just to find out what it *means*, side effects and all,
+is more trouble than it's worth, and tells you about one run anyway. So they need
+a description of the language, and we never made one, so they guess.
 
 And there are only two ways to guess. You can try to *reimplement `perl`*
 — chase its behavior corner by corner, forever. This is the road PPI and the
