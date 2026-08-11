@@ -117,18 +117,14 @@ value untouched behind it. Rust took the discipline SSA imposes *inside* a compi
 into the language.
 
 So I go to put Perl into SSA — `perl` implements scalar values as something
-called an SV. And what's an SV?
-It's a scalar in the only sense `perl` knows — a heap-allocated,
-reference-counted, dynamically-retypeable box with room for an integer *and* a
-float *and* a string, plus the capacity to carry magic, to be overloaded, to be
-tied, to turn into a dualvar. An SV is a container built to hold any scalar Perl
-will ever have and to *become* any other scalar at runtime.
-
-It's Katamari Damacy with your data. If you never played it: you roll a little
-sticky ball around a room and everything it bumps into sticks to it and it grows
-and grows until you're shoving a cow and a bicycle and a small building around
-the screen. That's the SV. Every value in your program rolls along accreting the
-machinery for everything it might one day need to be.
+called an SV. And what's an SV? It's Katamari Damacy with your data. If you never played it:
+you roll a little sticky ball around a room and everything it bumps into sticks
+to it and it grows and grows until you're shoving a cow and a bicycle and a small
+building around the screen. That's the SV: a heap-allocated, reference-counted,
+dynamically-retypeable box with room for an integer *and* a float *and* a string,
+plus the capacity to carry magic, to be overloaded, to be tied, to turn into a
+dualvar. Every value in your program rolls along accreting the machinery for
+everything it might one day need to be.
 
 And here's the rub — SSA has *already designed all of that away*. The whole
 point of SSA is that values are immutable and assigned once. The mutation the SV
