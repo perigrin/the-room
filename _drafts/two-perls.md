@@ -263,8 +263,7 @@ everything and *says so* — a warning you can't wave off, or a flat refusal —
 the latent type system becomes a working one: the string-to-zero bug caught
 before it ships, a newcomer handed guardrails instead of a footgun, the same help
 every other typed language gives — and no annotations, because the types were
-always there to infer. That's what "expose the type system we already have"
-means. Not bolt one on. Flip on the check `perl` left off.
+always there to infer.
 
 ## Throwing perl out of the room
 
