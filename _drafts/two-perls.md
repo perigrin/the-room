@@ -61,7 +61,7 @@ your way to *probably right*, which is what the linters and the editors and
 increasingly the LLMs do. Neither can ever be
 finished, because the third option — "go read the spec" — doesn't exist.
 
-That little circle is, I think, what quietly holds Perl back. Every tool
+I think this quietly holds Perl back. Every tool
 we might want is either impossibly expensive to build or doomed to be
 approximate, and not because Perl is uniquely cursed. It's because we let
 the language dissolve into its one implementation, so there's nothing to build
