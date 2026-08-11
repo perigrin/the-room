@@ -97,7 +97,7 @@ dispatching every op, and let me ship one thing.
 Basically every serious optimizing compiler on the planet is built around Static
 Single Assignment (SSA) form. And with it, the trick I want. Julia feels dynamic
 to write, but its compiler infers concrete types and hands them to LLVM, and what
-comes out the far end is native machine code running at highly optimized speeds.
+comes out the far end is highly optimized native machine code.
 
 ## Katamari Damacy with your data
 
@@ -122,8 +122,8 @@ you roll a little sticky ball around a room and everything it bumps into sticks
 to it and it grows and grows until you're shoving a cow and a bicycle and a small
 building around the screen. That's the SV: a heap-allocated, reference-counted,
 dynamically-retypeable box with room for an integer *and* a float *and* a string,
-plus the capacity to carry magic, to be overloaded, to be tied, to turn into a
-dualvar. Every value in your program rolls along accreting the machinery for
+plus the capacity to carry magic, to be overloaded, to be tied. Every value in
+your program rolls along accreting the machinery for
 everything it might one day need to be.
 
 The whole point of SSA is that values are immutable and assigned once. SV is
@@ -211,9 +211,9 @@ immutable values, you get the same list of behaviors.
 
 Read that list from the compiler's side and it's everything you have to rule out
 to drop a value into a bare machine integer — no mutation, no aliasing, no magic,
-no overload, no tie, no dualvar. Read it from the language's side and it's the
-contracts that make a value *really* an integer, *really* a string, *really* a
-dualvar. Same list, one for one. So
+no overload, no tie. Read it from the language's side and it's the
+contracts that make a value *really* an integer, *really* a string. Same list,
+one for one. So
 describing what a value *is* and earning the right to make it fast turn out to be
 the same act; where the guards hold you drop the SV, where they don't you keep
 it. A licensed bridge, not a magic wand.
