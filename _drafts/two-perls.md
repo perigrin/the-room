@@ -222,15 +222,9 @@ it. A licensed bridge, not a magic wand.
 
 When I've heard or had this conversation in the past, the sharpest Perl people I
 know immediately reach for structural types or the interpreter types (SV et al.)
-… and they usually object to this more traditional type system. "Perl's types"
-isn't one thing, they'll tell me. There are sigils (`$ @ %`, enforced at compile
-time; you can't `splice` a scalar). There's SV/AV/HV storage. There's *context*.
-There's the Int/Num/Str business. And there are lists, which don't slot in
-anywhere. Five different things — wasn't I mashing them into a pile and calling
-it a type system?
+… and they usually object to this more traditional type system.
 
-Not a pile — but not five things either. Stop describing `perl` and start
-describing Perl and they fall into three. And there's no single tree to commit a
+But stop describing `perl` and start describing Perl and it falls into three. And there's no single tree to commit a
 category error with, because two of the three aren't hierarchies at all.
 
 **Values.** Static — one committed datum, the way SSA wants them. They have
