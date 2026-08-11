@@ -293,8 +293,8 @@ as a separate step, make it fast. Writing it down *is* making it fast.
 
 ## The other Katamari
 
-But speed was only ever the concrete case — the version of the argument sharp
-enough to draw blood. It isn't the point.
+But speed was only ever the concrete case — the version of the argument obvious
+and easy to implement. It isn't the point.
 
 Types make development nicer, and I don't need to sell anyone on that anymore;
 Python grew them, TypeScript is nothing but, Ruby's sprouting them, Go and Rust
