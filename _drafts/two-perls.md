@@ -149,13 +149,13 @@ show you — it's simpler than it sounds and it's hiding in plain sight.
 Is `42` a number? Sure. Is `"hello"` a number? No. Is `"42"` — the *string* — a
 number?
 
-Yes? No? ...Maybe.
+Yes? No? ...It depends.
 
-That "maybe" isn't a cop-out. It's the whole idea in one word. Whether `"42"` is
+That "it depends" isn't a cop-out. It's the whole idea. Whether `"42"` is
 a number depends on what you're about to *do* with it and which sense of
 "number" you mean, and — this is the important part — it does not depend at all
 on how `perl` happens to be storing it right now. Two clean
-tests hide under the maybe.
+tests hide under that "it depends."
 
 The first is a **round trip**. Take the value, convert it to the type you're
 asking about, convert it back, and see if you got the same thing.
