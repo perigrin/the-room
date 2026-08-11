@@ -140,6 +140,10 @@ SVs are about data mutating, SSA is about values transforming over time. How
 could we describe Perl with transitions over type? Because of Moose, Types and
 Coercions came to mind.
 
+The answer is that Perl has a Type system we've never bothered to write down. If
+you squint, SVs really implement Types and Coercions between those Types. Let me
+show you — it's simpler than it sounds and it's hiding in plain sight.
+
 ## Is "42" a number?
 
 Start with the dumbest question I can think of. Is `42` a number? Sure. Is
