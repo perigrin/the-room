@@ -228,10 +228,7 @@ Stop describing `perl` and start describing Perl and it all falls out.
 
 **Values.** Static — one committed datum, the way SSA wants them. They have
 types, and the types form a lattice: `Int <: Num <: Str <: Scalar`, `Scalar <:
-List`, references off to the side. SV/AV/HV is just `perl`'s way of storing a
-value; it leaves when `perl` leaves. The sigils are that same split drawn at
-compile time. Int/Num/Str and lists are only ever a question of where a value
-sits on the lattice.
+List`, references off to the side.
 
 (That `Scalar <: List` isn't a decree — it's what the two tests report when you
 run them on the sigils themselves. A scalar in list context is a one-element
