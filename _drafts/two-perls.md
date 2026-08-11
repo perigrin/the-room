@@ -230,13 +230,6 @@ Stop describing `perl` and start describing Perl and it all falls out.
 types, and the types form a lattice: `Int <: Num <: Str <: Scalar`, `Scalar <:
 List`, references off to the side.
 
-(That `Scalar <: List` isn't a decree — it's what the two tests report when you
-run them on the sigils themselves. A scalar in list context is a one-element
-list, and it round-trips; a longer list forced back to a scalar keeps only its
-count. So a scalar *is* a list, the one-element kind — which is why `@a = ($x)`
-is free and `$n = @a` throws information away. The framework corrected my own
-diagram there. That's when I started trusting it.)
-
 **Coercions**, driven by a *type signal*. This is what people mean by context,
 and it isn't a type — it's a signal of what type is expected next. `+` signals
 "Num." `my @x = …` signals "List." A value answers two ways. It **coerces**: a
