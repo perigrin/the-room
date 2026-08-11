@@ -76,10 +76,9 @@ if we could take advantage of 40 years of research?
 Let me pick the least abstract version of that question: I want Perl to be fast.
 Fast and Good aren't synonymous, but Fast helps a language get better.
 
-I have to be careful, because it's easy to say something dumb here. `perl` is
-not a naive interpreter. It compiles your source into an optree and runs real
-optimization passes over it. It is already an optimizing compiler.
-What it *can't* do is get below its own machinery — and there's more of that than
+I have to be careful, because it's easy to say something dumb here. As an
+interpreter `perl` is not naive. It compiles your source into an optree and runs
+optimization passes over it. What it *can't* do is get below its own machinery — and there's more of that than
 just the boxes. Every `+` in your program goes through `pp_add`, which takes two
 SVs, works out at runtime what they are, adds them, and boxes the answer back
 into another SV. And it *reaches* `pp_add` through the runloop: the dispatch loop
