@@ -134,26 +134,11 @@ I want to be clear this isn't me dunking on the SV. The SV is *great*. `perl`
 makes every value an SV and it works, and it's the right call for what `perl`
 is.
 
-## The bridge that shouldn't be there
+## Types and coercions
 
-Here's where I landed, and it's the sentence this whole post is really about:
-
-> An SV carries the machinery for every possible future a scalar might have. SSA
-> is a decision to only worry about *right now*. There should be no way to bridge
-> them — but Perl has a latent static type system that gets us there.
-
-Sit with the first two sentences, because they really are opposites. The SV is
-about *potential* — it holds every future open, keeps every option alive,
-refuses to commit. SSA is about *commitment* — this value, here, is
-this, full stop, no becoming. One is a hedge against every possibility; the
-other is a decision. You shouldn't be able to have both. How do you take a value
-whose entire nature is that it *could be anything* and pin it to one
-specific thing, right now?
-
-The answer is that Perl — the language, not `perl` — has a type system we've
-never bothered to write down, and it happens to be exactly the tool for
-collapsing "every possible future" into "this, right now." Let me show you,
-because it's simpler than it sounds and it's hiding in plain sight.
+SVs are about data mutating, SSA is about values transforming over time. How
+could we describe Perl with transitions over type? Because of Moose, Types and
+Coercions came to mind.
 
 ## Is "42" a number?
 
