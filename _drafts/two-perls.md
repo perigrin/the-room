@@ -310,14 +310,26 @@ as a separate step, make it fast. Writing it down *is* making it fast.
 But speed was only ever the concrete case — the version of the argument obvious
 and easy to implement. It isn't the point.
 
-Types make development nicer, and I shouldn't need to sell anyone on that anymore;
+Types make development nicer, and I shouldn't need to sell anyone on that —
 Python grew them, TypeScript is nothing but, Ruby's sprouting them, Go and Rust
-were born with them. Old news. The fresh part, for Perl specifically, is *why*
-they'd show up: the work you do to make the language stand alone is the work of defining a
-theory of what correct Perl behavior even is, and why. Once the compiler knows what correct behavior
-is, it can tell the *developer* when they've wandered outside it — instead of
-silently doing something, anything, and handing back a plausible-looking wrong
-answer.
+were born with them. But that's the generic pitch: catch the typo, autocomplete
+the method, refactor without fear. Old news. The fresh part, for Perl
+specifically, is *why* they'd show up: the work you do to make the language stand
+alone is the work of defining a theory of what correct Perl behavior even is, and
+why.
+
+And once the compiler knows what correct behavior is, a coercion-based type
+system has a pitch that *isn't* old news — one that falls straight out of
+building the thing on coercions in the first place. Because every type change
+here is an explicit, classified coercion, the system can tell you things no
+`perl` program can: how *often* you coerce a value — and a value you convert on
+every call is often one you're storing in the wrong type; *where* the coercions
+are lossy — the exact points where `"hello"` quietly becomes `0` and your data
+degrades without a word; and *when* the thing crossing a boundary isn't what you
+promised. Most type systems are a bouncer that says *no* at the door. This one is
+also an accountant, handing you a running ledger of what's happening to your
+data — instead of silently doing something, anything, and handing back a
+plausible-looking wrong answer.
 
 Because here's the other Katamari, the one aimed at us instead of the machine.
 `perl`'s SV rolls up every possible future of a value for the runtime's sake. But
